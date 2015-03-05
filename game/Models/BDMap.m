@@ -34,7 +34,7 @@
         
         self.touchDetector = [[TouchDetector alloc] initWithScreenSize:size  andTileSize:self.tileSize];
         self.physicsWorld.contactDelegate = self;
-        
+        self.buildings = [NSMutableArray array];
         
     }
     return self;
@@ -53,6 +53,9 @@
     CGPoint tileScreenCoordinate = [self getTileCoordonateFromId:uid];
     building.position = tileScreenCoordinate;
     [self addChild:building];
+    [self.buildings addObject:building];
+    
+
 }
 
 - (CGPoint)getTileCoordonateFromId:(int)uid {

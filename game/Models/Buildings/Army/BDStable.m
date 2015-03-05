@@ -10,4 +10,8 @@
 
 @implementation BDStable
 
+- (NSArray *)protoProductsNames {
+    return @[@"",@"", @""];
+}
+
 @end

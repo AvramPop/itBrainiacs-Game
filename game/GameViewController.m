@@ -11,6 +11,10 @@
 #import "BDHeadquarters.h"
 #import "BDMenu.h"
 #import "BDMenuItem.h"
+#import "BDPlayer.h"
+#import "BDGameLogicController.h"
+#import "BDMap.h"
+
 
 @implementation SKScene (Unarchive) 
 
@@ -31,6 +35,14 @@
 
 @end
 
+@interface GameViewController ()
+
+@property (nonatomic, strong) UILabel *gold;
+@property (nonatomic, strong) UILabel *wood;
+@property (nonatomic, strong) UILabel *iron;
+
+@end
+
 @implementation GameViewController
 
 
@@ -38,26 +50,35 @@
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateResourcesLabels) name:@"shouldUpdateResourcesUI" object:nil];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    BDMap *scene = [BDMap sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    UIImage *image = [self steachBackgroundImagesForOrientation:UIInterfaceOrientationPortrait];
-    scene.backgroundImage = image;
+
     // Present the scene.
-    self.gameScene = scene;
+    self.gameScene = [BDMap sceneWithSize:skView.bounds.size];
+    self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
+    
+
+    UIImage *image = [self steachBackgroundImagesForOrientation:UIInterfaceOrientationPortrait];
     self.gameScene.tileSize = self.tileSize;
+    self.gameScene.backgroundImage = image;
+
+    [skView presentScene:self.gameScene];
+    
+    self.gameLogicController = [[BDGameLogicController alloc] initWithMap:self.gameScene];
+    
     BDHeadquarters *headquarter = [[BDHeadquarters alloc] init];
     [self.gameScene prepareToAddNode:headquarter];
     
     self.buildingsMenu = [[BDMenuController alloc] initWithDecoratedView:self.view withMenuFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 100)];
     self.buildingsMenu.delegate = self;
     
-    [skView presentScene:scene];
+    [self addResourcesInfo];
+    
+    self.player = [self getSavedPlayer];
 }
 
 - (BOOL)shouldAutorotate {
@@ -159,6 +180,51 @@
 - (void)menu:(BDMenu *)menu didSelectBuilding:(BDBuilding *)building {
     
     [self.gameScene prepareToAddNode:building];
+}
+
+- (void)updateResourcesLabels {
+    self.gold.text = [NSString stringWithFormat:@"Gold: %ld", (long)[BDPlayer goldAmount]];
+    self.iron.text = [NSString stringWithFormat:@"Iron: %ld", (long)[BDPlayer ironAmount]];
+    self.wood.text = [NSString stringWithFormat:@"Wood: %ld", (long)[BDPlayer woodAmount]];
+    [self saveUserInfo];
+}
+
+- (void)addResourcesInfo{
+    self.gold = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 0, 100, 75)];
+    [self.view addSubview:self.gold];
+    
+    self.iron = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 75, 100, 75)];
+    [self.view addSubview:self.iron];
+    
+    self.wood = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 150, 100, 75)];
+    [self.view addSubview:self.wood];
+}
+
+- (void)saveUserInfo{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dictionary = @{@"amountOfGold" : @([BDPlayer goldAmount]),
+                                 @"amountOfIron" : @([BDPlayer ironAmount]),
+                                 @"amountOfWood" : @([BDPlayer woodAmount])};
+    
+    [userDefaults setObject:dictionary forKey:@"player"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)saveMapInfo{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dictionary = @{@"buildings" : [self.gameScene buildings]};
+    [userDefaults setObject:dictionary forKey:@"map"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BDPlayer *)getSavedPlayer {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dictionary = [userDefaults objectForKey:@"player"];
+    [BDPlayer setGoldAmount:[dictionary[@"amountOfGold"] integerValue]];
+    [BDPlayer setWoodAmount:[dictionary[@"amountOfWood"] integerValue]];
+    [BDPlayer setIronAmount:[dictionary[@"amountOfIron"] integerValue]];
+    
+    return nil;
 }
 
 @end

@@ -58,6 +58,8 @@
     //if there are not enough buttons
     for (long i = self.buttons.count; i < self.dataSource.count; i++) {
         aButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [aButton addTarget:self action:@selector(menuItemSelected:) forControlEvents:UIControlEventTouchUpInside];
+
         [self.buttons addObject:aButton];
         [self addSubview:aButton];
     }
@@ -87,8 +89,6 @@
             if (item.iconName && ![item.iconName isEqual:@""]) {
                 [aButton setImage:[UIImage imageNamed:item.iconName] forState:UIControlStateNormal];
             }
-            
-            [aButton addTarget:self action:@selector(menuItemSelected:) forControlEvents:UIControlEventTouchUpInside];
         } else {
             [aButton setTitle:@"" forState:UIControlStateNormal];
             [aButton setImage:nil forState:UIControlStateNormal];

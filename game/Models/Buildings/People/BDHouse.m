@@ -10,4 +10,8 @@
 
 @implementation BDHouse
 
+- (NSArray *)protoProductsNames {
+    return @[@"",@"", @""];
+}
+
 @end

@@ -10,4 +10,8 @@
 
 @implementation BDWorkshop
 
+- (NSArray *)protoProductsNames {
+    return @[@"",@"", @""];
+}
+
 @end

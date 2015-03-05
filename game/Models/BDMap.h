@@ -16,7 +16,7 @@
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic, strong) UIImage *backgroundImage;
 @property (nonatomic, assign) CGSize tileSize;
-
+@property (nonatomic, strong) NSMutableArray *buildings;
 @property (nonatomic, strong) TouchDetector *touchDetector;
 
 - (void)prepareToAddNode:(SKSpriteNode *)addNode;

@@ -7,15 +7,18 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "BDProtoProduct.h"
 
-@interface BDBuilding : SKSpriteNode
+@interface BDBuilding : SKSpriteNode <BDProtoProduct>
 
 @property (nonatomic, assign) int uid;
 
 @property (nonatomic, assign) int level;
 
+@property (nonatomic, strong) NSMutableArray *protoProducts;
 
 - (void)reactToTouch;
-- (instancetype)initWithLevel:(int) level;
+- (instancetype)initWithLevel:(int)level;
+- (NSArray *)protoProductsNames;
 
 @end

@@ -10,11 +10,17 @@
 #import <SpriteKit/SpriteKit.h>
 #import "BDMap.h"
 #import "BDMenuController.h"
+#import "BDPlayer.h"
+#import "BDGameLogicController.h"
 
 @interface GameViewController : UIViewController <BDMenuControllerDelegate>
-@property (nonatomic, assign) CGSize tileSize;
-@property (nonatomic, strong) BDMenuController *buildingsMenu;
+@property (nonatomic, assign) CGSize             tileSize;
+@property (nonatomic, strong) BDMenuController  *buildingsMenu;
+@property (nonatomic, strong) BDPlayer          *player;
+@property (nonatomic, strong) BDMap             *gameScene;
 
-@property (nonatomic, strong) BDMap *gameScene;
+@property (nonatomic, strong) BDGameLogicController *gameLogicController;
+
+-(void)saveUserInfo;
 
 @end

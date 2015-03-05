@@ -10,4 +10,6 @@
 
 @interface BDWoodCamp : BDBuilding
 
+@property(nonatomic, assign)NSInteger productionRate;
+
 @end

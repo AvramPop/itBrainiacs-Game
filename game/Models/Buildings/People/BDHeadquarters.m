@@ -23,4 +23,8 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchHeadQuartersMenu" object:nil];
 }
 
+- (NSArray *)protoProductsNames {
+    return @[@"",@"", @""];
+}
+
 @end

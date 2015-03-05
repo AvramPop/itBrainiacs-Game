@@ -10,4 +10,8 @@
 
 @implementation BDMarket
 
+- (NSArray *)protoProductsNames {
+    return @[@"",@"", @""];
+}
+
 @end

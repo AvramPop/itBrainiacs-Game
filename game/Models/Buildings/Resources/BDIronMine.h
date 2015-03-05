@@ -10,4 +10,5 @@
 
 @interface BDIronMine : BDBuilding
 
+
 @end

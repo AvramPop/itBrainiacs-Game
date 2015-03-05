@@ -10,4 +10,8 @@
 
 @implementation BDUniversity
 
+- (NSArray *)protoProductsNames {
+    return @[@"",@"", @""];
+}
+
 @end

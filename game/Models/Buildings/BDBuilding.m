@@ -23,15 +23,17 @@
     self = [super init];
     if (self) {
         self.level = 1;
+        self.protoProducts = [NSMutableArray array];
     }
     return self;
 }
 
 - (instancetype)initWithImageNamed:(NSString *)name {
     self = [super initWithImageNamed:name];
-    
-    self.backgroundImageName = name;
-    
+    if (self) {
+        self.backgroundImageName = name;
+        self.protoProducts = [NSMutableArray array];
+    }
     return self;
 }
 
@@ -39,6 +41,7 @@
     self = [super init];
     if (self) {
         self.level = level;
+        self.protoProducts = [NSMutableArray array];
     }
     return self;
 }
@@ -53,5 +56,30 @@
 }
 
 
+- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    [self.protoProducts removeObject:protoProduct];
+}
+
+- (NSArray *)protoProductsNames {
+    return nil;
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInt:self.uid forKey:@"uid"];
+    [aCoder encodeInt:self.level forKey:@"level"];
+    [aCoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithImageNamed:[aDecoder decodeObjectForKey:@"backgroundImageName"]];
+    if (!self) {
+        return nil;
+    }
+    
+    self.uid = [aDecoder decodeIntForKey:@"uid"];
+    self.backgroundImageName = [aDecoder decodeObjectForKey:@"backgroundImageName"];
+    self.level = [aDecoder decodeIntForKey:@"level"];
+    return self;
+}
 
 @end

@@ -22,6 +22,7 @@
         self.title = @"emptyItem";
         self.iconName = @"Elixir1";
         self.itemsArray = array;
+                
     }
     return self;
 }

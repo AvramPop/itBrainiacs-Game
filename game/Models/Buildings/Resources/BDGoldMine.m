@@ -10,4 +10,29 @@
 
 @implementation BDGoldMine
 
+- (instancetype)initWithImageNamed:(NSString *)name {
+    self = [super initWithImageNamed:name];
+    if (self) {
+        self.name = @"goldMine";
+        BDProtoProduct *protoGold = [[BDProtoProduct alloc] init];
+        protoGold.protoProductName = @"BDGold";
+        protoGold.isResource = YES;
+        [self.protoProducts addObject:protoGold];
+    }
+    return self;
+}
+
+- (void)reactToTouch {
+    [super reactToTouch];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchGoldMine" object:nil];
+}
+
+-(void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    
+}
+
+- (NSArray *)protoProductsNames {
+    return @[@"BDGold"];
+}
+
 @end

@@ -10,4 +10,27 @@
 
 @implementation BDIronMine
 
+- (instancetype)initWithImageNamed:(NSString *)name {
+    self = [super initWithImageNamed:name];
+    if (self) {
+        self.name = @"ironMine";
+        BDProtoProduct *protoIron = [[BDProtoProduct alloc] init];
+        protoIron.protoProductName = @"BDIron";
+        protoIron.isResource = YES;
+        self.protoProducts = [NSMutableArray arrayWithObject:protoIron];
+    }
+    return self;
+}
+
+- (void)reactToTouch {
+    [super reactToTouch];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchIronMine" object:nil];
+}
+
+- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {}
+
+- (NSArray *)protoProductsNames {
+    return @[@"BDIron"];
+}
+
 @end

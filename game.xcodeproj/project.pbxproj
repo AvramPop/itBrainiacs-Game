@@ -7,15 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC558D161A83C37100A3F0AB /* BDMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D0D1A83C37100A3F0AB /* BDMap.m */; };
+		CC558D171A83C37100A3F0AB /* BDBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D111A83C37100A3F0AB /* BDBuilding.m */; };
+		CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D151A83C37100A3F0AB /* TouchDetector.m */; };
+		CC558D1B1A83C3D500A3F0AB /* BDWoodCamp.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D1A1A83C3D500A3F0AB /* BDWoodCamp.m */; };
+		CC558D1E1A83C3FB00A3F0AB /* BDGoldMine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D1D1A83C3FB00A3F0AB /* BDGoldMine.m */; };
+		CC558D241A83C43000A3F0AB /* BDIronMine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D231A83C43000A3F0AB /* BDIronMine.m */; };
+		CC558D2B1A83C51E00A3F0AB /* BDBaracks.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D2A1A83C51E00A3F0AB /* BDBaracks.m */; };
+		CC558D2E1A83C52C00A3F0AB /* BDStable.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D2D1A83C52C00A3F0AB /* BDStable.m */; };
+		CC558D311A83C53A00A3F0AB /* BDWorkshop.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D301A83C53A00A3F0AB /* BDWorkshop.m */; };
+		CC558D341A83C54600A3F0AB /* BDHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D331A83C54600A3F0AB /* BDHouse.m */; };
+		CC558D371A83C55600A3F0AB /* BDHeadquarters.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D361A83C55600A3F0AB /* BDHeadquarters.m */; };
+		CC558D3A1A83C56300A3F0AB /* BDMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D391A83C56300A3F0AB /* BDMarket.m */; };
+		CC558D3D1A83C57200A3F0AB /* BDUniversity.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D3C1A83C57200A3F0AB /* BDUniversity.m */; };
+		CC802A651AA0DAEF00971F83 /* BDProtoProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A641AA0DAEF00971F83 /* BDProtoProduct.m */; };
+		CC802A691AA10BD000971F83 /* BDWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A681AA10BD000971F83 /* BDWizard.m */; };
+		CC802A6C1AA10BE600971F83 /* BDArcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A6B1AA10BE600971F83 /* BDArcher.m */; };
+		CC802A6F1AA10C0700971F83 /* BDCatapult.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A6E1AA10C0700971F83 /* BDCatapult.m */; };
+		CC802A721AA10C2700971F83 /* BDBaloon.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A711AA10C2700971F83 /* BDBaloon.m */; };
+		CC802A751AA10C4300971F83 /* BDRam.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A741AA10C4300971F83 /* BDRam.m */; };
+		CC802A781AA10C6D00971F83 /* BDHighCavalery.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A771AA10C6D00971F83 /* BDHighCavalery.m */; };
+		CC802A7B1AA10C8F00971F83 /* BDLightCavalery.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A7A1AA10C8F00971F83 /* BDLightCavalery.m */; };
+		CC802A7E1AA10CB200971F83 /* BDSpy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A7D1AA10CB200971F83 /* BDSpy.m */; };
+		CC802A811AA10CF300971F83 /* BDAxeman.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A801AA10CF300971F83 /* BDAxeman.m */; };
+		CC802A841AA10D0400971F83 /* BDSwordsman.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A831AA10D0400971F83 /* BDSwordsman.m */; };
+		CC802A871AA114B900971F83 /* BDUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = CC802A861AA114B900971F83 /* BDUnit.m */; };
+		CCC0A3551A9313EA0091BAF5 /* BDMenuSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC0A3541A9313EA0091BAF5 /* BDMenuSection.m */; };
+		CCC0A3581A9316B90091BAF5 /* BDMenuSectionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC0A3571A9316B90091BAF5 /* BDMenuSectionFactory.m */; };
+		CCC0A43F1A9B85EF0091BAF5 /* BDPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC0A43E1A9B85EF0091BAF5 /* BDPlayer.m */; };
+		CCC0A4421A9B90090091BAF5 /* BDGameLogicController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */; };
+		CCD757DB1A8D09A800263F03 /* BDMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD757DA1A8D09A800263F03 /* BDMenu.m */; };
+		CCD757E11A8D155900263F03 /* BDMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD757E01A8D155900263F03 /* BDMenuItem.m */; };
+		CCD757E41A8D15C000263F03 /* BDMenuItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD757E31A8D15C000263F03 /* BDMenuItemFactory.m */; };
 		CCDDD6581A7A8F47006A996C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6571A7A8F47006A996C /* main.m */; };
 		CCDDD65B1A7A8F47006A996C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD65A1A7A8F47006A996C /* AppDelegate.m */; };
-		CCDDD65E1A7A8F47006A996C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD65D1A7A8F47006A996C /* GameScene.m */; };
 		CCDDD6601A7A8F47006A996C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CCDDD65F1A7A8F47006A996C /* GameScene.sks */; };
 		CCDDD6631A7A8F47006A996C /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6621A7A8F47006A996C /* GameViewController.m */; };
 		CCDDD6661A7A8F47006A996C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCDDD6641A7A8F47006A996C /* Main.storyboard */; };
 		CCDDD6681A7A8F48006A996C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDDD6671A7A8F48006A996C /* Images.xcassets */; };
 		CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCDDD6691A7A8F48006A996C /* LaunchScreen.xib */; };
 		CCDDD6771A7A8F48006A996C /* gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6761A7A8F48006A996C /* gameTests.m */; };
+		CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE199871A8E5F6E003A0804 /* BDMenuController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +61,75 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC558D0C1A83C37100A3F0AB /* BDMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMap.h; sourceTree = "<group>"; };
+		CC558D0D1A83C37100A3F0AB /* BDMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMap.m; sourceTree = "<group>"; };
+		CC558D101A83C37100A3F0AB /* BDBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuilding.h; sourceTree = "<group>"; };
+		CC558D111A83C37100A3F0AB /* BDBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuilding.m; sourceTree = "<group>"; };
+		CC558D141A83C37100A3F0AB /* TouchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDetector.h; sourceTree = "<group>"; };
+		CC558D151A83C37100A3F0AB /* TouchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDetector.m; sourceTree = "<group>"; };
+		CC558D191A83C3D500A3F0AB /* BDWoodCamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWoodCamp.h; sourceTree = "<group>"; };
+		CC558D1A1A83C3D500A3F0AB /* BDWoodCamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDWoodCamp.m; sourceTree = "<group>"; };
+		CC558D1C1A83C3FB00A3F0AB /* BDGoldMine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDGoldMine.h; sourceTree = "<group>"; };
+		CC558D1D1A83C3FB00A3F0AB /* BDGoldMine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDGoldMine.m; sourceTree = "<group>"; };
+		CC558D221A83C43000A3F0AB /* BDIronMine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDIronMine.h; sourceTree = "<group>"; };
+		CC558D231A83C43000A3F0AB /* BDIronMine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDIronMine.m; sourceTree = "<group>"; };
+		CC558D291A83C51E00A3F0AB /* BDBaracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBaracks.h; sourceTree = "<group>"; };
+		CC558D2A1A83C51E00A3F0AB /* BDBaracks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBaracks.m; sourceTree = "<group>"; };
+		CC558D2C1A83C52C00A3F0AB /* BDStable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDStable.h; sourceTree = "<group>"; };
+		CC558D2D1A83C52C00A3F0AB /* BDStable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDStable.m; sourceTree = "<group>"; };
+		CC558D2F1A83C53A00A3F0AB /* BDWorkshop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWorkshop.h; sourceTree = "<group>"; };
+		CC558D301A83C53A00A3F0AB /* BDWorkshop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDWorkshop.m; sourceTree = "<group>"; };
+		CC558D321A83C54600A3F0AB /* BDHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDHouse.h; sourceTree = "<group>"; };
+		CC558D331A83C54600A3F0AB /* BDHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHouse.m; sourceTree = "<group>"; };
+		CC558D351A83C55600A3F0AB /* BDHeadquarters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDHeadquarters.h; sourceTree = "<group>"; };
+		CC558D361A83C55600A3F0AB /* BDHeadquarters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHeadquarters.m; sourceTree = "<group>"; };
+		CC558D381A83C56300A3F0AB /* BDMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMarket.h; sourceTree = "<group>"; };
+		CC558D391A83C56300A3F0AB /* BDMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMarket.m; sourceTree = "<group>"; };
+		CC558D3B1A83C57200A3F0AB /* BDUniversity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDUniversity.h; sourceTree = "<group>"; };
+		CC558D3C1A83C57200A3F0AB /* BDUniversity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUniversity.m; sourceTree = "<group>"; };
+		CC802A631AA0DAEF00971F83 /* BDProtoProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDProtoProduct.h; path = ../BDPlayer/BDProtoProduct.h; sourceTree = "<group>"; };
+		CC802A641AA0DAEF00971F83 /* BDProtoProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDProtoProduct.m; path = ../BDPlayer/BDProtoProduct.m; sourceTree = "<group>"; };
+		CC802A671AA10BD000971F83 /* BDWizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWizard.h; sourceTree = "<group>"; };
+		CC802A681AA10BD000971F83 /* BDWizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDWizard.m; sourceTree = "<group>"; };
+		CC802A6A1AA10BE600971F83 /* BDArcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDArcher.h; sourceTree = "<group>"; };
+		CC802A6B1AA10BE600971F83 /* BDArcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDArcher.m; sourceTree = "<group>"; };
+		CC802A6D1AA10C0700971F83 /* BDCatapult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCatapult.h; sourceTree = "<group>"; };
+		CC802A6E1AA10C0700971F83 /* BDCatapult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCatapult.m; sourceTree = "<group>"; };
+		CC802A701AA10C2700971F83 /* BDBaloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBaloon.h; sourceTree = "<group>"; };
+		CC802A711AA10C2700971F83 /* BDBaloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBaloon.m; sourceTree = "<group>"; };
+		CC802A731AA10C4300971F83 /* BDRam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRam.h; sourceTree = "<group>"; };
+		CC802A741AA10C4300971F83 /* BDRam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRam.m; sourceTree = "<group>"; };
+		CC802A761AA10C6D00971F83 /* BDHighCavalery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDHighCavalery.h; sourceTree = "<group>"; };
+		CC802A771AA10C6D00971F83 /* BDHighCavalery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDHighCavalery.m; sourceTree = "<group>"; };
+		CC802A791AA10C8F00971F83 /* BDLightCavalery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDLightCavalery.h; sourceTree = "<group>"; };
+		CC802A7A1AA10C8F00971F83 /* BDLightCavalery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDLightCavalery.m; sourceTree = "<group>"; };
+		CC802A7C1AA10CB200971F83 /* BDSpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSpy.h; sourceTree = "<group>"; };
+		CC802A7D1AA10CB200971F83 /* BDSpy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSpy.m; sourceTree = "<group>"; };
+		CC802A7F1AA10CF300971F83 /* BDAxeman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAxeman.h; sourceTree = "<group>"; };
+		CC802A801AA10CF300971F83 /* BDAxeman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAxeman.m; sourceTree = "<group>"; };
+		CC802A821AA10D0400971F83 /* BDSwordsman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSwordsman.h; sourceTree = "<group>"; };
+		CC802A831AA10D0400971F83 /* BDSwordsman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSwordsman.m; sourceTree = "<group>"; };
+		CC802A851AA114B900971F83 /* BDUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDUnit.h; sourceTree = "<group>"; };
+		CC802A861AA114B900971F83 /* BDUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUnit.m; sourceTree = "<group>"; };
+		CCC0A3531A9313EA0091BAF5 /* BDMenuSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMenuSection.h; sourceTree = "<group>"; };
+		CCC0A3541A9313EA0091BAF5 /* BDMenuSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMenuSection.m; sourceTree = "<group>"; };
+		CCC0A3561A9316B90091BAF5 /* BDMenuSectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMenuSectionFactory.h; sourceTree = "<group>"; };
+		CCC0A3571A9316B90091BAF5 /* BDMenuSectionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMenuSectionFactory.m; sourceTree = "<group>"; };
+		CCC0A43D1A9B85EF0091BAF5 /* BDPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDPlayer.h; sourceTree = "<group>"; };
+		CCC0A43E1A9B85EF0091BAF5 /* BDPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDPlayer.m; sourceTree = "<group>"; };
+		CCC0A4401A9B90090091BAF5 /* BDGameLogicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDGameLogicController.h; sourceTree = "<group>"; };
+		CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDGameLogicController.m; sourceTree = "<group>"; };
+		CCD757D91A8D09A800263F03 /* BDMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMenu.h; sourceTree = "<group>"; };
+		CCD757DA1A8D09A800263F03 /* BDMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMenu.m; sourceTree = "<group>"; };
+		CCD757DF1A8D155900263F03 /* BDMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMenuItem.h; sourceTree = "<group>"; };
+		CCD757E01A8D155900263F03 /* BDMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMenuItem.m; sourceTree = "<group>"; };
+		CCD757E21A8D15C000263F03 /* BDMenuItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMenuItemFactory.h; sourceTree = "<group>"; };
+		CCD757E31A8D15C000263F03 /* BDMenuItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMenuItemFactory.m; sourceTree = "<group>"; };
 		CCDDD6521A7A8F47006A996C /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDDD6561A7A8F47006A996C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCDDD6571A7A8F47006A996C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCDDD6591A7A8F47006A996C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CCDDD65A1A7A8F47006A996C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CCDDD65C1A7A8F47006A996C /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		CCDDD65D1A7A8F47006A996C /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		CCDDD65F1A7A8F47006A996C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		CCDDD6611A7A8F47006A996C /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		CCDDD6621A7A8F47006A996C /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
@@ -45,6 +139,9 @@
 		CCDDD6701A7A8F48006A996C /* gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDDD6751A7A8F48006A996C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCDDD6761A7A8F48006A996C /* gameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gameTests.m; sourceTree = "<group>"; };
+		CCE199861A8E5F6E003A0804 /* BDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuController.h; path = Views/BDMenuController.h; sourceTree = "<group>"; };
+		CCE199871A8E5F6E003A0804 /* BDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDMenuController.m; path = Views/BDMenuController.m; sourceTree = "<group>"; };
+		CCE199891A8E602E003A0804 /* BDMenuDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuDefinitions.h; path = Views/BDMenuDefinitions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +162,206 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC558D0B1A83C37100A3F0AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC802A661AA10BBB00971F83 /* BDUnits */,
+				CCC0A43C1A9B85DB0091BAF5 /* BDPlayer */,
+				CC558D0C1A83C37100A3F0AB /* BDMap.h */,
+				CC558D0D1A83C37100A3F0AB /* BDMap.m */,
+				CC558D141A83C37100A3F0AB /* TouchDetector.h */,
+				CC558D151A83C37100A3F0AB /* TouchDetector.m */,
+				CC558D0E1A83C37100A3F0AB /* Buildings */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CC558D0E1A83C37100A3F0AB /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+				CC558D101A83C37100A3F0AB /* BDBuilding.h */,
+				CC558D111A83C37100A3F0AB /* BDBuilding.m */,
+				CC558D281A83C51000A3F0AB /* Army */,
+				CC558D121A83C37100A3F0AB /* People */,
+				CC558D131A83C37100A3F0AB /* Resources */,
+			);
+			path = Buildings;
+			sourceTree = "<group>";
+		};
+		CC558D121A83C37100A3F0AB /* People */ = {
+			isa = PBXGroup;
+			children = (
+				CC558D321A83C54600A3F0AB /* BDHouse.h */,
+				CC558D331A83C54600A3F0AB /* BDHouse.m */,
+				CC558D351A83C55600A3F0AB /* BDHeadquarters.h */,
+				CC558D361A83C55600A3F0AB /* BDHeadquarters.m */,
+				CC558D381A83C56300A3F0AB /* BDMarket.h */,
+				CC558D391A83C56300A3F0AB /* BDMarket.m */,
+				CC558D3B1A83C57200A3F0AB /* BDUniversity.h */,
+				CC558D3C1A83C57200A3F0AB /* BDUniversity.m */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		CC558D131A83C37100A3F0AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC558D191A83C3D500A3F0AB /* BDWoodCamp.h */,
+				CC558D1A1A83C3D500A3F0AB /* BDWoodCamp.m */,
+				CC558D1C1A83C3FB00A3F0AB /* BDGoldMine.h */,
+				CC558D1D1A83C3FB00A3F0AB /* BDGoldMine.m */,
+				CC558D221A83C43000A3F0AB /* BDIronMine.h */,
+				CC558D231A83C43000A3F0AB /* BDIronMine.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC558D281A83C51000A3F0AB /* Army */ = {
+			isa = PBXGroup;
+			children = (
+				CC558D291A83C51E00A3F0AB /* BDBaracks.h */,
+				CC558D2A1A83C51E00A3F0AB /* BDBaracks.m */,
+				CC558D2C1A83C52C00A3F0AB /* BDStable.h */,
+				CC558D2D1A83C52C00A3F0AB /* BDStable.m */,
+				CC558D2F1A83C53A00A3F0AB /* BDWorkshop.h */,
+				CC558D301A83C53A00A3F0AB /* BDWorkshop.m */,
+			);
+			path = Army;
+			sourceTree = "<group>";
+		};
+		CC802A661AA10BBB00971F83 /* BDUnits */ = {
+			isa = PBXGroup;
+			children = (
+				CC802A631AA0DAEF00971F83 /* BDProtoProduct.h */,
+				CC802A641AA0DAEF00971F83 /* BDProtoProduct.m */,
+				CC802A6A1AA10BE600971F83 /* BDArcher.h */,
+				CC802A6B1AA10BE600971F83 /* BDArcher.m */,
+				CC802A7F1AA10CF300971F83 /* BDAxeman.h */,
+				CC802A801AA10CF300971F83 /* BDAxeman.m */,
+				CC802A701AA10C2700971F83 /* BDBaloon.h */,
+				CC802A711AA10C2700971F83 /* BDBaloon.m */,
+				CC802A6D1AA10C0700971F83 /* BDCatapult.h */,
+				CC802A6E1AA10C0700971F83 /* BDCatapult.m */,
+				CC802A761AA10C6D00971F83 /* BDHighCavalery.h */,
+				CC802A771AA10C6D00971F83 /* BDHighCavalery.m */,
+				CC802A791AA10C8F00971F83 /* BDLightCavalery.h */,
+				CC802A7A1AA10C8F00971F83 /* BDLightCavalery.m */,
+				CC802A731AA10C4300971F83 /* BDRam.h */,
+				CC802A741AA10C4300971F83 /* BDRam.m */,
+				CC802A7C1AA10CB200971F83 /* BDSpy.h */,
+				CC802A7D1AA10CB200971F83 /* BDSpy.m */,
+				CC802A821AA10D0400971F83 /* BDSwordsman.h */,
+				CC802A831AA10D0400971F83 /* BDSwordsman.m */,
+				CC802A671AA10BD000971F83 /* BDWizard.h */,
+				CC802A681AA10BD000971F83 /* BDWizard.m */,
+				CC802A851AA114B900971F83 /* BDUnit.h */,
+				CC802A861AA114B900971F83 /* BDUnit.m */,
+			);
+			path = BDUnits;
+			sourceTree = "<group>";
+		};
+		CCC0A3591A935CA00091BAF5 /* Menu Section */ = {
+			isa = PBXGroup;
+			children = (
+				CCC0A3531A9313EA0091BAF5 /* BDMenuSection.h */,
+				CCC0A3541A9313EA0091BAF5 /* BDMenuSection.m */,
+				CCC0A3561A9316B90091BAF5 /* BDMenuSectionFactory.h */,
+				CCC0A3571A9316B90091BAF5 /* BDMenuSectionFactory.m */,
+			);
+			name = "Menu Section";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCC0A35A1A935CA90091BAF5 /* Menu Item */ = {
+			isa = PBXGroup;
+			children = (
+				CCD757DF1A8D155900263F03 /* BDMenuItem.h */,
+				CCD757E01A8D155900263F03 /* BDMenuItem.m */,
+				CCD757E21A8D15C000263F03 /* BDMenuItemFactory.h */,
+				CCD757E31A8D15C000263F03 /* BDMenuItemFactory.m */,
+			);
+			name = "Menu Item";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCC0A35B1A935CB30091BAF5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CCD757D91A8D09A800263F03 /* BDMenu.h */,
+				CCD757DA1A8D09A800263F03 /* BDMenu.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		CCC0A3691A9375C30091BAF5 /* BuisnessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				CCC0A36B1A9376460091BAF5 /* Menu */,
+				CCC0A4401A9B90090091BAF5 /* BDGameLogicController.h */,
+				CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */,
+			);
+			name = BuisnessLogic;
+			sourceTree = "<group>";
+		};
+		CCC0A36A1A93761F0091BAF5 /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+				CCE199891A8E602E003A0804 /* BDMenuDefinitions.h */,
+				CCE199861A8E5F6E003A0804 /* BDMenuController.h */,
+				CCE199871A8E5F6E003A0804 /* BDMenuController.m */,
+			);
+			name = MenuController;
+			sourceTree = "<group>";
+		};
+		CCC0A36B1A9376460091BAF5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CCC0A3591A935CA00091BAF5 /* Menu Section */,
+				CCC0A35A1A935CA90091BAF5 /* Menu Item */,
+				CCC0A36A1A93761F0091BAF5 /* MenuController */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		CCC0A36C1A9376DF0091BAF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD65F1A7A8F47006A996C /* GameScene.sks */,
+				CCDDD6641A7A8F47006A996C /* Main.storyboard */,
+				CCDDD6691A7A8F48006A996C /* LaunchScreen.xib */,
+				CCDDD6671A7A8F48006A996C /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CCC0A36D1A9377030091BAF5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCDDD6591A7A8F47006A996C /* AppDelegate.h */,
+				CCDDD65A1A7A8F47006A996C /* AppDelegate.m */,
+				CCDDD6611A7A8F47006A996C /* GameViewController.h */,
+				CCDDD6621A7A8F47006A996C /* GameViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CCC0A43C1A9B85DB0091BAF5 /* BDPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CCC0A43D1A9B85EF0091BAF5 /* BDPlayer.h */,
+				CCC0A43E1A9B85EF0091BAF5 /* BDPlayer.m */,
+			);
+			path = BDPlayer;
+			sourceTree = "<group>";
+		};
+		CCD757D81A8D098700263F03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCC0A35B1A935CB30091BAF5 /* Menu */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CCDDD6491A7A8F47006A996C = {
 			isa = PBXGroup;
 			children = (
@@ -86,17 +383,12 @@
 		CCDDD6541A7A8F47006A996C /* game */ = {
 			isa = PBXGroup;
 			children = (
-				CCDDD6591A7A8F47006A996C /* AppDelegate.h */,
-				CCDDD65A1A7A8F47006A996C /* AppDelegate.m */,
-				CCDDD65C1A7A8F47006A996C /* GameScene.h */,
-				CCDDD65D1A7A8F47006A996C /* GameScene.m */,
-				CCDDD65F1A7A8F47006A996C /* GameScene.sks */,
-				CCDDD6611A7A8F47006A996C /* GameViewController.h */,
-				CCDDD6621A7A8F47006A996C /* GameViewController.m */,
-				CCDDD6641A7A8F47006A996C /* Main.storyboard */,
-				CCDDD6671A7A8F48006A996C /* Images.xcassets */,
-				CCDDD6691A7A8F48006A996C /* LaunchScreen.xib */,
+				CCC0A3691A9375C30091BAF5 /* BuisnessLogic */,
+				CC558D0B1A83C37100A3F0AB /* Models */,
+				CCC0A36C1A9376DF0091BAF5 /* Resources */,
 				CCDDD6551A7A8F47006A996C /* Supporting Files */,
+				CCC0A36D1A9377030091BAF5 /* ViewControllers */,
+				CCD757D81A8D098700263F03 /* Views */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -228,10 +520,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC802A751AA10C4300971F83 /* BDRam.m in Sources */,
+				CC802A7B1AA10C8F00971F83 /* BDLightCavalery.m in Sources */,
+				CC558D1B1A83C3D500A3F0AB /* BDWoodCamp.m in Sources */,
+				CC558D3D1A83C57200A3F0AB /* BDUniversity.m in Sources */,
+				CC558D241A83C43000A3F0AB /* BDIronMine.m in Sources */,
+				CC558D2E1A83C52C00A3F0AB /* BDStable.m in Sources */,
+				CC802A6C1AA10BE600971F83 /* BDArcher.m in Sources */,
+				CC802A651AA0DAEF00971F83 /* BDProtoProduct.m in Sources */,
+				CC558D171A83C37100A3F0AB /* BDBuilding.m in Sources */,
+				CC802A6F1AA10C0700971F83 /* BDCatapult.m in Sources */,
+				CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */,
+				CC802A811AA10CF300971F83 /* BDAxeman.m in Sources */,
+				CC558D3A1A83C56300A3F0AB /* BDMarket.m in Sources */,
 				CCDDD6631A7A8F47006A996C /* GameViewController.m in Sources */,
+				CCC0A3581A9316B90091BAF5 /* BDMenuSectionFactory.m in Sources */,
+				CCD757E41A8D15C000263F03 /* BDMenuItemFactory.m in Sources */,
 				CCDDD65B1A7A8F47006A996C /* AppDelegate.m in Sources */,
-				CCDDD65E1A7A8F47006A996C /* GameScene.m in Sources */,
+				CC802A691AA10BD000971F83 /* BDWizard.m in Sources */,
+				CC558D341A83C54600A3F0AB /* BDHouse.m in Sources */,
+				CCC0A4421A9B90090091BAF5 /* BDGameLogicController.m in Sources */,
+				CC558D311A83C53A00A3F0AB /* BDWorkshop.m in Sources */,
+				CC802A871AA114B900971F83 /* BDUnit.m in Sources */,
+				CCD757E11A8D155900263F03 /* BDMenuItem.m in Sources */,
+				CC802A841AA10D0400971F83 /* BDSwordsman.m in Sources */,
+				CC802A7E1AA10CB200971F83 /* BDSpy.m in Sources */,
+				CCC0A3551A9313EA0091BAF5 /* BDMenuSection.m in Sources */,
+				CC802A781AA10C6D00971F83 /* BDHighCavalery.m in Sources */,
+				CCC0A43F1A9B85EF0091BAF5 /* BDPlayer.m in Sources */,
+				CC802A721AA10C2700971F83 /* BDBaloon.m in Sources */,
+				CC558D1E1A83C3FB00A3F0AB /* BDGoldMine.m in Sources */,
+				CC558D161A83C37100A3F0AB /* BDMap.m in Sources */,
+				CCD757DB1A8D09A800263F03 /* BDMenu.m in Sources */,
+				CC558D2B1A83C51E00A3F0AB /* BDBaracks.m in Sources */,
 				CCDDD6581A7A8F47006A996C /* main.m in Sources */,
+				CC558D371A83C55600A3F0AB /* BDHeadquarters.m in Sources */,
+				CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -366,6 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -424,6 +750,7 @@
 				CCDDD67C1A7A8F48006A996C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCDDD67D1A7A8F48006A996C /* Build configuration list for PBXNativeTarget "gameTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +759,7 @@
 				CCDDD67F1A7A8F48006A996C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
