@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2466C51ABC7A580056631D /* BDBuildingMenu.m */; };
 		CC558D161A83C37100A3F0AB /* BDMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D0D1A83C37100A3F0AB /* BDMap.m */; };
 		CC558D171A83C37100A3F0AB /* BDBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D111A83C37100A3F0AB /* BDBuilding.m */; };
 		CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D151A83C37100A3F0AB /* TouchDetector.m */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC2466C41ABC7A580056631D /* BDBuildingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingMenu.h; sourceTree = "<group>"; };
+		CC2466C51ABC7A580056631D /* BDBuildingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingMenu.m; sourceTree = "<group>"; };
 		CC558D0C1A83C37100A3F0AB /* BDMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMap.h; sourceTree = "<group>"; };
 		CC558D0D1A83C37100A3F0AB /* BDMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMap.m; sourceTree = "<group>"; };
 		CC558D101A83C37100A3F0AB /* BDBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuilding.h; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 				CCC0A3591A935CA00091BAF5 /* Menu Section */,
 				CCC0A35A1A935CA90091BAF5 /* Menu Item */,
 				CCC0A36A1A93761F0091BAF5 /* MenuController */,
+				CC2466C41ABC7A580056631D /* BDBuildingMenu.h */,
+				CC2466C51ABC7A580056631D /* BDBuildingMenu.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -552,6 +557,7 @@
 				CC558D1E1A83C3FB00A3F0AB /* BDGoldMine.m in Sources */,
 				CC558D161A83C37100A3F0AB /* BDMap.m in Sources */,
 				CCD757DB1A8D09A800263F03 /* BDMenu.m in Sources */,
+				CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */,
 				CC558D2B1A83C51E00A3F0AB /* BDBaracks.m in Sources */,
 				CCDDD6581A7A8F47006A996C /* main.m in Sources */,
 				CC558D371A83C55600A3F0AB /* BDHeadquarters.m in Sources */,
