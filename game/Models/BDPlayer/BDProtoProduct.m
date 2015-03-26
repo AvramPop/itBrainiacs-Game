@@ -18,4 +18,21 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        self.timeStamp = [aDecoder decodeObjectForKey:@"timeStamp"];
+        self.protoProductName = [aDecoder decodeObjectForKey:@"protoProductName"];
+        self.isResource = [aDecoder decodeBoolForKey:@"isResource"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.timeStamp forKey:@"timeStamp"];
+    [aCoder encodeObject:self.protoProductName forKey:@"protoProductName"];
+    [aCoder encodeBool:self.isResource forKey:@"isResource"];
+}
+
+
 @end

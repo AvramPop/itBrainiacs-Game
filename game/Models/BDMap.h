@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSMutableArray *buildings;
 @property (nonatomic, strong) TouchDetector *touchDetector;
 
+- (instancetype)initWithSize:(CGSize)aSize andBuildings:(NSMutableArray *)array;
+
 - (void)prepareToAddNode:(SKSpriteNode *)addNode;
 
 @end

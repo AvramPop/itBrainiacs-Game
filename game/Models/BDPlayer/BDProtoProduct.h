@@ -10,6 +10,7 @@
 
 @class BDProtoProduct;
 
+
 @protocol BDProtoProduct <NSObject>
 
 @optional
@@ -18,11 +19,10 @@
 @optional
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct;
 
-
-
 @end
 
-@interface BDProtoProduct : NSObject
+
+@interface BDProtoProduct : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSDate *timeStamp;
 

@@ -12,11 +12,21 @@
 @interface BDMap()
 
 @property (nonatomic, strong) SKSpriteNode *addedNode;
+@property (nonatomic, assign) NSArray *cacheBuild;
 
 @end
 
 
 @implementation BDMap
+
+- (instancetype)initWithSize:(CGSize)aSize andBuildings:(NSMutableArray *)array {
+    self = [self initWithSize:aSize];
+    if (self) {
+        self.cacheBuild = array;
+    }
+    return self;
+}
+
 
 
 - (void)prepareToAddNode:(SKSpriteNode *)addNode {
@@ -52,20 +62,20 @@
     int uid = building.uid;
     CGPoint tileScreenCoordinate = [self getTileCoordonateFromId:uid];
     building.position = tileScreenCoordinate;
+    building.zPosition = 10;
     [self addChild:building];
     [self.buildings addObject:building];
-    
-
 }
 
 - (CGPoint)getTileCoordonateFromId:(int)uid {
     int i = 0;
 
-    int tileHeight = self.tileSize.height;
-    int tileWidth = self.tileSize.width;
-    
-    for (int y = - tileHeight / 2; y <= self.view.frame.size.height; y = y + tileHeight / 2) {
-        for (int x = (y % tileHeight == 0 ? 0 : -tileWidth / 2); x < self.view.frame.size.width; x = x + tileWidth) {
+    int tileHeight = 44;
+    int tileWidth = 57;
+    CGFloat height = self.view.frame.size.height;
+    CGFloat width = self.view.frame.size.width;
+    for (int y = - tileHeight / 2; y <= height; y = y + tileHeight / 2) {
+        for (int x = (y % tileHeight == 0 ? 0 : -tileWidth / 2); x < width; x = x + tileWidth) {
             if (uid == i) {
                 return CGPointMake(x+tileWidth/2, y+tileHeight/4);
             }
@@ -113,7 +123,94 @@
     [monster removeFromParent];
 }
 
-- (void)didBeginContact:(SKPhysicsContact *)contact {
+-(void)didMoveToView:(SKView *)view {
+    UIImage *image = [self steachBackgroundImagesForOrientation:UIInterfaceOrientationPortrait];
+    self.backgroundImage = image;
+    for (BDBuilding *building in self.cacheBuild) {
+        [self addBuilding:building];
+    }
 }
+
+- (UIImage *)steachBackgroundImagesForOrientation:(UIInterfaceOrientation)orientation {
+    
+    int x, y;
+    UIImage *tile1 = [UIImage imageNamed:@"tileset1.png"];
+    UIImage *tile2 = [UIImage imageNamed:@"tileset2.png"];
+    
+    self.tileSize = tile1.size;
+    
+    int tileWidth = self.tileSize.width;
+    int tileHeight = self.tileSize.height;
+    
+    UIImage *finalImage = [[UIImage alloc] init];
+    
+    CGContextRef context = CGBitmapContextCreate(nil,
+                                                 CGRectGetWidth(self.view.frame),
+                                                 CGRectGetHeight(self.view.frame),
+                                                 CGImageGetBitsPerComponent(tile1.CGImage),
+                                                 0, //auto computed
+                                                 CGColorSpaceCreateDeviceRGB(),
+                                                 (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    int i = 0;
+    
+#ifdef TouchDebug
+    UIFont *helvetica11 = [UIFont fontWithName:@"Helvetica" size:9];
+#endif
+    for (y = - tileHeight / 2; y <= self.view.frame.size.height; y = y + tileHeight / 2) {
+        for (x = (y % tileHeight == 0 ? 0 : -tileWidth / 2); x < self.view.frame.size.width; x = x + tileWidth) {
+            UIImage *currentImage;
+            if (y % tileHeight == 0){
+                currentImage = tile1;
+            } else {
+                currentImage = tile2;
+            }
+            CGRect frame = CGRectMake(x, y, tileWidth, tileHeight);
+#ifdef TouchDebug
+            if (currentImage == tile1) {
+                currentImage = [self drawText:[NSString stringWithFormat:@"%d", i] withFont:helvetica11 inImage:currentImage];
+            } else {
+                currentImage = [self drawText:[NSString stringWithFormat:@"%d", i] withFont:helvetica11 inImage:currentImage];;
+            }
+#endif
+            CGContextDrawImage(context, frame, currentImage.CGImage);
+            i++;
+        }
+    }
+    
+    CGImageRef mergeResult  = CGBitmapContextCreateImage(context);
+    finalImage = [[UIImage alloc] initWithCGImage:mergeResult];
+    CGContextRelease(context);
+    CGImageRelease(mergeResult);
+    
+    return finalImage;
+    
+}
+
+- (UIImage *)drawText:(NSString *)text withFont:(UIFont *)font inImage:(UIImage*)image {
+    //initialize the text randering context variables (text size, font, frame, alignment)
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    NSDictionary *attributes = @{ NSFontAttributeName:font,
+                                  NSForegroundColorAttributeName: [UIColor blackColor],
+                                  NSParagraphStyleAttributeName: paragraphStyle };
+    CGSize size = [text sizeWithAttributes:attributes];
+    CGRect textRect = CGRectMake(frame.origin.x + floorf((frame.size.width - size.width) / 1.5),
+                                 frame.origin.y + floorf((frame.size.height - size.height) / 4),
+                                 size.width,
+                                 size.height);
+    //render image in context after that rander text => text on image
+    UIGraphicsBeginImageContext(frame.size);
+    CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), true);
+    [image drawInRect:CGRectMake(0,0,frame.size.width,frame.size.height)];
+    [text drawInRect:textRect withAttributes:attributes];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+
 
 @end

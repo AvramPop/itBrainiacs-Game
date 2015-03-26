@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "BDProtoProduct.h"
 
-@interface BDBuilding : SKSpriteNode <BDProtoProduct>
+@interface BDBuilding : SKSpriteNode <BDProtoProduct, NSCoding>
 
 @property (nonatomic, assign) int uid;
 

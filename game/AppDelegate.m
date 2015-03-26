@@ -17,7 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    NSString *myFilePath = [documentDirectory stringByAppendingPathComponent:@"MyFileName.data"];
+    
+    NSMutableArray *myClassArray = [NSKeyedUnarchiver unarchiveObjectWithFile:myFilePath];	//Unarchive it to our array
+    
+    if (!myClassArray) {
+        NSLog(@"not ok");
+    } else {
+        NSLog(@"OK");
+    }
+    
     return YES;
 }
 
@@ -40,7 +52,14 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [(GameViewController *)self.window.rootViewController saveUserInfo];
+   [(GameViewController *)self.window.rootViewController saveUserInfo];
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    NSString *myFilePath = [documentDirectory stringByAppendingPathComponent:@"MyFileName.data"];
+    
+    NSMutableArray *arrayToStore = ((GameViewController *)self.window.rootViewController).gameScene.buildings;
+    [NSKeyedArchiver archiveRootObject:arrayToStore toFile:myFilePath];
 }
+
 
 @end
