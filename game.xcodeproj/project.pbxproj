@@ -49,6 +49,8 @@
 		CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCDDD6691A7A8F48006A996C /* LaunchScreen.xib */; };
 		CCDDD6771A7A8F48006A996C /* gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6761A7A8F48006A996C /* gameTests.m */; };
 		CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE199871A8E5F6E003A0804 /* BDMenuController.m */; };
+		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
+		CCEE2F1C1AC4839600BA027F /* BDHeadquartersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,9 @@
 		CCE199861A8E5F6E003A0804 /* BDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuController.h; path = Views/BDMenuController.h; sourceTree = "<group>"; };
 		CCE199871A8E5F6E003A0804 /* BDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDMenuController.m; path = Views/BDMenuController.m; sourceTree = "<group>"; };
 		CCE199891A8E602E003A0804 /* BDMenuDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuDefinitions.h; path = Views/BDMenuDefinitions.h; sourceTree = "<group>"; };
+		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
+		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
+		CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BDHeadquartersInfo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,13 +173,10 @@
 		CC558D0B1A83C37100A3F0AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CC802A661AA10BBB00971F83 /* BDUnits */,
 				CCC0A43C1A9B85DB0091BAF5 /* BDPlayer */,
-				CC558D0C1A83C37100A3F0AB /* BDMap.h */,
-				CC558D0D1A83C37100A3F0AB /* BDMap.m */,
-				CC558D141A83C37100A3F0AB /* TouchDetector.h */,
-				CC558D151A83C37100A3F0AB /* TouchDetector.m */,
+				CC802A661AA10BBB00971F83 /* BDUnits */,
 				CC558D0E1A83C37100A3F0AB /* Buildings */,
+				CCEE2F191AC481C300BA027F /* Other */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,8 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				CCC0A36B1A9376460091BAF5 /* Menu */,
-				CCC0A4401A9B90090091BAF5 /* BDGameLogicController.h */,
-				CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */,
 			);
 			name = BuisnessLogic;
 			sourceTree = "<group>";
@@ -319,11 +319,10 @@
 		CCC0A36B1A9376460091BAF5 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				CCC0A3591A935CA00091BAF5 /* Menu Section */,
 				CCC0A35A1A935CA90091BAF5 /* Menu Item */,
+				CCC0A3591A935CA00091BAF5 /* Menu Section */,
 				CCC0A36A1A93761F0091BAF5 /* MenuController */,
-				CC2466C41ABC7A580056631D /* BDBuildingMenu.h */,
-				CC2466C51ABC7A580056631D /* BDBuildingMenu.m */,
+				CCEE2F1A1AC481E500BA027F /* Other */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -342,6 +341,7 @@
 		CCC0A36D1A9377030091BAF5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */,
 				CCDDD6591A7A8F47006A996C /* AppDelegate.h */,
 				CCDDD65A1A7A8F47006A996C /* AppDelegate.m */,
 				CCDDD6611A7A8F47006A996C /* GameViewController.h */,
@@ -424,6 +424,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CCEE2F191AC481C300BA027F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CC558D141A83C37100A3F0AB /* TouchDetector.h */,
+				CC558D151A83C37100A3F0AB /* TouchDetector.m */,
+				CC558D0C1A83C37100A3F0AB /* BDMap.h */,
+				CC558D0D1A83C37100A3F0AB /* BDMap.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		CCEE2F1A1AC481E500BA027F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */,
+				CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */,
+				CC2466C41ABC7A580056631D /* BDBuildingMenu.h */,
+				CC2466C51ABC7A580056631D /* BDBuildingMenu.m */,
+				CCC0A4401A9B90090091BAF5 /* BDGameLogicController.h */,
+				CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCEE2F1C1AC4839600BA027F /* BDHeadquartersInfo.json in Resources */,
 				CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */,
 				CCDDD6681A7A8F48006A996C /* Images.xcassets in Resources */,
 				CCDDD6601A7A8F47006A996C /* GameScene.sks in Resources */,
@@ -555,6 +580,7 @@
 				CCC0A43F1A9B85EF0091BAF5 /* BDPlayer.m in Sources */,
 				CC802A721AA10C2700971F83 /* BDBaloon.m in Sources */,
 				CC558D1E1A83C3FB00A3F0AB /* BDGoldMine.m in Sources */,
+				CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */,
 				CC558D161A83C37100A3F0AB /* BDMap.m in Sources */,
 				CCD757DB1A8D09A800263F03 /* BDMenu.m in Sources */,
 				CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */,

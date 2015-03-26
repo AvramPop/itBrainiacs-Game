@@ -1,0 +1,14 @@
+{
+    "name" : "Headquarters",
+    "Level" : [
+    {
+        "name" : "iceage",
+        "title" : "gica",
+        "protoProducts" : ["BDHorse", "BDWizzard"],
+    },
+    {
+       "name" : "manelesAge",
+        "title" : "gica",
+        "protoProducts" : ["BDHorse", "BDWizzard"],
+    }]
+}

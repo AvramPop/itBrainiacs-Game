@@ -15,6 +15,7 @@
 #import "BDGameLogicController.h"
 #import "BDMap.h"
 #import "BDBuildingMenu.h"
+#import "BDBuildingInfoParser.h"
 
 @implementation SKScene (Unarchive) 
 
@@ -56,7 +57,13 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    NSError *error;
+    ;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BDHeadquartersInfo" ofType:@"json"];
+    NSString *dataStr = [[NSString alloc ] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
 
+    BDBuildingInfoParser *bdip = [[BDBuildingInfoParser alloc] initWithString:dataStr];
+ 
     
     NSMutableArray *array = [[self getSavedBuildings] mutableCopy];
     // Present the scene.
