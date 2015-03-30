@@ -51,6 +51,8 @@
 		CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE199871A8E5F6E003A0804 /* BDMenuController.m */; };
 		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
 		CCEE2F1C1AC4839600BA027F /* BDHeadquartersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */; };
+		CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */; };
+		CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3811AC9A3F00095A21E /* headquarters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,8 @@
 		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
 		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
 		CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BDHeadquartersInfo.json; sourceTree = "<group>"; };
+		CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BDHeadquartersInfo.json; sourceTree = "<group>"; };
+		CCF9D3811AC9A3F00095A21E /* headquarters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = headquarters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +392,7 @@
 		CCDDD6541A7A8F47006A996C /* game */ = {
 			isa = PBXGroup;
 			children = (
+				CCF9D37E1AC9A3F00095A21E /* JSONFiles */,
 				CCC0A3691A9375C30091BAF5 /* BuisnessLogic */,
 				CC558D0B1A83C37100A3F0AB /* Models */,
 				CCC0A36C1A9376DF0091BAF5 /* Resources */,
@@ -446,6 +451,15 @@
 				CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		CCF9D37E1AC9A3F00095A21E /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */,
+				CCF9D3811AC9A3F00095A21E /* headquarters.json */,
+			);
+			path = JSONFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +543,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCEE2F1C1AC4839600BA027F /* BDHeadquartersInfo.json in Resources */,
+				CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */,
+				CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */,
 				CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */,
 				CCDDD6681A7A8F48006A996C /* Images.xcassets in Resources */,
 				CCDDD6601A7A8F47006A996C /* GameScene.sks in Resources */,
