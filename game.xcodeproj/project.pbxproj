@@ -50,7 +50,6 @@
 		CCDDD6771A7A8F48006A996C /* gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6761A7A8F48006A996C /* gameTests.m */; };
 		CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE199871A8E5F6E003A0804 /* BDMenuController.m */; };
 		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
-		CCEE2F1C1AC4839600BA027F /* BDHeadquartersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */; };
 		CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */; };
 		CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3811AC9A3F00095A21E /* headquarters.json */; };
 /* End PBXBuildFile section */
@@ -151,7 +150,6 @@
 		CCE199891A8E602E003A0804 /* BDMenuDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuDefinitions.h; path = Views/BDMenuDefinitions.h; sourceTree = "<group>"; };
 		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
 		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
-		CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BDHeadquartersInfo.json; sourceTree = "<group>"; };
 		CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BDHeadquartersInfo.json; sourceTree = "<group>"; };
 		CCF9D3811AC9A3F00095A21E /* headquarters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = headquarters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -345,7 +343,6 @@
 		CCC0A36D1A9377030091BAF5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCEE2F1B1AC4839600BA027F /* BDHeadquartersInfo.json */,
 				CCDDD6591A7A8F47006A996C /* AppDelegate.h */,
 				CCDDD65A1A7A8F47006A996C /* AppDelegate.m */,
 				CCDDD6611A7A8F47006A996C /* GameViewController.h */,
@@ -542,7 +539,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCEE2F1C1AC4839600BA027F /* BDHeadquartersInfo.json in Resources */,
 				CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */,
 				CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */,
 				CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */,
