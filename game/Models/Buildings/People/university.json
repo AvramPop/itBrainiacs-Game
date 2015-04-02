@@ -1,0 +1,49 @@
+// university infos
+
+{
+	"Name": "University",
+	"Type": "BDBuilding",
+	"Subtype": "People",
+	"Level": [{
+		"Cost": ["goldCost": "600",
+		"woodCost": "720",
+		"ironCost": "9000",
+		"peopleCost": "2",
+		"timeCost": "300"],
+	},
+	{
+		"Cost": ["goldCost": "250",
+		"woodCost": "600",
+		"ironCost": "75",
+		"peopleCost": "3",
+		"timeCost": "600"],
+	},
+	{
+		"Cost": ["goldCost": "500",
+		"woodCost": "1000",
+		"ironCost": "300",
+		"peopleCost": "4",
+		"timeCost": "800"],
+	},
+	{
+		"Cost": ["goldCost": "900",
+		"woodCost": "1500",
+		"ironCost": "550",
+		"peopleCost": "5",
+		"timeCost": "1500"],
+	},
+	{
+		"Cost": ["goldCost": "1500",
+		"woodCost": "2300",
+		"ironCost": "800",
+		"peopleCost": "7",
+		"timeCost": "2000"],
+	},
+	{
+		"Cost": ["goldCost": "2200",
+		"woodCost": "3000",
+		"ironCost": "1200",
+		"peopleCost": "10",
+		"timeCost": "3000"],
+	}]
+}
