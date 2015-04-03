@@ -1,0 +1,64 @@
+//axeman infos
+
+{
+	"Name": "Axeman",
+	"Type": "BDUnit",
+    "Subtype": "barracks",
+    "favouriteTarget": "heavyCavalery",
+    "peopleCost" : "1",
+	"Level": [{
+		"Cost": ["goldCost": "50",
+		"woodCost": "30",
+		"ironCost": "70",
+		"timeCost": "50"],
+        "damage": "18",
+        "life": "60",
+        "defense": "3",
+        "squaresPerHour": "75",
+        "carryCapacity": "80"
+	},
+	{
+		"Cost": ["goldCost": "100",
+		"woodCost": "80",
+		"ironCost": "100",
+		"timeCost": "120"],
+		"damage": "40",
+        "life": "90",
+        "defense": "6",
+        "squaresPerHour": "90",
+        "carryCapacity": "100"
+	},
+	{
+		"Cost": ["goldCost": "230",
+		"woodCost": "150",
+		"ironCost": "100",
+		"timeCost": "300"],
+	    "damage": "65",
+        "life": "120",
+        "defense": "13",
+        "squaresPerHour": "110",
+        "carryCapacity": "135"
+	},
+	{
+		"Cost": ["goldCost": "300",
+		"woodCost": "260",
+		"ironCost": "200",
+		"timeCost": "400"],
+	    "damage": "90",
+        "life": "165",
+        "defense": "17",
+        "squaresPerHour": "130",
+        "carryCapacity": "170"
+	},
+	{
+		"Cost": ["goldCost": "400",
+		"woodCost": "350",
+		"ironCost": "300",
+		"timeCost": "550"],
+		"damage": "140",
+        "life": "250",
+        "defense": "22",
+        "squaresPerHour": "150",
+        "carryCapacity": "210"
+	}]
+}
