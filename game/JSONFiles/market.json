@@ -1,55 +1,73 @@
-// market infos
-
 {
-	"Name": "Market",
-	"Type": "BDBuilding",
-	"Subtype": "People",
-	"Level": [{
-		"Cost": ["goldCost": "100",
-		"woodCost": "120",
-		"ironCost": "120",
-		"peopleCost": "2",
-		"timeCost": "120"],
-		"merchantsProduced": "2"
-	},
-	{
-		"Cost": ["goldCost": "250",
-		"woodCost": "600",
-		"ironCost": "75",
-		"peopleCost": "3",
-		"timeCost": "600"],
-		"merchantsProduced": "3"
-	},
-	{
-		"Cost": ["goldCost": "500",
-		"woodCost": "1000",
-		"ironCost": "300",
-		"peopleCost": "4",
-		"timeCost": "800"],
-		"merchantsProduced": "5"
-	},
-	{
-		"Cost": ["goldCost": "900",
-		"woodCost": "1500",
-		"ironCost": "550",
-		"peopleCost": "5",
-		"timeCost": "1500"],
-		"merchantsProduced": "7"
-	},
-	{
-		"Cost": ["goldCost": "1500",
-		"woodCost": "2300",
-		"ironCost": "800",
-		"peopleCost": "7",
-		"timeCost": "2000"],
-		"merchantsProduced": "8"
-	},
-	{
-		"Cost": ["goldCost": "2200",
-		"woodCost": "3000",
-		"ironCost": "1200",
-		"peopleCost": "10",
-		"timeCost": "3000"],
-		"merchantsProduced": "10"
-	}]
+    "Name": "Market",
+    "Type": "BDBuilding",
+    "Subtype": "People",
+    "Level": [
+        {
+            "Cost": {
+                "goldCost": "100",
+                "woodCost": "120",
+                "ironCost": "120",
+                "peopleCost": "2",
+                "timeCost": "120"
+            },
+            "merchantsProduced": "2",
+              "points" : "50"
+        },
+        {
+            "Cost": {
+                "goldCost": "250",
+                "woodCost": "600",
+                "ironCost": "75",
+                "peopleCost": "3",
+                "timeCost": "600"
+            },
+            "merchantsProduced": "3",
+              "points" : "100"
+        },
+        {
+            "Cost": {
+                "goldCost": "500",
+                "woodCost": "1000",
+                "ironCost": "300",
+                "peopleCost": "4",
+                "timeCost": "800"
+            },
+            "merchantsProduced": "5",
+              "points" : "150"
+        },
+        {
+            "Cost": {
+                "goldCost": "900",
+                "woodCost": "1500",
+                "ironCost": "550",
+                "peopleCost": "5",
+                "timeCost": "1500"
+            },
+            "merchantsProduced": "7",
+              "points" : "200"
+        },
+        {
+            "Cost": {
+                "goldCost": "1500",
+                "woodCost": "2300",
+                "ironCost": "800",
+                "peopleCost": "7",
+                "timeCost": "2000"
+            },
+            "merchantsProduced": "8",
+              "points" : "250"
+        },
+        {
+            "Cost": {
+                "goldCost": "2200",
+                "woodCost": "3000",
+                "ironCost": "1200",
+                "peopleCost": "10",
+                "timeCost": "3000"
+            },
+            "merchantsProduced": "10",
+              "points" : "300"
+        }
+    ]
 }

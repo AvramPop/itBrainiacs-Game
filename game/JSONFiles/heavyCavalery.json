@@ -1,64 +1,74 @@
-//heavyCavalery infos
-
 {
-	"Name": "HeavyCavalery",
-	"Type": "BDUnit",
+    "Name": "HeavyCavalery",
+    "Type": "BDUnit",
     "Subtype": "stable",
     "favouriteTarget": "resources",
-    "peopleCost" : "3",
-	"Level": [{
-		"Cost": ["goldCost": "200",
-		"woodCost": "250",
-		"ironCost": "350",
-		"timeCost": "300"],
-        "damage": "40",
-        "life": "180",
-        "defense": "20",
-        "squaresPerHour": "50",
-        "carryCapacity": "90"
-	},
-	{
-		"Cost": ["goldCost": "440",
-		"woodCost": "500",
-		"ironCost": "600",
-		"timeCost": "600"],
-		"damage": "75",
-        "life": "260",
-        "defense": "40",
-        "squaresPerHour": "90",
-        "carryCapacity": "120"
-	},
-	{
-		"Cost": ["goldCost": "700",
-		"woodCost": "700",
-		"ironCost": "880",
-		"timeCost": "700"],
-	    "damage": "100",
-        "life": "300",
-        "defense": "60",
-        "squaresPerHour": "120",
-        "carryCapacity": "150"
-	},
-	{
-		"Cost": ["goldCost": "1000",
-		"woodCost": "1400",
-		"ironCost": "1500",
-		"timeCost": "800"],
-	    "damage": "180",
-        "life": "400",
-        "defense": "84",
-        "squaresPerHour": "160",
-        "carryCapacity": "200"
-	},
-	{
-		"Cost": ["goldCost": "1700",
-		"woodCost": "1900",
-		"ironCost": "2200",
-		"timeCost": "1000"],
-		"damage": "230",
-        "life": "600",
-        "defense": "100",
-        "squaresPerHour": "200",
-        "carryCapacity": "250"
-	}]
+    "peopleCost": "3",
+    "Level": [
+        {
+            "Cost": {
+                "goldCost": "200",
+                "woodCost": "250",
+                "ironCost": "350",
+                "timeCost": "300"
+            },
+            "damage": "40",
+            "life": "180",
+            "defense": "20",
+            "squaresPerHour": "50",
+            "carryCapacity": "90"
+        },
+        {
+            "Cost": {
+                "goldCost": "440",
+                "woodCost": "500",
+                "ironCost": "600",
+                "timeCost": "600"
+            },
+            "damage": "75",
+            "life": "260",
+            "defense": "40",
+            "squaresPerHour": "90",
+            "carryCapacity": "120"
+        },
+        {
+            "Cost": {
+                "goldCost": "700",
+                "woodCost": "700",
+                "ironCost": "880",
+                "timeCost": "700"
+            },
+            "damage": "100",
+            "life": "300",
+            "defense": "60",
+            "squaresPerHour": "120",
+            "carryCapacity": "150"
+        },
+        {
+            "Cost": {
+                "goldCost": "1000",
+                "woodCost": "1400",
+                "ironCost": "1500",
+                "timeCost": "800"
+            },
+            "damage": "180",
+            "life": "400",
+            "defense": "84",
+            "squaresPerHour": "160",
+            "carryCapacity": "200"
+        },
+        {
+            "Cost": {
+                "goldCost": "1700",
+                "woodCost": "1900",
+                "ironCost": "2200",
+                "timeCost": "1000"
+            },
+            "damage": "230",
+            "life": "600",
+            "defense": "100",
+            "squaresPerHour": "200",
+            "carryCapacity": "250"
+        }
+    ]
 }

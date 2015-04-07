@@ -1,64 +1,74 @@
-//swordsman infos
-
 {
-	"Name": "Swordsman",
-	"Type": "BDUnit",
+    "Name": "Swordsman",
+    "Type": "BDUnit",
     "Subtype": "barracks",
     "favouriteTarget": "archer",
-    "peopleCost" : "1",
-	"Level": [{
-		"Cost": ["goldCost": "50",
-		"woodCost": "30",
-		"ironCost": "70",
-		"timeCost": "50"],
-        "damage": "10",
-        "life": "100",
-        "defense": "5",
-        "squaresPerHour": "60",
-        "carryCapacity": "60"
-	},
-	{
-		"Cost": ["goldCost": "100",
-		"woodCost": "80",
-		"ironCost": "100",
-		"timeCost": "120"],
-		"damage": "25",
-        "life": "150",
-        "defense": "12",
-        "squaresPerHour": "80",
-        "carryCapacity": "80"
-	},
-	{
-		"Cost": ["goldCost": "230",
-		"woodCost": "150",
-		"ironCost": "100",
-		"timeCost": "300"],
-	    "damage": "40",
-        "life": "200",
-        "defense": "16",
-        "squaresPerHour": "95",
-        "carryCapacity": "100"
-	},
-	{
-		"Cost": ["goldCost": "300",
-		"woodCost": "260",
-		"ironCost": "200",
-		"timeCost": "400"],
-	    "damage": "70",
-        "life": "300",
-        "defense": "20",
-        "squaresPerHour": "130",
-        "carryCapacity": "140"
-	},
-	{
-		"Cost": ["goldCost": "400",
-		"woodCost": "350",
-		"ironCost": "300",
-		"timeCost": "550"],
-		"damage": "100",
-        "life": "420",
-        "defense": "30",
-        "squaresPerHour": "150",
-        "carryCapacity": "180"
-	}]
+    "peopleCost": "1",
+    "Level": [
+        {
+            "Cost": {
+                "goldCost": "50",
+                "woodCost": "30",
+                "ironCost": "70",
+                "timeCost": "50"
+            },
+            "damage": "10",
+            "life": "100",
+            "defense": "5",
+            "squaresPerHour": "60",
+            "carryCapacity": "60"
+        },
+        {
+            "Cost": {
+                "goldCost": "100",
+                "woodCost": "80",
+                "ironCost": "100",
+                "timeCost": "120"
+            },
+            "damage": "25",
+            "life": "150",
+            "defense": "12",
+            "squaresPerHour": "80",
+            "carryCapacity": "80"
+        },
+        {
+            "Cost": {
+                "goldCost": "230",
+                "woodCost": "150",
+                "ironCost": "100",
+                "timeCost": "300"
+            },
+            "damage": "40",
+            "life": "200",
+            "defense": "16",
+            "squaresPerHour": "95",
+            "carryCapacity": "100"
+        },
+        {
+            "Cost": {
+                "goldCost": "300",
+                "woodCost": "260",
+                "ironCost": "200",
+                "timeCost": "400"
+            },
+            "damage": "70",
+            "life": "300",
+            "defense": "20",
+            "squaresPerHour": "130",
+            "carryCapacity": "140"
+        },
+        {
+            "Cost": {
+                "goldCost": "400",
+                "woodCost": "350",
+                "ironCost": "300",
+                "timeCost": "550"
+            },
+            "damage": "100",
+            "life": "420",
+            "defense": "30",
+            "squaresPerHour": "150",
+            "carryCapacity": "180"
+        }
+    ]
 }

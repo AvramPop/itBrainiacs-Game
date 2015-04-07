@@ -1,64 +1,87 @@
-//barracks infos
-
 {
-	"Name": "Barracks",
-	"Type": "BDBuilding",
-	"Subtype": "Army",
-	"Level": [{
-		"Cost": ["goldCost": "200",
-		"woodCost": "200",
-		"ironCost": "200",
-		"peopleCost": "2",
-		"timeCost": "180"],
-		"products": ["swordsman": "1"]
-	},
-	{
-		"Cost": ["goldCost": "250",
-		"woodCost": "600",
-		"ironCost": "75",
-		"peopleCost": "3",
-		"timeCost": "1800"],
-		"products": ["swordsman": "2",
-		"axeman": "1"]
-	},
-	{
-		"Cost": ["goldCost": "500",
-		"woodCost": "1000",
-		"ironCost": "300",
-		"peopleCost": "4",
-		"timeCost": "2500"],
-		"products": ["swordsman": "3",
-		"axeman": "2",
-		"archer": "1"]
-	},
-	{
-		"Cost": ["goldCost": "900",
-		"woodCost": "1500",
-		"ironCost": "550",
-		"peopleCost": "5",
-		"timeCost": "3600"],
-		"products": ["swordsman": "4",
-		"axeman": "3",
-		"archer": "2"]
-	},
-	{
-		"Cost": ["goldCost": "1500",
-		"woodCost": "2300",
-		"ironCost": "800",
-		"peopleCost": "7",
-		"timeCost": "5000"],
-		"products": ["swordsman": "5",
-		"axeman": "4",
-		"archer": "3"]
-	},
-	{
-		"Cost": ["goldCost": "2200",
-		"woodCost": "3000",
-		"ironCost": "1200",
-		"peopleCost": "10",
-		"timeCost": "8000"],
-		"products": ["lightCavalery": "5",
-		"axeman": "5",
-		"archer": "5","wizard" : "1"]
-	}]
+    "Name": "Barracks",
+    "Type": "BDBuilding",
+    "Subtype": "Army",
+    "Level": [
+        {
+            "Cost": {
+                "goldCost": "200",
+                "woodCost": "200",
+                "ironCost": "200",
+                "peopleCost": "2",
+                "timeCost": "180"
+            },
+            "products": { "swordsman": "1" }
+        },
+        {
+            "Cost": {
+                "goldCost": "250",
+                "woodCost": "600",
+                "ironCost": "75",
+                "peopleCost": "3",
+                "timeCost": "1800"
+            },
+            "products": {
+                "swordsman": "2",
+                "axeman": "1"
+            }
+        },
+        {
+            "Cost": {
+                "goldCost": "500",
+                "woodCost": "1000",
+                "ironCost": "300",
+                "peopleCost": "4",
+                "timeCost": "2500"
+            },
+            "products": {
+                "swordsman": "3",
+                "axeman": "2",
+                "archer": "1"
+            }
+        },
+        {
+            "Cost": {
+                "goldCost": "900",
+                "woodCost": "1500",
+                "ironCost": "550",
+                "peopleCost": "5",
+                "timeCost": "3600"
+            },
+            "products": {
+                "swordsman": "4",
+                "axeman": "3",
+                "archer": "2"
+            }
+        },
+        {
+            "Cost": {
+                "goldCost": "1500",
+                "woodCost": "2300",
+                "ironCost": "800",
+                "peopleCost": "7",
+                "timeCost": "5000"
+            },
+            "products": {
+                "swordsman": "5",
+                "axeman": "4",
+                "archer": "3"
+            }
+        },
+        {
+            "Cost": {
+                "goldCost": "2200",
+                "woodCost": "3000",
+                "ironCost": "1200",
+                "peopleCost": "10",
+                "timeCost": "8000"
+            },
+            "products": {
+                "lightCavalery": "5",
+                "axeman": "5",
+                "archer": "5",
+                "wizard": "1"
+            }
+        }
+    ]
 }
