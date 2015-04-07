@@ -42,6 +42,8 @@
 @property (nonatomic, strong) UILabel *wood;
 @property (nonatomic, strong) UILabel *iron;
 
+@property (nonatomic, copy) void (^confirmationBlock)();
+
 @end
 
 @implementation GameViewController
@@ -57,13 +59,6 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-    NSError *error;
-    ;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"BDHeadquartersInfo" ofType:@"json"];
-    NSString *dataStr = [[NSString alloc ] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-
-    BDBuildingInfoParser *bdip = [[BDBuildingInfoParser alloc] initWithString:dataStr];
- 
     
     NSMutableArray *array = [[self getSavedBuildings] mutableCopy];
     // Present the scene.
@@ -84,6 +79,7 @@
     [skView presentScene:self.gameScene];
     
     self.gameLogicController = [[BDGameLogicController alloc] initWithMap:self.gameScene];
+    self.gameLogicController.delegate = self;
 
     self.buildingsMenu = [[BDMenuController alloc] initWithDecoratedView:self.view withMenuFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 100)];
     self.buildingsMenu.delegate = self;
@@ -171,13 +167,35 @@
     return buildingsArray;
 }
 
-- (void) didTouchBuilding:(NSNotification *)notification{
+- (void)didTouchBuilding:(NSNotification *)notification{
     BDBuilding *building = notification.object;
     BDBuildingMenu *menu;
     CGFloat margin = 100;
     menu = [[BDBuildingMenu alloc] initWithBuilding:building andFrame: CGRectMake(100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
+    menu.delegate = self.gameLogicController;
     menu.backgroundColor = [UIColor redColor];
     [self.view addSubview:menu];
 }
+
+- (void)gameLogicController:(BDGameLogicController *)gameLogic requestUpdateForBuilding:(id)building withConfirmationBlock:(void (^)())block {
+    self.confirmationBlock = block;
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Upgrade" message:@"Are you sure you want to update?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    [alertView show];
+}
+
+- (void)gameLogicController:(BDGameLogicController *)gameLogicController notEnoughResourcesForBuilding:(BDBuilding *)building {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Upgrade" message:@"NOT ENOUGH MINERALS" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        self.confirmationBlock = nil;
+    } else {
+        self.confirmationBlock();
+    }
+}
+
 
 @end
