@@ -9,8 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "BDBuilding.h"
 
+@protocol BDBuildingDelegate;
+
 @interface BDBuildingMenu : UIView
+
+@property (nonatomic, assign) id<BDBuildingDelegate> delegate;
+@property (nonatomic, strong) BDBuilding            *building;
 
 - (instancetype)initWithBuilding:(BDBuilding *)building andFrame:(CGRect)frame;
 
 @end
+
+@protocol BDBuildingDelegate
+
+- (void)buildingMenu:(BDBuildingMenu *)menu didTouchUpdateButton:(UIButton *)button;
+    
+@end
+

@@ -9,19 +9,20 @@
 #import "BDBuildingInfoParser.h"
 
 @implementation BDBuildingInfoParser
-
 - (instancetype)initWithString:(NSString *)jsonString{
     self = [super init];
     if(self){
         NSError *error;
         self.dictionary = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
-        NSString *theName = self.dictionary[@"name"];
-        NSString *value = self.dictionary[@"title"];
-        NSArray *array= self.dictionary[@"level"];
-        NSDictionary *level0 = array[0];
-        NSDictionary *level1 = array[1];
-        NSString *value1 = level0[@"name"];
-        NSLog(@"the name is : %@", self.dictionary);
+        NSString *name = self.dictionary[@"name"];
+        NSString *type = self.dictionary[@"type"];
+        NSString *subtype = self.dictionary[@"subtype"];
+        NSArray *level = self.dictionary[@"level"];
+        NSDictionary *cost = level[0];
+        NSLog(@"the name is : %@", name);
+        NSLog(@"the type is : %@", type);
+        NSLog(@"the subtype is : %@", subtype);
+        NSLog(@"the cost is : %@", cost);
     }
     return self;
 }

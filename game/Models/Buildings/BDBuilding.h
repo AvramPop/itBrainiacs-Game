@@ -17,8 +17,20 @@
 
 @property (nonatomic, strong) NSMutableArray *protoProducts;
 
+@property (nonatomic, assign) NSInteger      goldCost;
+
+@property (nonatomic, assign) NSInteger      woodCost;
+
+@property (nonatomic, assign) NSInteger      ironCost;
+
+@property (nonatomic, assign) NSInteger      peopleCost;
+
+@property (nonatomic, assign) NSInteger      timeCost;
+
 - (void)reactToTouch;
 - (instancetype)initWithLevel:(int)level;
 - (NSArray *)protoProductsNames;
+- (void)initWithInfo:(NSString *)jsonString;
+
 
 @end

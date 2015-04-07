@@ -1,0 +1,64 @@
+//workshop infos
+
+{
+	"Name": "Workshop",
+	"Type": "BDBuilding",
+	"Subtype": "Army",
+	"Level": [{
+		"Cost": ["goldCost": "200",
+		"woodCost": "200",
+		"ironCost": "200",
+		"peopleCost": "2",
+		"timeCost": "180"],
+		"products": ["ram": "1"]
+	},
+	{
+		"Cost": ["goldCost": "250",
+		"woodCost": "600",
+		"ironCost": "75",
+		"peopleCost": "3",
+		"timeCost": "1800"],
+		"products": ["ram": "2",
+		"baloon": "1"]
+	},
+	{
+		"Cost": ["goldCost": "500",
+		"woodCost": "1000",
+		"ironCost": "300",
+		"peopleCost": "4",
+		"timeCost": "2500"],
+		"products": ["ram": "3",
+		"baloon": "2",
+		"catapult": "1"]
+	},
+	{
+		"Cost": ["goldCost": "900",
+		"woodCost": "1500",
+		"ironCost": "550",
+		"peopleCost": "5",
+		"timeCost": "3600"],
+		"products": ["ram": "4",
+		"baloon": "3",
+		"catapult": "2"]
+	},
+	{
+		"Cost": ["goldCost": "1500",
+		"woodCost": "2300",
+		"ironCost": "800",
+		"peopleCost": "7",
+		"timeCost": "5000"],
+		"products": ["ram": "5",
+		"baloon": "4",
+		"catapult": "3"]
+	},
+	{
+		"Cost": ["goldCost": "2200",
+		"woodCost": "3000",
+		"ironCost": "1200",
+		"peopleCost": "10",
+		"timeCost": "8000"],
+		"products": ["ram": "5",
+		"baloon": "5",
+		"catapult": "5"]
+	}]
+}

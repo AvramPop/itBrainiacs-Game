@@ -9,5 +9,6 @@
 #import "BDBuilding.h"
 
 @interface BDHeadquarters : BDBuilding
++ (BDProtoProduct *)upgradeProtoProduct;
 
 @end

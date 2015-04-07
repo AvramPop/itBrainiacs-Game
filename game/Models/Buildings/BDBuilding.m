@@ -7,10 +7,12 @@
 //
 
 #import "BDBuilding.h"
+#import "BDBuildingInfoParser.h"
 
 @interface BDBuilding()
 
 @property (nonatomic, strong) NSString *backgroundImageName;
+@property (nonatomic, strong) NSString *name;
 
 @end
 
@@ -52,8 +54,15 @@
 }
 
 - (void)reactToTouch {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"buildingWasTouched" object:self];
     NSLog(@"building %@", self.name);
+    NSError *error;
+    NSString *path = [[NSBundle mainBundle] pathForResource:self.name ofType:@"json"];
+    if (path) {
+        NSString *dataStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        NSDictionary *dictionaryBuilding = [NSJSONSerialization JSONObjectWithData:[dataStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+        [self parse:dictionaryBuilding];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"buildingWasTouched" object:self];
 }
 
 
@@ -69,7 +78,7 @@
     [super encodeWithCoder:aCoder];
     [aCoder encodeInt:self.uid forKey:@"uid"];
     [aCoder encodeInt:self.level forKey:@"level"];
-    [aCoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
+    //[aCoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
     [aCoder encodeObject:self.protoProducts forKey:@"protoProducts"];
 }
 
@@ -80,7 +89,7 @@
     }
     
     self.uid = [aDecoder decodeIntForKey:@"uid"];
-    self.backgroundImageName = [aDecoder decodeObjectForKey:@"backgroundImageName"];
+//    self.backgroundImageName = [aDecoder decodeObjectForKey:@"backgroundImageName"];
     self.level = [aDecoder decodeIntForKey:@"level"];
     self.protoProducts = [aDecoder decodeObjectForKey:@"protoProducts"];
     
@@ -92,5 +101,18 @@
     
     return self;
 }
+
+
+- (void)parse:(NSDictionary *)dictionary{
+    NSArray *levels = dictionary[@"Level"];
+    NSDictionary *cost = levels[self.level][@"Cost"];
+    self.goldCost = [cost[@"goldCost"] integerValue];
+    self.woodCost = [cost[@"woodCost"] integerValue];
+    self.ironCost = [cost[@"ironCost"] integerValue];
+    self.peopleCost = [cost[@"peopleCost"] integerValue];
+    self.timeCost = [cost[@"timeCost"] integerValue];
+    self.backgroundImageName = dictionary[@"backgroundImage"];
+}
+
 
 @end

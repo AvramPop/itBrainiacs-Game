@@ -1,0 +1,64 @@
+//stable infos
+
+{
+	"Name": "Stable",
+	"Type": "BDBuilding",
+	"Subtype": "Army",
+	"Level": [{
+		"Cost": ["goldCost": "200",
+		"woodCost": "200",
+		"ironCost": "200",
+		"peopleCost": "2",
+		"timeCost": "180"],
+		"products": ["lightCavalery": "1"]
+	},
+	{
+		"Cost": ["goldCost": "250",
+		"woodCost": "600",
+		"ironCost": "75",
+		"peopleCost": "3",
+		"timeCost": "1800"],
+		"products": ["lightCavalery": "2",
+		"spy": "1"]
+	},
+	{
+		"Cost": ["goldCost": "500",
+		"woodCost": "1000",
+		"ironCost": "300",
+		"peopleCost": "4",
+		"timeCost": "2500"],
+		"products": ["lightCavalery": "3",
+		"spy": "2",
+		"highCavalery": "1"]
+	},
+	{
+		"Cost": ["goldCost": "900",
+		"woodCost": "1500",
+		"ironCost": "550",
+		"peopleCost": "5",
+		"timeCost": "3600"],
+		"products": ["lightCavalery": "4",
+		"spy": "3",
+		"highCavalery": "2"]
+	},
+	{
+		"Cost": ["goldCost": "1500",
+		"woodCost": "2300",
+		"ironCost": "800",
+		"peopleCost": "7",
+		"timeCost": "5000"],
+		"products": ["lightCavalery": "5",
+		"spy": "4",
+		"highCavalery": "3"]
+	},
+	{
+		"Cost": ["goldCost": "2200",
+		"woodCost": "3000",
+		"ironCost": "1200",
+		"peopleCost": "10",
+		"timeCost": "8000"],
+		"products": ["lightCavalery": "5",
+		"spy": "5",
+		"highCavalery": "5"]
+	}]
+}

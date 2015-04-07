@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2466C51ABC7A580056631D /* BDBuildingMenu.m */; };
+		CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB01ACEDF5000872D19 /* archer.json */; };
+		CC2B4FBF1ACEDF5000872D19 /* axeman.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB11ACEDF5000872D19 /* axeman.json */; };
+		CC2B4FC01ACEDF5000872D19 /* barracks.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB21ACEDF5000872D19 /* barracks.json */; };
+		CC2B4FC11ACEDF5000872D19 /* goldMine.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB31ACEDF5000872D19 /* goldMine.json */; };
+		CC2B4FC21ACEDF5000872D19 /* heavyCavalery.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB41ACEDF5000872D19 /* heavyCavalery.json */; };
+		CC2B4FC31ACEDF5000872D19 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB51ACEDF5000872D19 /* house.json */; };
+		CC2B4FC41ACEDF5000872D19 /* ironmine.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB61ACEDF5000872D19 /* ironmine.json */; };
+		CC2B4FC51ACEDF5000872D19 /* lightCavalery.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB71ACEDF5000872D19 /* lightCavalery.json */; };
+		CC2B4FC61ACEDF5000872D19 /* market.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB81ACEDF5000872D19 /* market.json */; };
+		CC2B4FC71ACEDF5000872D19 /* stable.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB91ACEDF5000872D19 /* stable.json */; };
+		CC2B4FC81ACEDF5000872D19 /* swordsman.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBA1ACEDF5000872D19 /* swordsman.json */; };
+		CC2B4FC91ACEDF5000872D19 /* university.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBB1ACEDF5000872D19 /* university.json */; };
+		CC2B4FCA1ACEDF5000872D19 /* woodcamp.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBC1ACEDF5000872D19 /* woodcamp.json */; };
+		CC2B4FCB1ACEDF5000872D19 /* workshop.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBD1ACEDF5000872D19 /* workshop.json */; };
 		CC558D161A83C37100A3F0AB /* BDMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D0D1A83C37100A3F0AB /* BDMap.m */; };
 		CC558D171A83C37100A3F0AB /* BDBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D111A83C37100A3F0AB /* BDBuilding.m */; };
 		CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D151A83C37100A3F0AB /* TouchDetector.m */; };
@@ -67,6 +81,20 @@
 /* Begin PBXFileReference section */
 		CC2466C41ABC7A580056631D /* BDBuildingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingMenu.h; sourceTree = "<group>"; };
 		CC2466C51ABC7A580056631D /* BDBuildingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingMenu.m; sourceTree = "<group>"; };
+		CC2B4FB01ACEDF5000872D19 /* archer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = archer.json; sourceTree = "<group>"; };
+		CC2B4FB11ACEDF5000872D19 /* axeman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = axeman.json; sourceTree = "<group>"; };
+		CC2B4FB21ACEDF5000872D19 /* barracks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barracks.json; sourceTree = "<group>"; };
+		CC2B4FB31ACEDF5000872D19 /* goldMine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goldMine.json; sourceTree = "<group>"; };
+		CC2B4FB41ACEDF5000872D19 /* heavyCavalery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heavyCavalery.json; sourceTree = "<group>"; };
+		CC2B4FB51ACEDF5000872D19 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = house.json; sourceTree = "<group>"; };
+		CC2B4FB61ACEDF5000872D19 /* ironmine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ironmine.json; sourceTree = "<group>"; };
+		CC2B4FB71ACEDF5000872D19 /* lightCavalery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lightCavalery.json; sourceTree = "<group>"; };
+		CC2B4FB81ACEDF5000872D19 /* market.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market.json; sourceTree = "<group>"; };
+		CC2B4FB91ACEDF5000872D19 /* stable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stable.json; sourceTree = "<group>"; };
+		CC2B4FBA1ACEDF5000872D19 /* swordsman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swordsman.json; sourceTree = "<group>"; };
+		CC2B4FBB1ACEDF5000872D19 /* university.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = university.json; sourceTree = "<group>"; };
+		CC2B4FBC1ACEDF5000872D19 /* woodcamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = woodcamp.json; sourceTree = "<group>"; };
+		CC2B4FBD1ACEDF5000872D19 /* workshop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workshop.json; sourceTree = "<group>"; };
 		CC558D0C1A83C37100A3F0AB /* BDMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMap.h; sourceTree = "<group>"; };
 		CC558D0D1A83C37100A3F0AB /* BDMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMap.m; sourceTree = "<group>"; };
 		CC558D101A83C37100A3F0AB /* BDBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuilding.h; sourceTree = "<group>"; };
@@ -453,6 +481,20 @@
 		CCF9D37E1AC9A3F00095A21E /* JSONFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CC2B4FB01ACEDF5000872D19 /* archer.json */,
+				CC2B4FB11ACEDF5000872D19 /* axeman.json */,
+				CC2B4FB21ACEDF5000872D19 /* barracks.json */,
+				CC2B4FB31ACEDF5000872D19 /* goldMine.json */,
+				CC2B4FB41ACEDF5000872D19 /* heavyCavalery.json */,
+				CC2B4FB51ACEDF5000872D19 /* house.json */,
+				CC2B4FB61ACEDF5000872D19 /* ironmine.json */,
+				CC2B4FB71ACEDF5000872D19 /* lightCavalery.json */,
+				CC2B4FB81ACEDF5000872D19 /* market.json */,
+				CC2B4FB91ACEDF5000872D19 /* stable.json */,
+				CC2B4FBA1ACEDF5000872D19 /* swordsman.json */,
+				CC2B4FBB1ACEDF5000872D19 /* university.json */,
+				CC2B4FBC1ACEDF5000872D19 /* woodcamp.json */,
+				CC2B4FBD1ACEDF5000872D19 /* workshop.json */,
 				CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */,
 				CCF9D3811AC9A3F00095A21E /* headquarters.json */,
 			);
@@ -540,10 +582,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */,
+				CC2B4FC81ACEDF5000872D19 /* swordsman.json in Resources */,
 				CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */,
+				CC2B4FC31ACEDF5000872D19 /* house.json in Resources */,
+				CC2B4FC11ACEDF5000872D19 /* goldMine.json in Resources */,
+				CC2B4FCA1ACEDF5000872D19 /* woodcamp.json in Resources */,
 				CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */,
+				CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */,
+				CC2B4FC01ACEDF5000872D19 /* barracks.json in Resources */,
+				CC2B4FC51ACEDF5000872D19 /* lightCavalery.json in Resources */,
+				CC2B4FCB1ACEDF5000872D19 /* workshop.json in Resources */,
+				CC2B4FC21ACEDF5000872D19 /* heavyCavalery.json in Resources */,
 				CCDDD6681A7A8F48006A996C /* Images.xcassets in Resources */,
+				CC2B4FC61ACEDF5000872D19 /* market.json in Resources */,
+				CC2B4FBF1ACEDF5000872D19 /* axeman.json in Resources */,
+				CC2B4FC91ACEDF5000872D19 /* university.json in Resources */,
 				CCDDD6601A7A8F47006A996C /* GameScene.sks in Resources */,
+				CC2B4FC41ACEDF5000872D19 /* ironmine.json in Resources */,
+				CC2B4FC71ACEDF5000872D19 /* stable.json in Resources */,
 				CCDDD6661A7A8F47006A996C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

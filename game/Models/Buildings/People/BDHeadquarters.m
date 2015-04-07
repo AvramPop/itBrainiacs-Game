@@ -7,6 +7,7 @@
 //
 
 #import "BDHeadquarters.h"
+#import "BDBuildingInfoParser.h"
 
 @implementation BDHeadquarters
 
@@ -14,6 +15,7 @@
     self = [super initWithImageNamed:@"Headquarters1"];
     if (self) {
         self.name = @"headquarters";
+        self.protoProducts = [NSMutableArray array];
     }
     return self;
 }
@@ -26,5 +28,27 @@
 - (NSArray *)protoProductsNames {
     return @[@"",@"", @""];
 }
+
+
++ (BDProtoProduct *)upgradeProtoProduct{
+    BDProtoProduct *proto = [[BDProtoProduct alloc] init];
+    proto.protoProductName = @"BDHeadquartersUpgrade";
+    proto.isResource = NO;
+    
+    return proto;
+}
+
+- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    self.level++;
+    [self.protoProducts removeObject:protoProduct];
+    NSLog(@"didfinish Upgrade!!!!!!");
+}
+
+/*- (void)parse:(NSDictionary *)dictionary {
+    [super parse:dictionary];
+  //parsezi in mod specific
+    
+    self.name = dictionary[@"name"];
+}*/
 
 @end
