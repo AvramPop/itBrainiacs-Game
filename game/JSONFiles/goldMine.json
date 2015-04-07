@@ -3,65 +3,71 @@
     "Type": "BDBuilding",
     "Subtype": "Resources",
     "Level": [
-              {
-              "Cost": {
-              "goldCost": "200",
-              "woodCost": "300",
-              "ironCost": "250",
-              "peopleCost": "0",
-              "timeCost": "150"
-              },
-              "productionPerHour": "100"
-              },
-              {
-              "Cost": {
-              "goldCost": "250",
-              "woodCost": "600",
-              "ironCost": "75",
-              "peopleCost": "3",
-              "timeCost": "1800"
-              },
-              "productionPerHour": "300"
-              },
-              {
-              "Cost": {
-              "goldCost": "500",
-              "woodCost": "1000",
-              "ironCost": "300",
-              "peopleCost": "4",
-              "timeCost": "2500"
-              },
-              "productionPerHour": "450"
-              },
-              {
-              "Cost": {
-              "goldCost": "900",
-              "woodCost": "1500",
-              "ironCost": "550",
-              "peopleCost": "5",
-              "timeCost": "3600"
-              },
-              "productionPerHour": "700"
-              },
-              {
-              "Cost": {
-              "goldCost": "1500",
-              "woodCost": "2300",
-              "ironCost": "800",
-              "peopleCost": "7",
-              "timeCost": "5000"
-              },
-              "productionPerHour": "1000"
-              },
-              {
-              "Cost": {
-              "goldCost": "2200",
-              "woodCost": "3000",
-              "ironCost": "1200",
-              "peopleCost": "10",
-              "timeCost": "8000"
-              },
-              "productionPerHour": "1500"
-              }
-              ]
+        {
+            "Cost": {
+                "goldCost": "200",
+                "woodCost": "300",
+                "ironCost": "250",
+                "peopleCost": "0",
+                "timeCost": "150"
+            },
+            "productionPerHour": "100",
+            "points": "50"
+        },
+        {
+            "Cost": {
+                "goldCost": "250",
+                "woodCost": "600",
+                "ironCost": "75",
+                "peopleCost": "3",
+                "timeCost": "1800"
+            },
+            "productionPerHour": "300",
+            "points": "100"
+        },
+        {
+            "Cost": {
+                "goldCost": "500",
+                "woodCost": "1000",
+                "ironCost": "300",
+                "peopleCost": "4",
+                "timeCost": "2500"
+            },
+            "productionPerHour": "450",
+            "points": "150"
+        },
+        {
+            "Cost": {
+                "goldCost": "900",
+                "woodCost": "1500",
+                "ironCost": "550",
+                "peopleCost": "5",
+                "timeCost": "3600"
+            },
+            "productionPerHour": "700",
+            "points": "200"
+        },
+        {
+            "Cost": {
+                "goldCost": "1500",
+                "woodCost": "2300",
+                "ironCost": "800",
+                "peopleCost": "7",
+                "timeCost": "5000"
+            },
+            "productionPerHour": "1000",
+            "points": "250"
+        },
+        {
+            "Cost": {
+                "goldCost": "2200",
+                "woodCost": "3000",
+                "ironCost": "1200",
+                "peopleCost": "10",
+                "timeCost": "8000"
+            },
+            "productionPerHour": "1500",
+            "points": "300"
+        }
+    ]
 }
