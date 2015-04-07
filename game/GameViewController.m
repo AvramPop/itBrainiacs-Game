@@ -36,7 +36,7 @@
 
 @end
 
-@interface GameViewController ()
+@interface GameViewController () <BDGameLogicControllerDelegate>
 
 @property (nonatomic, strong) UILabel *gold;
 @property (nonatomic, strong) UILabel *wood;
