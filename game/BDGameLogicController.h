@@ -13,7 +13,7 @@
 @class BDBuilding;
 @protocol  BDGameLogicControllerDelegate;
 
-@interface BDGameLogicController : NSObject <BDBuildingDelegate>
+@interface BDGameLogicController : NSObject <BDBuildingDelegate, BDMapProtocol>
 
 @property (nonatomic, assign) id<BDGameLogicControllerDelegate> delegate;
 

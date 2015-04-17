@@ -177,7 +177,6 @@
 		CCE199891A8E602E003A0804 /* BDMenuDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuDefinitions.h; path = Views/BDMenuDefinitions.h; sourceTree = "<group>"; };
 		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
 		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
-		CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BDHeadquartersInfo.json; sourceTree = "<group>"; };
 		CCF9D3811AC9A3F00095A21E /* headquarters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = headquarters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -494,7 +493,6 @@
 				CC2B4FBB1ACEDF5000872D19 /* university.json */,
 				CC2B4FBC1ACEDF5000872D19 /* woodcamp.json */,
 				CC2B4FBD1ACEDF5000872D19 /* workshop.json */,
-				CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */,
 				CCF9D3811AC9A3F00095A21E /* headquarters.json */,
 			);
 			path = JSONFiles;

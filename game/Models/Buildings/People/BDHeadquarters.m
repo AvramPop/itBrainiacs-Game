@@ -11,8 +11,8 @@
 
 @implementation BDHeadquarters
 
-- (instancetype)init {
-    self = [super initWithImageNamed:@"Headquarters1"];
+- (instancetype)initWithImageNamed:(NSString *)name {
+    self = [super initWithImageNamed:name];
     if (self) {
         self.name = @"headquarters";
         self.protoProducts = [NSMutableArray array];
@@ -50,5 +50,9 @@
     
     self.name = dictionary[@"name"];
 }*/
+
+- (NSString *)realName{
+    return @"headquarters";
+}
 
 @end

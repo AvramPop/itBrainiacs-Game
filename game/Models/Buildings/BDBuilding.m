@@ -12,7 +12,6 @@
 @interface BDBuilding()
 
 @property (nonatomic, strong) NSString *backgroundImageName;
-@property (nonatomic, strong) NSString *name;
 
 @end
 
@@ -54,15 +53,24 @@
 }
 
 - (void)reactToTouch {
+    NSDictionary *dictionaryBuilding = [self getJsonDictionary];
+    if (dictionaryBuilding) {
+        [self parse:dictionaryBuilding];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"buildingWasTouched" object:self];
+}
+
+
+- (NSDictionary *)getJsonDictionary {
     NSLog(@"building %@", self.name);
     NSError *error;
     NSString *path = [[NSBundle mainBundle] pathForResource:self.name ofType:@"json"];
     if (path) {
         NSString *dataStr = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
         NSDictionary *dictionaryBuilding = [NSJSONSerialization JSONObjectWithData:[dataStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
-        [self parse:dictionaryBuilding];
+        return dictionaryBuilding;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"buildingWasTouched" object:self];
+    return nil;
 }
 
 
@@ -78,7 +86,6 @@
     [super encodeWithCoder:aCoder];
     [aCoder encodeInt:self.uid forKey:@"uid"];
     [aCoder encodeInt:self.level forKey:@"level"];
-    //[aCoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
     [aCoder encodeObject:self.protoProducts forKey:@"protoProducts"];
 }
 
@@ -87,7 +94,7 @@
     if (!self) {
         return nil;
     }
-    
+
     self.uid = [aDecoder decodeIntForKey:@"uid"];
 //    self.backgroundImageName = [aDecoder decodeObjectForKey:@"backgroundImageName"];
     self.level = [aDecoder decodeIntForKey:@"level"];
@@ -116,3 +123,6 @@
 
 
 @end
+
+
+

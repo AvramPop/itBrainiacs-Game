@@ -65,6 +65,7 @@
     building.zPosition = 10;
     [self addChild:building];
     [self.buildings addObject:building];
+    [self.mapDelegate didFinishAddingBuilding:building toMap:self];
 }
 
 - (CGPoint)getTileCoordonateFromId:(int)uid {

@@ -30,7 +30,6 @@
 - (void)reactToTouch;
 - (instancetype)initWithLevel:(int)level;
 - (NSArray *)protoProductsNames;
-- (void)initWithInfo:(NSString *)jsonString;
-
+- (NSDictionary *)getJsonDictionary;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface BDHouse : BDBuilding
 
+@property (nonatomic, assign) int peopleProduced;
+
 @end

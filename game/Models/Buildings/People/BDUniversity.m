@@ -10,8 +10,21 @@
 
 @implementation BDUniversity
 
+- (instancetype)initWithImageNamed:(NSString *)name {
+    self = [super initWithImageNamed:name];
+    if (self) {
+        self.name = @"university";
+        self.protoProducts = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (NSArray *)protoProductsNames {
     return @[@"",@"", @""];
+}
+
+- (NSString *)realName{
+    return @"university";
 }
 
 @end

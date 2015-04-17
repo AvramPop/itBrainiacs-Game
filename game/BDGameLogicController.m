@@ -12,6 +12,7 @@
 #import "BDPlayer.h"
 #import "BDBuilding.h"
 #import "BDHeadquarters.h"
+#import "BDHouse.h"
 
 @interface BDGameLogicController()
 
@@ -94,5 +95,12 @@
         [self.delegate gameLogicController:self notEnoughResourcesForBuilding:menu.building];
     }
 }
+
+- (void)didFinishAddingBuilding:(BDBuilding *)building toMap:(BDMap *)map {
+    if ([building isKindOfClass:[BDHouse class]]) {
+        [BDPlayer setPeopleAmount:[BDPlayer peopleAmount] + ((BDHouse *)building).peopleProduced];
+    }
+}
+
 @end
 

@@ -41,6 +41,7 @@
 @property (nonatomic, strong) UILabel *gold;
 @property (nonatomic, strong) UILabel *wood;
 @property (nonatomic, strong) UILabel *iron;
+@property (nonatomic, strong) UILabel *people;
 
 @property (nonatomic, copy) void (^confirmationBlock)();
 
@@ -66,13 +67,12 @@
         self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andBuildings:array];
     } else {
         self.gameScene = [BDMap sceneWithSize:skView.bounds.size];
-        BDHeadquarters *headquarter = [[BDHeadquarters alloc] init];
+        BDHeadquarters *headquarter = [[BDHeadquarters alloc] initWithImageNamed:@"Headquarters1"];
         [self.gameScene prepareToAddNode:headquarter];
     }
     
     
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
-    
 
     self.gameScene.tileSize = self.tileSize;
     
@@ -85,7 +85,8 @@
     self.buildingsMenu.delegate = self;
     
     [self addResourcesInfo];
-    
+    self.gameScene.mapDelegate = self.gameLogicController;
+ 
     self.player = [self getSavedPlayer];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
@@ -119,25 +120,32 @@
     self.gold.text = [NSString stringWithFormat:@"Gold: %ld", (long)[BDPlayer goldAmount]];
     self.iron.text = [NSString stringWithFormat:@"Iron: %ld", (long)[BDPlayer ironAmount]];
     self.wood.text = [NSString stringWithFormat:@"Wood: %ld", (long)[BDPlayer woodAmount]];
+    self.people.text = [NSString stringWithFormat:@"People: %ld", (long)[BDPlayer peopleAmount]];
+
     [self saveUserInfo];
 }
 
 - (void)addResourcesInfo{
-    self.gold = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 0, 100, 75)];
+    self.gold = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 0, 100, 45)];
     [self.view addSubview:self.gold];
     
-    self.iron = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 75, 100, 75)];
+    self.iron = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, CGRectGetMaxY(self.gold.frame), 100, 45)];
     [self.view addSubview:self.iron];
     
-    self.wood = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, 150, 100, 75)];
+    self.wood = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, CGRectGetMaxY(self.iron.frame), 100, 45)];
     [self.view addSubview:self.wood];
+    
+    self.people = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, CGRectGetMaxY(self.wood.frame), 100, 45)];
+    [self.view addSubview:self.people];
 }
 
 - (void)saveUserInfo{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *dictionary = @{@"amountOfGold" : @([BDPlayer goldAmount]),
                                  @"amountOfIron" : @([BDPlayer ironAmount]),
-                                 @"amountOfWood" : @([BDPlayer woodAmount])};
+                                 @"amountOfWood" : @([BDPlayer woodAmount]),
+                                 @"amountOfPeople" : @([BDPlayer peopleAmount])
+                                 };
     
     [userDefaults setObject:dictionary forKey:@"player"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -156,6 +164,7 @@
     [BDPlayer setGoldAmount:[dictionary[@"amountOfGold"] integerValue]];
     [BDPlayer setWoodAmount:[dictionary[@"amountOfWood"] integerValue]];
     [BDPlayer setIronAmount:[dictionary[@"amountOfIron"] integerValue]];
+    [BDPlayer setIronAmount:[dictionary[@"amountOfPeople"] integerValue]];
     [[NSUserDefaults standardUserDefaults] synchronize];
     return nil;
 }

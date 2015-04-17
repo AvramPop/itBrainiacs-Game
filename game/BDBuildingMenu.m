@@ -31,7 +31,8 @@
 
         self.icon = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 200, 160)];
         self.icon.backgroundColor = [UIColor blueColor];
-        
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 20, 150, 40)];
+        nameLabel.text = [NSString stringWithFormat:building.name];
         CGFloat buttonsX = CGRectGetMaxX(self.icon.frame) + 15;
         UILabel *goldLabel = [[UILabel alloc] initWithFrame:CGRectMake(buttonsX, self.icon.frame.origin.y, 60, self.icon.frame.size.height / 4)];
         goldLabel.text = [NSString stringWithFormat:@"Gold"];
@@ -83,6 +84,7 @@
         [self addSubview:ironValue];
         [self addSubview:peopleValue];
         [self addSubview:exitButton];
+        [self addSubview:nameLabel];
     }
     return self;
 }

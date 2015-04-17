@@ -7,11 +7,39 @@
 //
 
 #import "BDHouse.h"
+#import "BDBuildingInfoParser.h"
 
 @implementation BDHouse
 
+- (instancetype)initWithImageNamed:(NSString *)name {
+    self = [super initWithImageNamed:name];
+    if (self) {
+        self.name = @"house";
+        BDProtoProduct *protoPeople = [[BDProtoProduct alloc] init];
+        protoPeople.protoProductName = @"BDPeople";
+        protoPeople.isResource = YES;
+        self.protoProducts = [NSMutableArray arrayWithObject:protoPeople];
+        [self parse:[self getJsonDictionary]];
+    }
+    return self;
+}
+
 - (NSArray *)protoProductsNames {
-    return @[@"",@"", @""];
+    return @[@"BDPeople"];
+}
+
+-(void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    
+}
+
+- (NSString *)realName{
+    return @"house";
+}
+
+- (void)parse:(NSDictionary *)dictionary {
+    [super parse:dictionary];
+    NSArray *levels = dictionary[@"Level"];
+    self.peopleProduced = [(NSNumber *)(levels[self.level][@"popleProduced"]) intValue];
 }
 
 @end

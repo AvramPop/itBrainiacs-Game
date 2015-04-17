@@ -10,8 +10,22 @@
 
 @implementation BDStable
 
+- (instancetype)initWithImageNamed:(NSString *)name {
+    self = [super initWithImageNamed:name];
+    if (self) {
+        self.name = @"stable";
+        self.protoProducts = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (NSArray *)protoProductsNames {
     return @[@"",@"", @""];
 }
+
+- (NSString *)realName{
+    return @"stable";
+}
+
 
 @end

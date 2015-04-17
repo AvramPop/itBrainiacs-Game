@@ -18,6 +18,7 @@
 
 @optional
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct;
+- (void)parse:(NSDictionary *)dictionary;
 
 @end
 
@@ -27,6 +28,7 @@
 @property (nonatomic, strong) NSDate *timeStamp;
 
 @property (nonatomic, strong) NSString *protoProductName;
+
 @property (nonatomic, assign) BOOL isResource;
 
 @property (nonatomic, assign) id<BDProtoProduct> delegate;
