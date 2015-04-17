@@ -14,9 +14,11 @@
 @protocol BDProtoProduct <NSObject>
 
 @optional
+
 + (BDProtoProduct *)protoProduct;
 
 @optional
+
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct;
 - (void)parse:(NSDictionary *)dictionary;
 
