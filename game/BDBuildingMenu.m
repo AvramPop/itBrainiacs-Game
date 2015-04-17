@@ -62,13 +62,19 @@
         [self.upgrade setTitle:@"Upgrade" forState:UIControlStateNormal];
         self.upgrade.backgroundColor =[UIColor blueColor];
         [self.upgrade addTarget:self action:@selector(upgradeBuilding:) forControlEvents:UIControlEventTouchUpInside];
-        
+        if ([self.building isUpgrading]){
+            [self.upgrade setEnabled:NO];
+            self.upgrade.backgroundColor =[UIColor grayColor];
+        }
         UIImage *timeImage = [UIImage imageNamed:@"TimeIcon"];
         UIImageView *timeIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.upgrade.frame.origin.x, CGRectGetMaxY(self.upgrade.frame) + 20, self.upgrade.frame.size.width / 3, self.upgrade.frame.size.width / 3)];
         timeIcon.image = timeImage;
         
         UILabel *timeValue = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(timeIcon.frame) + 5, timeIcon.frame.origin.y, 2 * timeIcon.frame.size.width, timeIcon.frame.size.height)];
         timeValue.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.timeCost];
+        
+        UILabel *levelLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.upgrade.frame.origin.x, self.upgrade.frame.origin.y - 20, 50, 20)];
+        levelLabel.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.level];
         
         [self addSubview:self.icon];
         [self addSubview:self.upgrade];
@@ -85,6 +91,7 @@
         [self addSubview:peopleValue];
         [self addSubview:exitButton];
         [self addSubview:nameLabel];
+        [self addSubview:levelLabel];
     }
     return self;
 }
@@ -94,7 +101,10 @@
 }
 
 - (void)upgradeBuilding:(UIButton *)button {
-    [self.delegate buildingMenu:self didTouchUpdateButton:button];
+    [self.delegate buildingMenu:self didTouchUpdateButton:button withConfirmationBlock:^void {
+        [self.upgrade setEnabled:NO];
+        self.upgrade.backgroundColor =[UIColor grayColor];
+    }];
 }
 
 - (BDBuilding *)buildingModel {

@@ -35,4 +35,11 @@
 }
 
 
+-(BOOL)isEqual:(id)object{
+    if([object class] == self.class && [[object protoProductName] isEqualToString:self.protoProductName]){
+        return YES;
+    }
+    return NO;
+}
+
 @end

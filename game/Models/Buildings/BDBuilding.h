@@ -27,6 +27,7 @@
 
 @property (nonatomic, assign) NSInteger      timeCost;
 
+- (BOOL)isUpgrading;
 - (void)reactToTouch;
 - (instancetype)initWithLevel:(int)level;
 - (NSArray *)protoProductsNames;

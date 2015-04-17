@@ -164,7 +164,7 @@
     [BDPlayer setGoldAmount:[dictionary[@"amountOfGold"] integerValue]];
     [BDPlayer setWoodAmount:[dictionary[@"amountOfWood"] integerValue]];
     [BDPlayer setIronAmount:[dictionary[@"amountOfIron"] integerValue]];
-    [BDPlayer setIronAmount:[dictionary[@"amountOfPeople"] integerValue]];
+    [BDPlayer setPeopleAmount:[dictionary[@"amountOfPeople"] integerValue]];
     [[NSUserDefaults standardUserDefaults] synchronize];
     return nil;
 }

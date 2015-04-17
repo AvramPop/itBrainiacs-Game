@@ -22,7 +22,7 @@
 
 @protocol BDBuildingDelegate
 
-- (void)buildingMenu:(BDBuildingMenu *)menu didTouchUpdateButton:(UIButton *)button;
+- (void)buildingMenu:(BDBuildingMenu *)menu didTouchUpdateButton:(UIButton *)button withConfirmationBlock:(void(^)())confBlock;
     
 @end
 

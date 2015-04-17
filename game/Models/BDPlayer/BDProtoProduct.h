@@ -16,6 +16,7 @@
 @optional
 
 + (BDProtoProduct *)protoProduct;
++ (BDProtoProduct *)upgradeProtoProduct;
 
 @optional
 

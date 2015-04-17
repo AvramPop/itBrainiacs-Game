@@ -121,6 +121,9 @@
     self.backgroundImageName = dictionary[@"backgroundImage"];
 }
 
+- (BOOL)isUpgrading {
+    return [self.protoProducts containsObject:[self.class upgradeProtoProduct]];
+}
 
 @end
 

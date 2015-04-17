@@ -22,6 +22,7 @@
 		CC2B4FC91ACEDF5000872D19 /* university.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBB1ACEDF5000872D19 /* university.json */; };
 		CC2B4FCA1ACEDF5000872D19 /* woodcamp.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBC1ACEDF5000872D19 /* woodcamp.json */; };
 		CC2B4FCB1ACEDF5000872D19 /* workshop.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBD1ACEDF5000872D19 /* workshop.json */; };
+		CC412DC61AE14A26001A1FAB /* BDWarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = CC412DC51AE14A26001A1FAB /* BDWarLogic.m */; };
 		CC558D161A83C37100A3F0AB /* BDMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D0D1A83C37100A3F0AB /* BDMap.m */; };
 		CC558D171A83C37100A3F0AB /* BDBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D111A83C37100A3F0AB /* BDBuilding.m */; };
 		CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D151A83C37100A3F0AB /* TouchDetector.m */; };
@@ -94,6 +95,9 @@
 		CC2B4FBB1ACEDF5000872D19 /* university.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = university.json; sourceTree = "<group>"; };
 		CC2B4FBC1ACEDF5000872D19 /* woodcamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = woodcamp.json; sourceTree = "<group>"; };
 		CC2B4FBD1ACEDF5000872D19 /* workshop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workshop.json; sourceTree = "<group>"; };
+		CC412DC31AE14252001A1FAB /* BuildOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildOptions.h; sourceTree = "<group>"; };
+		CC412DC41AE14A26001A1FAB /* BDWarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWarLogic.h; sourceTree = "<group>"; };
+		CC412DC51AE14A26001A1FAB /* BDWarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDWarLogic.m; sourceTree = "<group>"; };
 		CC558D0C1A83C37100A3F0AB /* BDMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMap.h; sourceTree = "<group>"; };
 		CC558D0D1A83C37100A3F0AB /* BDMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMap.m; sourceTree = "<group>"; };
 		CC558D101A83C37100A3F0AB /* BDBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuilding.h; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 			children = (
 				CCDDD6561A7A8F47006A996C /* Info.plist */,
 				CCDDD6571A7A8F47006A996C /* main.m */,
+				CC412DC31AE14252001A1FAB /* BuildOptions.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -466,6 +471,8 @@
 		CCEE2F1A1AC481E500BA027F /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				CC412DC41AE14A26001A1FAB /* BDWarLogic.h */,
+				CC412DC51AE14A26001A1FAB /* BDWarLogic.m */,
 				CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */,
 				CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */,
 				CC2466C41ABC7A580056631D /* BDBuildingMenu.h */,
@@ -614,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC412DC61AE14A26001A1FAB /* BDWarLogic.m in Sources */,
 				CC802A751AA10C4300971F83 /* BDRam.m in Sources */,
 				CC802A7B1AA10C8F00971F83 /* BDLightCavalery.m in Sources */,
 				CC558D1B1A83C3D500A3F0AB /* BDWoodCamp.m in Sources */,
