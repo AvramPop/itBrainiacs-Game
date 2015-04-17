@@ -64,7 +64,6 @@
 		CCDDD6771A7A8F48006A996C /* gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6761A7A8F48006A996C /* gameTests.m */; };
 		CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE199871A8E5F6E003A0804 /* BDMenuController.m */; };
 		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
-		CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3801AC9A3F00095A21E /* BDHeadquartersInfo.json */; };
 		CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3811AC9A3F00095A21E /* headquarters.json */; };
 /* End PBXBuildFile section */
 
@@ -581,7 +580,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCF9D3831AC9A3F00095A21E /* BDHeadquartersInfo.json in Resources */,
 				CC2B4FC81ACEDF5000872D19 /* swordsman.json in Resources */,
 				CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */,
 				CC2B4FC31ACEDF5000872D19 /* house.json in Resources */,
