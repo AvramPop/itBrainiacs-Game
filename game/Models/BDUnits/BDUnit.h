@@ -11,4 +11,9 @@
 
 @interface BDUnit : NSObject <BDProtoProduct>
 
+@property (nonatomic, strong) BDUnit        *favouriteTarget;
+@property (nonatomic, assign) NSInteger     life;
+@property (nonatomic, assign) NSInteger     attack;
+@property (nonatomic, assign) NSInteger     defense;
+
 @end

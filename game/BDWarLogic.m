@@ -1,37 +1,82 @@
+#import "BDWarLogic.h"
+
+
+@interface BDWarLogic ()
+
+@end
+
+
 @implementation BDWarLogic
-//stolenResourcesByAttackingTroops:(NSDictionary *)attackingTroops defendedBy:(NSDictionary *)defendingTroops
+
+- (instancetype)initWithAttackingTroops:(NSMutableDictionary *)attacDictionary defendingTroops:(NSMutableDictionary *)defDictionary {
+    self = [super init];
+    if (self) {
+        self.attackingTroops = attacDictionary;
+        self.defendingTroops = defDictionary;
+    }
+    
+    return self;
+}
+
+-(NSInteger)soldiersKilledBy:(NSInteger)amountOfAttackingSoldiers ofKind:(BDUnit *)attackingTroopsType defendedBy:(NSInteger)amountOfDefendingSoldiers ofKind:(BDUnit *)defendingTroopsType {
+    float rap = amountOfAttackingSoldiers / amountOfDefendingSoldiers;
+    float a = amountOfDefendingSoldiers / rap;
+    if ((defendingTroopsType.defense - rap * attackingTroopsType.attack) < defendingTroopsType.life * -1){
+        return amountOfDefendingSoldiers;
+    }
+    else if ((defendingTroopsType.defense - rap * attackingTroopsType.attack) < 0){
+        return (((defendingTroopsType.defense - rap * attackingTroopsType.attack) * -1) / defendingTroopsType.life) * a;
+    }
+    else return 0;
+}
+
+- (BOOL)ckeckIfAllAreDead:(NSDictionary *)troops{
+    for (NSString* key in troops){
+        id value = [troops objectForKey:key];
+        if(value){
+            return YES;
+        }
+    }
+    return NO;
+}
+
+
 -(void)attack{
+    NSInteger a, b;
 	for (NSString* key in self.attackingTroops) {
-		id value = [self.attackingTroops objectForKey:key];
+		id value = self.attackingTroops[key];
 		if(value){
-			int a = soldiersKilledBy:[self.attackingTroops objectForKey:key] ofKind:/**/ defendedBy: [self.defendingTroops objectForKey:key.favouriteTarget];
-			int b = soldiersKilledBy:[self.defendingTroops objectForKey:key.favouriteTarget] ofKind:/**/ defendedBy: [self.attackingTroops objectForKey:key];
-			self.defendingTroops.key -= a;
-			self.attackingTroops.key -= b;
+            a = [self soldiersKilledBy:[self.attackingTroops[key] integerValue] ofKind:nil defendedBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget];
+            b = [self soldiersKilledBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget defendedBy:[self.attackingTroops[key] integerValue] ofKind:nil];
+			self.defendingTroops[key] = [NSNumber numberWithInteger:[self.defendingTroops[key] integerValue] - a];
+			self.attackingTroops[key] = [NSNumber numberWithInteger:[self.attackingTroops[key] integerValue] - b];
 		}	
 	}
-	if([[ckeckIfAllAreDead:self.attackingTroops] isEqual:YES]|| [[ckeckIfAllAreDead:self.defendingTroops] isEqual:YES]){
+	if([self ckeckIfAllAreDead:self.attackingTroops] == YES || [self ckeckIfAllAreDead:self.defendingTroops] == YES) {
         NSLog(@"the war is over");
-        if([[ckeckIfAllAreDead:self.attackingTroops] isEqual:YES]) {
+        if([self ckeckIfAllAreDead:self.attackingTroops] == YES) {
 			NSLog(@"defenders won");
 		}
         else {
 			NSLog(@"attackers won");
 		}
     } else{
-		int r, s = 0;
+        int r , s =0;
+        id value;
+        
         for (NSString* key in self.defendingTroops) {
 			value = [self.defendingTroops objectForKey:key];
 			if(value) s++;
         }
+        
         for (NSString* key in self.attackingTroops) {
 			value = [self.attackingTroops objectForKey:key];
             if(value){
                 r = arc4random_uniform(s - 1);
-				a = soldiersKilledBy:[self.attackingTroops objectForKey:key] ofKind:/**/ defendedBy: [self.defendingTroops objectForKey:key.favouriteTarget];
-				b = soldiersKilledBy:[self.defendingTroops objectForKey:key.favouriteTarget] ofKind:/**/ defendedBy: [self.attackingTroops objectForKey:key];
-				self.defendingTroops.key -= a;
-				self.attackingTroops.key -= b;
+                a = [self soldiersKilledBy:[self.attackingTroops[key] integerValue] ofKind:nil defendedBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget];
+                b = [self soldiersKilledBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget defendedBy:[self.attackingTroops[key] integerValue] ofKind:0];
+                self.defendingTroops[key] = [NSNumber numberWithInteger:[self.defendingTroops[key] integerValue] - a];
+                self.attackingTroops[key] = [NSNumber numberWithInteger:[self.attackingTroops[key] integerValue] - b];
             }
         }
 		int s1 = 0, s2 = 0;
@@ -43,29 +88,10 @@
         }
         if(s1 > s2) cout <<" attackers won";
         else cout << "def won";
-	}*/
+        */
+	}
 }
 
--(NSInteger)soldiersKilledBy:(NSInteger *)amountOfAttackingSoldiers ofKind:(BDUnit *)attackingTroopsType defendedBy:(NSInteger *)amountOfDefendingSoldiers ofKind:(BDUnit *)defendingTroopsType{
-	float rap = amountOfAttackingSoldiers / amountOfDefendingSoldiers;
-	float a = amountOfDefendingSoldiers / rap;
-	if ((defendingTroopsType.defense - rap * attackingTroopsType.attack) < defendingTroopsType.life * -1){
-		return amountOfDefendingSoldiers;
-	}
-	else if ((defendingTroopsType.defense - rap * attackingTroopsType.attack) < 0){
-		return (((defendingTroopsType.defense - rap * attackingTroopsType.attack) * -1) / defendingTroopsType.life) * a;
-	}
-	else return 0;
-}
 
--(bool)ckeckIfAllAreDead:(NSDictionary *)troops{
-	for (NSString* key in troops]){
-		id value = [troops objectForKey:key];
-		if(value){
-			return 1;
-		}
-	}
-	return 0;
-}
 
 @end
