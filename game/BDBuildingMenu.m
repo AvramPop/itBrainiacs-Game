@@ -30,7 +30,7 @@
         [exitButton addTarget:self action:@selector(didTouchExitButton) forControlEvents:UIControlEventTouchUpInside];
 
         self.icon = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 200, 160)];
-        self.icon.backgroundColor = [UIColor blueColor];
+        self.icon.image = [UIImage imageNamed:building.iconName];
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 20, 150, 40)];
         nameLabel.text = building.name;
         CGFloat buttonsX = CGRectGetMaxX(self.icon.frame) + 15;

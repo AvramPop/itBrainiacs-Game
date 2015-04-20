@@ -27,6 +27,8 @@
 
 @property (nonatomic, assign) NSInteger      timeCost;
 
+@property (nonatomic, strong) NSString      *iconName;
+
 - (BOOL)isUpgrading;
 - (void)reactToTouch;
 - (instancetype)initWithLevel:(int)level;

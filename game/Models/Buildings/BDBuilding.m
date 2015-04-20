@@ -112,13 +112,14 @@
 
 - (void)parse:(NSDictionary *)dictionary{
     NSArray *levels = dictionary[@"Level"];
-    NSDictionary *cost = levels[self.level][@"Cost"];
+    NSDictionary *currentLevel = levels[self.level];
+    NSDictionary *cost = currentLevel[@"Cost"];
     self.goldCost = [cost[@"goldCost"] integerValue];
     self.woodCost = [cost[@"woodCost"] integerValue];
     self.ironCost = [cost[@"ironCost"] integerValue];
     self.peopleCost = [cost[@"peopleCost"] integerValue];
     self.timeCost = [cost[@"timeCost"] integerValue];
-    self.backgroundImageName = dictionary[@"backgroundImage"];
+    self.iconName = currentLevel[@"backgroundImage"];
 }
 
 - (BOOL)isUpgrading {

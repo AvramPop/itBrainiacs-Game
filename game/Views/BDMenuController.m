@@ -50,13 +50,13 @@
 }
 
 - (void)didTouchBaracksMenu:(id)sender {
-    if (!self.menu.isOpen) {
-        self.menuType = BDMenuSectionPeopleUnits;
-        self.menu.dataSource = [self getDataSourceForMenuType:self.menuType];
-        [self menuOpenAnimation];
-    } else {
-        [self menuCloseAnimation];
-    }
+//    if (!self.menu.isOpen) {
+//        self.menuType = BDMenuSectionPeopleUnits;
+//        self.menu.dataSource = [self getDataSourceForMenuType:self.menuType];
+//        [self menuOpenAnimation];
+//    } else {
+//        [self menuCloseAnimation];
+//    }
 }
 
 - (BDMenuSection *)getDataSourceForMenuType:(BDMenuSectionKey)menuType {

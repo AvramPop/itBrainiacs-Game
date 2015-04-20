@@ -12,7 +12,8 @@
                 "timeCost": "120"
             },
             "popleProduced": "2",
-              "points" : "50"
+              "points" : "50",
+              "backgroundImage": "ClanCastle1"
         },
         {
             "Cost": {
@@ -23,7 +24,8 @@
                 "timeCost": "600"
             },
             "popleProduced": "3",
-              "points" : "100"
+              "points" : "100",
+            "backgroundImage": "ClanCastle2"
         },
         {
             "Cost": {
@@ -34,7 +36,8 @@
                 "timeCost": "800"
             },
             "popleProduced": "5",
-              "points" : "150"
+              "points" : "150",
+            "backgroundImage": "ClanCastle3"
         },
         {
             "Cost": {
@@ -45,7 +48,8 @@
                 "timeCost": "1500"
             },
             "popleProduced": "7",
-              "points" : "200"
+              "points" : "200",
+            "backgroundImage": "ClanCastle4"
         },
         {
             "Cost": {
@@ -56,7 +60,8 @@
                 "timeCost": "2000"
             },
             "popleProduced": "8",
-              "points" : "250"
+              "points" : "250",
+            "backgroundImage": "ClanCastle5"
         },
         {
             "Cost": {
@@ -67,7 +72,8 @@
                 "timeCost": "3000"
             },
             "popleProduced": "10",
-              "points" : "300"
+              "points" : "300",
+          "backgroundImage": "ClanCastle6"
         }
     ]
 }

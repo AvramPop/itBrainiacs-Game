@@ -12,7 +12,8 @@
                 "timeCost": "180"
             },
             "products": { "swordsman": "1" },
-            "points" : "50"
+            "points" : "50",
+            "backgroundImage" : "Army_Camp1"
         },
         {
             "Cost": {
@@ -26,7 +27,8 @@
                 "swordsman": "2",
                 "axeman": "1"
             },
-            "points" : "100"
+            "points" : "100",
+            "backgroundImage" : "Army_Camp2"
         },
         {
             "Cost": {
@@ -41,7 +43,8 @@
                 "axeman": "2",
                 "archer": "1"
             },
-            "points" : "150"
+            "points" : "150",
+            "backgroundImage" : "Army_Camp3"
         },
         {
             "Cost": {
@@ -56,7 +59,8 @@
                 "axeman": "3",
                 "archer": "2"
             },
-            "points" : "200"
+            "points" : "200",
+            "backgroundImage" : "Army_Camp4"
         },
         {
             "Cost": {
@@ -71,7 +75,8 @@
                 "axeman": "4",
                 "archer": "3"
             },
-            "points" : "250"
+            "points" : "250",
+            "backgroundImage" : "Army_Camp5"
         },
         {
             "Cost": {
@@ -87,7 +92,8 @@
                 "archer": "5",
                 "wizard": "1"
             },
-            "points" : "300"
+            "points" : "300",
+            "backgroundImage" : "Army_Camp6"
         }
     ]
 }
