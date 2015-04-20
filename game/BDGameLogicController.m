@@ -45,11 +45,11 @@
                 if (product.isResource) {
                     hasResourcesUpdate = YES;
                     if ([product.protoProductName compare:@"BDGold"] == NSOrderedSame) {
-                        [BDPlayer incrementGold];
+                        [BDPlayer currentPlayer].gold++;
                     } else if ([product.protoProductName compare:@"BDIron"] == NSOrderedSame) {
-                        [BDPlayer incrementIron];
+                        [BDPlayer currentPlayer].iron++;
                     } else if ([product.protoProductName compare:@"BDWood"] == NSOrderedSame) {
-                        [BDPlayer incrementWood];
+                        [BDPlayer currentPlayer].wood++;
                     }
                 } else {
                     if ([product.protoProductName compare:@"BDHeadquartersUpgrade"] == NSOrderedSame) {
@@ -71,10 +71,10 @@
 #ifdef DebugEnabled
     return YES;
 #endif
-    return [BDPlayer goldAmount] >= building.goldCost &&
-    [BDPlayer woodAmount] >= building.woodCost &&
-    [BDPlayer ironAmount] >= building.ironCost &&
-    [BDPlayer peopleAmount] >= building.peopleCost;
+    return [BDPlayer currentPlayer].gold >= building.goldCost &&
+    [BDPlayer currentPlayer].wood >= building.woodCost &&
+    [BDPlayer currentPlayer].iron >= building.ironCost &&
+    [BDPlayer currentPlayer].people >= building.peopleCost;
 
 }
 
@@ -83,10 +83,10 @@
     
     if([self hasEnoughResourcesFor:menu.building] ) {
         [self.delegate gameLogicController:self requestUpdateForBuilding:menu.building withConfirmationBlock:^void{
-            [BDPlayer setGoldAmount:[BDPlayer goldAmount] - menu.building.goldCost];
-            [BDPlayer setWoodAmount:[BDPlayer woodAmount] - menu.building.woodCost];
-            [BDPlayer setIronAmount:[BDPlayer ironAmount] - menu.building.ironCost];
-            [BDPlayer setPeopleAmount:[BDPlayer peopleAmount] - menu.building.peopleCost];
+            [BDPlayer currentPlayer].gold -= menu.building.goldCost;
+            [BDPlayer currentPlayer].wood -= menu.building.woodCost;
+            [BDPlayer currentPlayer].iron -= menu.building.ironCost;
+            [BDPlayer currentPlayer].people -= menu.building.peopleCost;
             
             BDProtoProduct *proto = [BDHeadquarters upgradeProtoProduct];
             proto.delegate = menu.building;
@@ -104,7 +104,7 @@
 
 - (void)didFinishAddingBuilding:(BDBuilding *)building toMap:(BDMap *)map {
     if ([building isKindOfClass:[BDHouse class]]) {
-        [BDPlayer setPeopleAmount:[BDPlayer peopleAmount] + ((BDHouse *)building).peopleProduced];
+        [BDPlayer currentPlayer].people += ((BDHouse *)building).peopleProduced;
     }
 }
 

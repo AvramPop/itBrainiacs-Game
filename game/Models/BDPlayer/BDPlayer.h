@@ -8,65 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BDPlayer : NSObject
+@interface BDPlayer : NSObject <NSCoding>
 
-#pragma mark - Resources
+@property (nonatomic, assign) NSInteger gold;
+@property (nonatomic, assign) NSInteger wood;
+@property (nonatomic, assign) NSInteger iron;
+@property (nonatomic, assign) NSInteger people;
+//
+@property (nonatomic, assign) NSInteger swordsmanNumber;
+@property (nonatomic, assign) NSInteger axemanNumber;
+@property (nonatomic, assign) NSInteger archerNumber;
+@property (nonatomic, assign) NSInteger wizardNumber;
+@property (nonatomic, assign) NSInteger spyNumber;
+@property (nonatomic, assign) NSInteger lightCavaleryNumber;
+@property (nonatomic, assign) NSInteger highCavaleryNumber;
+@property (nonatomic, assign) NSInteger ramNumber;
+@property (nonatomic, assign) NSInteger baloonNumber;
+@property (nonatomic, assign) NSInteger catapultNumber;
 
-+(NSInteger)goldAmount;
-+(void)setGoldAmount:(NSInteger)amount;
-+(void)incrementGold;
++ (BDPlayer *)currentPlayer;
++ (void)setCurrentPlayer:(BDPlayer *)aPlayer;
 
-+(NSInteger)woodAmount;
-+(void)setWoodAmount:(NSInteger)amount;
-+(void)incrementWood;
++ (BDPlayer *)adversaryPlayer;
++ (void)setAdversaryPlayer:(BDPlayer *)aPlayer;
 
-+(NSInteger)ironAmount;
-+(void)setIronAmount:(NSInteger)amount;
-+(void)incrementIron;
-
-+(NSInteger)peopleAmount;
-+(void)setPeopleAmount:(NSInteger)amount;
-+(void)incrementPeople;
-
-#pragma mark - Units
-
-+(NSInteger)swordsmanNumber;
-+(void)setSwordsmanNumber:(NSInteger)amount;
-+(void)incrementSwordsman;
-
-+(NSInteger)axemanNumber;
-+(void)setAxemanNumber:(NSInteger)amount;
-+(void)incrementAxeman;
-
-+(NSInteger)archerNumber;
-+(void)setArcherNumber:(NSInteger)amount;
-+(void)incrementArcher;
-
-+(NSInteger)wizardNumber;
-+(void)setWizardNumber:(NSInteger)amount;
-+(void)incrementWizard;
-
-+(NSInteger)spyNumber;
-+(void)setSpyNumber:(NSInteger)amount;
-+(void)incrementSpy;
-
-+(NSInteger)lightCavaleryNumber;
-+(void)setLightCavaleryNumber:(NSInteger)amount;
-+(void)incrementLightCavalery;
-
-+(NSInteger)highCavaleryNumber;
-+(void)setHighCavaleryNumber:(NSInteger)amount;
-+(void)incrementHighCavalery;
-
-+(NSInteger)ramNumber;
-+(void)setRamNumber:(NSInteger)amount;
-+(void)incrementRam;
-
-+(NSInteger)baloonNumber;
-+(void)setBaloonNumber:(NSInteger)amount;
-+(void)incrementBaloon;
-
-+(NSInteger)catapultNumber;
-+(void)setCatapultNumber:(NSInteger)amount;
-+(void)incrementCatapult;
 @end

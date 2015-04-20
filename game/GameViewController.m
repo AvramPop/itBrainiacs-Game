@@ -87,7 +87,8 @@
     [self addResourcesInfo];
     self.gameScene.mapDelegate = self.gameLogicController;
  
-    self.player = [self getSavedPlayer];
+    [BDPlayer setCurrentPlayer:[self getSavedPlayer]];
+    self.player = [BDPlayer currentPlayer];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
     [button setTitle:@"save" forState:UIControlStateNormal];
@@ -117,10 +118,10 @@
 }
 
 - (void)updateResourcesLabels {
-    self.gold.text = [NSString stringWithFormat:@"Gold: %ld", (long)[BDPlayer goldAmount]];
-    self.iron.text = [NSString stringWithFormat:@"Iron: %ld", (long)[BDPlayer ironAmount]];
-    self.wood.text = [NSString stringWithFormat:@"Wood: %ld", (long)[BDPlayer woodAmount]];
-    self.people.text = [NSString stringWithFormat:@"People: %ld", (long)[BDPlayer peopleAmount]];
+    self.gold.text = [NSString stringWithFormat:@"Gold: %ld", (long)[BDPlayer currentPlayer].gold];
+    self.iron.text = [NSString stringWithFormat:@"Iron: %ld", (long)[BDPlayer currentPlayer].iron];
+    self.wood.text = [NSString stringWithFormat:@"Wood: %ld", (long)[BDPlayer currentPlayer].wood];
+    self.people.text = [NSString stringWithFormat:@"People: %ld", (long)[BDPlayer currentPlayer].people];
 
     [self saveUserInfo];
 }
@@ -141,13 +142,8 @@
 
 - (void)saveUserInfo{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dictionary = @{@"amountOfGold" : @([BDPlayer goldAmount]),
-                                 @"amountOfIron" : @([BDPlayer ironAmount]),
-                                 @"amountOfWood" : @([BDPlayer woodAmount]),
-                                 @"amountOfPeople" : @([BDPlayer peopleAmount])
-                                 };
-    
-    [userDefaults setObject:dictionary forKey:@"player"];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[BDPlayer currentPlayer]];
+    [userDefaults setObject:data forKey:@"player"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -160,15 +156,9 @@
 
 - (BDPlayer *)getSavedPlayer {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dictionary = [userDefaults objectForKey:@"player"];
-    [BDPlayer setGoldAmount:[dictionary[@"amountOfGold"] integerValue]];
-    [BDPlayer setWoodAmount:[dictionary[@"amountOfWood"] integerValue]];
-    [BDPlayer setIronAmount:[dictionary[@"amountOfIron"] integerValue]];
-    [BDPlayer setPeopleAmount:[dictionary[@"amountOfPeople"] integerValue]];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    return nil;
+    BDPlayer *player = [NSKeyedUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@"player"]];
+    return player;
 }
-
 
 - (NSArray *)getSavedBuildings {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
