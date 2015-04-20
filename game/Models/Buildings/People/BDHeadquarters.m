@@ -21,7 +21,7 @@
 }
 
 - (void)reactToTouch {
-    [super reactToTouch];
+//    [super reactToTouch]; display the building menu info
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchHeadQuartersMenu" object:nil];
 }
 
@@ -50,9 +50,5 @@
     
     self.name = dictionary[@"name"];
 }*/
-
-- (NSString *)realName{
-    return @"headquarters";
-}
 
 @end

@@ -31,6 +31,10 @@
     
 }
 
++ (BDProtoProduct *)upgradeProtoProduct {
+    return nil;
+}
+
 - (NSArray *)protoProductsNames {
     return @[@"BDGold"];
 }

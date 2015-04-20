@@ -29,6 +29,10 @@
 
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {}
 
++ (BDProtoProduct *)upgradeProtoProduct {
+    return nil;
+}
+
 - (NSArray *)protoProductsNames {
     return @[@"BDIron"];
 }

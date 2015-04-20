@@ -23,8 +23,12 @@
     return @[@"",@"", @""];
 }
 
-- (NSString *)realName{
-    return @"university";
++ (BDProtoProduct *)upgradeProtoProduct {
+    BDProtoProduct *proto = [[BDProtoProduct alloc] init];
+    proto.protoProductName = @"BDUniversityUpgrade";
+    proto.isResource = NO;
+    
+    return proto;
 }
 
 @end

@@ -32,14 +32,18 @@
     
 }
 
-- (NSString *)realName{
-    return @"house";
-}
-
 - (void)parse:(NSDictionary *)dictionary {
     [super parse:dictionary];
     NSArray *levels = dictionary[@"Level"];
     self.peopleProduced = [(NSNumber *)(levels[self.level][@"popleProduced"]) intValue];
+}
+
++ (BDProtoProduct *)upgradeProtoProduct {
+    BDProtoProduct *proto = [[BDProtoProduct alloc] init];
+    proto.protoProductName = @"BDHouseUpgrade";
+    proto.isResource = NO;
+    
+    return proto;
 }
 
 @end
