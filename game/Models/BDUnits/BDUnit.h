@@ -15,5 +15,7 @@
 @property (nonatomic, assign) NSInteger     life;
 @property (nonatomic, assign) NSInteger     attack;
 @property (nonatomic, assign) NSInteger     defense;
+@property (nonatomic, assign) NSInteger     speed;
+@property (nonatomic, assign) NSInteger     carryCapacity;
 
 @end
