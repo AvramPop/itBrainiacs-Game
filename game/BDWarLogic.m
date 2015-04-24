@@ -56,14 +56,16 @@
         NSLog(@"the war is over");
         if([self ckeckIfAllAreDead:self.attackingTroops] == YES) {
 			NSLog(@"defenders won");
+			self.amountOfStolenResources = 0;
 		}
         else {
 			NSLog(@"attackers won");
+			[self getAmountOfStolenResourcesByTroops:self.attackingTroops];
 		}
     } else{
-        int r , s =0;
+        NSInteger r , s = 0;
         id value;
-        
+        NSInteger s1 = 0, s2 = 0;
         for (NSString* key in self.defendingTroops) {
 			value = [self.defendingTroops objectForKey:key];
 			if(value) s++;
@@ -79,19 +81,30 @@
                 self.attackingTroops[key] = [NSNumber numberWithInteger:[self.attackingTroops[key] integerValue] - b];
             }
         }
-		int s1 = 0, s2 = 0;
-      //  cout << "final standings: \n";
-       /* for(i = 0; i < 10; i++){
-            cout << attackers[i] << " " << defenders[i] << endl;
-            s1 += (attack[i] + def[i] + health[i]) * attackers[i];
-            s2 += (attack[i] + def[i] + health[i]) * defenders[i];
-        }
-        if(s1 > s2) cout <<" attackers won";
-        else cout << "def won";
-        */
+
+		NSLog(@"Final standings: ");
+		for (NSString* key in self.attackingTroops) {
+			s1 += ((BDUnit *)self.attackingTroops[key].attack + (BDUnit *)self.attackingTroops[key].defense + (BDUnit *)self.attackingTroops[key].health) * self.attackingTroops[key];
+		}
+		for (NSString* key in self.defendingTroops) {
+			s1 += ((BDUnit *)self.defendingTroops[key].attack + (BDUnit *)self.defendingTroops[key].defense + (BDUnit *)self.defendingTroops[key].health) * self.defendingTroops[key];
+		}
+        if(s1 > s2){
+			self.winner = [stringW	withFormat @"attackers"];
+			[self getAmountOfStolenResourcesByTroops:self.attackingTroops];
+		}
+        else {
+			self.winner = [stringWithFormat @"defenders"];
+			self.amountOfStolenResources = 0;
+		}
 	}
 }
 
-
+-(void)getAmountOfStolenResourcesByTroops(NSDictionary *)troops{
+	for (NSString* key in troops) {
+		value = [troops objectForKey:key];
+		self.amountOfStolenResources += value * (BDUnit *)self.troops[key].carryCapacity;
+	}
+}
 
 @end
