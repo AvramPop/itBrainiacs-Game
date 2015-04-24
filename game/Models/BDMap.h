@@ -15,8 +15,6 @@
 @interface BDMap : SKScene <SKPhysicsContactDelegate>
 
 @property (nonatomic, strong) SKSpriteNode* player;
-@property (nonatomic) NSTimeInterval lastSpawnTimeInterval;
-@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic, strong) UIImage *backgroundImage;
 @property (nonatomic, assign) CGSize tileSize;
 @property (nonatomic, strong) NSMutableArray *buildings;
@@ -24,7 +22,7 @@
 @property (nonatomic, strong) id<BDMapProtocol> mapDelegate;
 
 
-- (instancetype)initWithSize:(CGSize)aSize andBuildings:(NSMutableArray *)array;
+- (instancetype)initWithSize:(CGSize)aSize andBuildings:(NSMutableArray *)array sceneSize:(CGSize)totalSize;
 
 - (void)prepareToAddNode:(SKSpriteNode *)addNode;
 

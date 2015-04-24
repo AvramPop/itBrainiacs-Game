@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC00A8061AEA86A400A2A1D0 /* BDWarUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8051AEA86A400A2A1D0 /* BDWarUnit.m */; };
+		CC00A8091AEAC91200A2A1D0 /* BDMapGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */; };
 		CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2466C51ABC7A580056631D /* BDBuildingMenu.m */; };
 		CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB01ACEDF5000872D19 /* archer.json */; };
 		CC2B4FBF1ACEDF5000872D19 /* axeman.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB11ACEDF5000872D19 /* axeman.json */; };
@@ -82,6 +83,8 @@
 /* Begin PBXFileReference section */
 		CC00A8041AEA86A300A2A1D0 /* BDWarUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWarUnit.h; sourceTree = "<group>"; };
 		CC00A8051AEA86A400A2A1D0 /* BDWarUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDWarUnit.m; sourceTree = "<group>"; };
+		CC00A8071AEAC91200A2A1D0 /* BDMapGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMapGestures.h; sourceTree = "<group>"; };
+		CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMapGestures.m; sourceTree = "<group>"; };
 		CC2466C41ABC7A580056631D /* BDBuildingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingMenu.h; sourceTree = "<group>"; };
 		CC2466C51ABC7A580056631D /* BDBuildingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingMenu.m; sourceTree = "<group>"; };
 		CC2B4FB01ACEDF5000872D19 /* archer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = archer.json; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				CC558D151A83C37100A3F0AB /* TouchDetector.m */,
 				CC558D0C1A83C37100A3F0AB /* BDMap.h */,
 				CC558D0D1A83C37100A3F0AB /* BDMap.m */,
+				CC00A8071AEAC91200A2A1D0 /* BDMapGestures.h */,
+				CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 				CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */,
 				CC802A811AA10CF300971F83 /* BDAxeman.m in Sources */,
 				CC558D3A1A83C56300A3F0AB /* BDMarket.m in Sources */,
+				CC00A8091AEAC91200A2A1D0 /* BDMapGestures.m in Sources */,
 				CCDDD6631A7A8F47006A996C /* GameViewController.m in Sources */,
 				CCC0A3581A9316B90091BAF5 /* BDMenuSectionFactory.m in Sources */,
 				CCD757E41A8D15C000263F03 /* BDMenuItemFactory.m in Sources */,

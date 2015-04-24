@@ -64,7 +64,7 @@
     NSMutableArray *array = [[self getSavedBuildings] mutableCopy];
     // Present the scene.
     if (array) {
-        self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andBuildings:array];
+        self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andBuildings:array sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)];
     } else {
         self.gameScene = [BDMap sceneWithSize:skView.bounds.size];
         BDHeadquarters *headquarter = [[BDHeadquarters alloc] initWithImageNamed:@"Headquarters1"];
