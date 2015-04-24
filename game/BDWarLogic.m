@@ -1,5 +1,5 @@
 #import "BDWarLogic.h"
-
+#import "BDWarUnit.h"
 
 @interface BDWarLogic ()
 
@@ -8,7 +8,7 @@
 
 @implementation BDWarLogic
 
-- (instancetype)initWithAttackingTroops:(NSMutableDictionary *)attacDictionary defendingTroops:(NSMutableDictionary *)defDictionary {
+- (instancetype)initWithAttackingTroops:(NSArray *)attacDictionary defendingTroops:(NSArray *)defDictionary {
     self = [super init];
     if (self) {
         self.attackingTroops = attacDictionary;
@@ -30,10 +30,9 @@
     else return 0;
 }
 
-- (BOOL)ckeckIfAllAreDead:(NSDictionary *)troops{
-    for (NSString* key in troops){
-        id value = [troops objectForKey:key];
-        if(value){
+- (BOOL)ckeckIfAllAreDead:(NSArray *)troops{
+    for (BDWarUnit* key in troops){
+        if(key.count){
             return YES;
         }
     }
@@ -41,16 +40,14 @@
 }
 
 
--(void)attack{
-    NSInteger a, b;
-	for (NSString* key in self.attackingTroops) {
-		id value = self.attackingTroops[key];
-		if(value){
-            a = [self soldiersKilledBy:[self.attackingTroops[key] integerValue] ofKind:nil defendedBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget];
-            b = [self soldiersKilledBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget defendedBy:[self.attackingTroops[key] integerValue] ofKind:nil];
-			self.defendingTroops[key] = [NSNumber numberWithInteger:[self.defendingTroops[key] integerValue] - a];
-			self.attackingTroops[key] = [NSNumber numberWithInteger:[self.attackingTroops[key] integerValue] - b];
-		}	
+-(void)attack {
+    NSInteger deffendersKiled, attackersKiled;
+	for (BDWarUnit *attackingUnit in self.attackingTroops) {
+        BDWarUnit *defendingUnit = [self findWarUnit:attackingUnit.unit.favouriteTarget inArray:self.defendingTroops];
+        deffendersKiled = [self soldiersKilledBy:attackingUnit.count ofKind:attackingUnit.unit defendedBy:defendingUnit.count ofKind:defendingUnit.unit];
+        attackersKiled = [self soldiersKilledBy:defendingUnit.count ofKind:defendingUnit.unit defendedBy:attackingUnit.count ofKind:attackingUnit.unit];
+        defendingUnit.count -= deffendersKiled;
+        attackingUnit.count -= attackersKiled;
 	}
 	if([self ckeckIfAllAreDead:self.attackingTroops] == YES || [self ckeckIfAllAreDead:self.defendingTroops] == YES) {
         NSLog(@"the war is over");
@@ -60,51 +57,56 @@
 		}
         else {
 			NSLog(@"attackers won");
-			[self getAmountOfStolenResourcesByTroops:self.attackingTroops];
+			[self getAmountOfStolenResourcesByTroops];
 		}
     } else{
-        NSInteger r , s = 0;
-        id value;
+        NSInteger randomNumber , s = 0;
         NSInteger s1 = 0, s2 = 0;
-        for (NSString* key in self.defendingTroops) {
-			value = [self.defendingTroops objectForKey:key];
-			if(value) s++;
+        for (BDWarUnit* defUnit in self.defendingTroops) {
+			if(defUnit.count) s++;
         }
-        
-        for (NSString* key in self.attackingTroops) {
-			value = [self.attackingTroops objectForKey:key];
-            if(value){
-                r = arc4random_uniform(s - 1);
-                a = [self soldiersKilledBy:[self.attackingTroops[key] integerValue] ofKind:nil defendedBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget];
-                b = [self soldiersKilledBy:0 ofKind:((BDUnit *)self.defendingTroops[key]).favouriteTarget defendedBy:[self.attackingTroops[key] integerValue] ofKind:0];
-                self.defendingTroops[key] = [NSNumber numberWithInteger:[self.defendingTroops[key] integerValue] - a];
-                self.attackingTroops[key] = [NSNumber numberWithInteger:[self.attackingTroops[key] integerValue] - b];
+        for (BDWarUnit *attackingUnit in self.attackingTroops) {
+            if(attackingUnit.count){
+                randomNumber = arc4random_uniform(s - 1);
+                BDWarUnit *defendingUnit = self.defendingTroops[randomNumber];
+                deffendersKiled = [self soldiersKilledBy:attackingUnit.count ofKind:attackingUnit.unit defendedBy:defendingUnit.count ofKind:defendingUnit.unit];
+                attackersKiled = [self soldiersKilledBy:defendingUnit.count ofKind:defendingUnit.unit defendedBy:attackingUnit.count ofKind:attackingUnit.unit];
+                defendingUnit.count -= deffendersKiled;
+                attackingUnit.count -= attackersKiled;
             }
         }
 
 		NSLog(@"Final standings: ");
-		for (NSString* key in self.attackingTroops) {
-			s1 += ((BDUnit *)self.attackingTroops[key].attack + (BDUnit *)self.attackingTroops[key].defense + (BDUnit *)self.attackingTroops[key].health) * self.attackingTroops[key];
+		for (BDWarUnit* attUnit in self.attackingTroops) {
+			s1 += (attUnit.unit.attack + attUnit.unit.defense + attUnit.unit.life) * attUnit.count;
 		}
-		for (NSString* key in self.defendingTroops) {
-			s1 += ((BDUnit *)self.defendingTroops[key].attack + (BDUnit *)self.defendingTroops[key].defense + (BDUnit *)self.defendingTroops[key].health) * self.defendingTroops[key];
-		}
+        for (BDWarUnit *defUnit in self.defendingTroops) {
+            s1 += (defUnit.unit.attack + defUnit.unit.defense + defUnit.unit.life) * defUnit.count;
+        }
         if(s1 > s2){
-			self.winner = [stringW	withFormat @"attackers"];
-			[self getAmountOfStolenResourcesByTroops:self.attackingTroops];
+            self.winner = [NSString stringWithFormat: @"attackers"];
+			[self getAmountOfStolenResourcesByTroops];
 		}
         else {
-			self.winner = [stringWithFormat @"defenders"];
+            self.winner = [NSString stringWithFormat: @"defenders"];
 			self.amountOfStolenResources = 0;
 		}
 	}
 }
 
--(void)getAmountOfStolenResourcesByTroops(NSDictionary *)troops{
-	for (NSString* key in troops) {
-		value = [troops objectForKey:key];
-		self.amountOfStolenResources += value * (BDUnit *)self.troops[key].carryCapacity;
+-(void)getAmountOfStolenResourcesByTroops{
+	for (BDWarUnit* unit in self.attackingTroops) {
+		self.amountOfStolenResources += unit.count * unit.unit.carryCapacity;
 	}
+}
+
+- (BDWarUnit *)findWarUnit:(BDUnit *)unit inArray:(NSArray *)array {
+    for (BDWarUnit *warUnit in array) {
+        if ([warUnit.unit isKindOfClass:[unit class]]) {
+            return warUnit;
+        }
+    }
+    return nil;
 }
 
 @end
