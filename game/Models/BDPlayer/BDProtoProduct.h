@@ -18,8 +18,6 @@
 + (BDProtoProduct *)protoProduct;
 + (BDProtoProduct *)upgradeProtoProduct;
 
-@optional
-
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct;
 - (void)parse:(NSDictionary *)dictionary;
 
@@ -28,12 +26,9 @@
 
 @interface BDProtoProduct : NSObject <NSCoding>
 
-@property (nonatomic, strong) NSDate *timeStamp;
-
-@property (nonatomic, strong) NSString *protoProductName;
-
-@property (nonatomic, assign) BOOL isResource;
-
-@property (nonatomic, assign) id<BDProtoProduct> delegate;
+@property (nonatomic, strong) NSDate                *timeStamp;
+@property (nonatomic, strong) NSString              *protoProductName;
+@property (nonatomic, assign) BOOL                  isResource;
+@property (nonatomic, assign) id<BDProtoProduct>    delegate;
 
 @end

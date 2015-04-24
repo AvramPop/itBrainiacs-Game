@@ -103,7 +103,7 @@
 - (void)upgradeBuilding:(UIButton *)button {
     [self.delegate buildingMenu:self didTouchUpdateButton:button withConfirmationBlock:^void {
         [self.upgrade setEnabled:NO];
-        self.upgrade.backgroundColor =[UIColor grayColor];
+        self.upgrade.backgroundColor = [UIColor grayColor];
     }];
 }
 

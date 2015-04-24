@@ -15,6 +15,7 @@
 @interface BDMenuController()<BDMenuDelegate>
 
 @property (nonatomic, strong) BDMenu        *menu;
+@property (nonatomic, assign) BOOL          isAnimating;
 @property (nonatomic, strong) UIView        *decoratedView;
 
 @property (nonatomic, assign) BDMenuSectionKey    menuType;
@@ -40,6 +41,9 @@
 }
 
 - (void)didTouchMainMenu:(id)sender {
+    if (self.isAnimating) {
+        return;
+    }
     if (!self.menu.isOpen) {
         self.menuType = BDMenuSectionMain;
         self.menu.dataSource = [self getDataSourceForMenuType:self.menuType];
@@ -86,18 +90,22 @@
 
 - (void)menuCloseAnimation {
     [self.menu menuWillDissappearAnimated:YES];
+    self.isAnimating = YES;
     [UIView animateWithDuration:0.5 animations:^{
         self.menu.frame = CGRectOffset(self.menu.frame, 0, 100);
     } completion:^(BOOL finished) {
+        self.isAnimating = NO;
         [self.menu menuDidDissapearAnimated:YES];
     }];
 }
 
 - (void)menuOpenAnimation {
     [self.menu menuWillAppearAnimated:YES];
+    self.isAnimating = YES;
     [UIView animateWithDuration:0.5 animations:^{
         self.menu.frame = CGRectOffset(self.menu.frame, 0, -100);
     } completion:^(BOOL finished) {
+        self.isAnimating = NO;
         [self.menu menuDidAppearAnimated:YES];
     }];
 }
