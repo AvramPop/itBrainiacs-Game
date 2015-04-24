@@ -12,7 +12,8 @@
                 "timeCost": "180"
             },
             "productionPerHour": "100",
-              "points" : "50"
+              "points" : "50",
+              "backgroundImage": "mine1"
         },
         {
             "Cost": {
@@ -23,7 +24,8 @@
                 "timeCost": "1800"
             },
             "productionPerHour": "300",
-              "points" : "100"
+              "points" : "100",
+              "backgroundImage": "mine2"
         },
         {
             "Cost": {
@@ -34,7 +36,8 @@
                 "timeCost": "2500"
             },
             "productionPerHour": "450",
-              "points" : "150"
+              "points" : "150",
+              "backgroundImage": "mine3"
         },
         {
             "Cost": {
@@ -45,7 +48,8 @@
                 "timeCost": "3600"
             },
             "productionPerHour": "700",
-              "points" : "200"
+              "points" : "200",
+              "backgroundImage": "mine4"
         },
         {
             "Cost": {
@@ -56,7 +60,8 @@
                 "timeCost": "5000"
             },
             "productionPerHour": "1000",
-              "points" : "250"
+              "points" : "250",
+              "backgroundImage": "mine5"
         },
         {
             "Cost": {
@@ -67,7 +72,8 @@
                 "timeCost": "8000"
             },
             "productionPerHour": "1500",
-              "points" : "300"
+              "points" : "300",
+              "backgroundImage": "mine6"
         }
     ]
 }

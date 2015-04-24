@@ -56,7 +56,7 @@
 + (BDMenuItem *)menuItemWoodCamp {
     BDMenuItem *peopleItem = [[BDMenuItem alloc] init];
     peopleItem.title = @"";
-    peopleItem.iconName = @"Dark_Elixir_Drill1";
+    peopleItem.iconName = @"Builder_Hut";
     peopleItem.className = @"BDWoodCamp";
     peopleItem.itemKey = BDMenuItemWoodCamp;
 

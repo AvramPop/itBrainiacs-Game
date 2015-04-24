@@ -12,7 +12,8 @@
                 "timeCost": "180"
             },
             "products": { "lightCavalery": "1" },
-              "points" : "50"
+              "points" : "50",
+              "backgroundImage" : "Barracks1"
         },
         {
             "Cost": {
@@ -26,7 +27,8 @@
                 "lightCavalery": "2",
                 "spy": "1"
             },
-              "points" : "100"
+              "points" : "100",
+              "backgroundImage" : "Barracks2"
         },
         {
             "Cost": {
@@ -41,7 +43,8 @@
                 "spy": "2",
                 "highCavalery": "1"
             },
-              "points" : "150"
+              "points" : "150",
+              "backgroundImage" : "Barracks3"
         },
         {
             "Cost": {
@@ -56,7 +59,8 @@
                 "spy": "3",
                 "highCavalery": "2"
             },
-              "points" : "200"
+              "points" : "200",
+              "backgroundImage" : "Barracks4"
         },
         {
             "Cost": {
@@ -71,7 +75,8 @@
                 "spy": "4",
                 "highCavalery": "3"
             },
-              "points" : "250"
+              "points" : "250",
+              "backgroundImage" : "Barracks5"
         },
         {
             "Cost": {
@@ -86,7 +91,8 @@
                 "spy": "5",
                 "highCavalery": "5"
             },
-              "points" : "300"
+              "points" : "300",
+              "backgroundImage" : "Barracks6"
         }
     ]
 }
