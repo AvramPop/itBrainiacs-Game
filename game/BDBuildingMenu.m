@@ -45,13 +45,13 @@
 
         buttonsX = CGRectGetMaxX(goldLabel.frame);
         UILabel *goldValue = [[UILabel alloc] initWithFrame:CGRectMake(buttonsX, goldLabel.frame.origin.y, 60, self.icon.frame.size.height / 4)];
-        goldValue.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.goldCost];
+        goldValue.text = [NSString stringWithFormat:@"%ld", (long)self.building.goldCost];
         UILabel *woodValue = [[UILabel alloc] initWithFrame:CGRectMake(buttonsX, woodLabel.frame.origin.y, 60, self.icon.frame.size.height / 4)];
-        woodValue.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.woodCost];
+        woodValue.text = [NSString stringWithFormat:@"%ld", (long)self.building.woodCost];
         UILabel *ironValue = [[UILabel alloc] initWithFrame:CGRectMake(buttonsX, ironLabel.frame.origin.y, 60, self.icon.frame.size.height / 4)];
-        ironValue.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.ironCost];
+        ironValue.text = [NSString stringWithFormat:@"%ld", (long)self.building.ironCost];
         UILabel *peopleValue = [[UILabel alloc] initWithFrame:CGRectMake(buttonsX, peopleLabel.frame.origin.y, 60, self.icon.frame.size.height / 4)];
-        peopleValue.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.peopleCost];
+        peopleValue.text = [NSString stringWithFormat:@"%ld", (long)self.building.peopleCost];
 
         CGFloat originY = CGRectGetMaxY(self.icon.frame) + 20;
         UIView *container = [[UIView alloc] initWithFrame:CGRectMake(self.icon.frame.origin.x, originY, self.frame.size.width - 100, self.frame.size.height - originY - 50)];
@@ -71,10 +71,10 @@
         timeIcon.image = timeImage;
         
         UILabel *timeValue = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(timeIcon.frame) + 5, timeIcon.frame.origin.y, 2 * timeIcon.frame.size.width, timeIcon.frame.size.height)];
-        timeValue.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.timeCost];
+        timeValue.text = [NSString stringWithFormat:@"%ld", (long)self.building.timeCost];
         
         UILabel *levelLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.upgrade.frame.origin.x, self.upgrade.frame.origin.y - 20, 50, 20)];
-        levelLabel.text = [NSString stringWithFormat:@"%ld", (NSInteger)self.building.level];
+        levelLabel.text = [NSString stringWithFormat:@"%ld", (long)self.building.level];
         
         [self addSubview:self.icon];
         [self addSubview:self.upgrade];
