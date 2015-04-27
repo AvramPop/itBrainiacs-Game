@@ -14,13 +14,12 @@
 
 @interface BDMap : SKScene <SKPhysicsContactDelegate>
 
-@property (nonatomic, strong) SKSpriteNode* player;
-@property (nonatomic, strong) UIImage *backgroundImage;
-@property (nonatomic, assign) CGSize tileSize;
-@property (nonatomic, strong) NSMutableArray *buildings;
-@property (nonatomic, strong) TouchDetector *touchDetector;
+@property (nonatomic, strong) SKSpriteNode      *player;
+@property (nonatomic, assign) CGSize            tileSize;
+@property (nonatomic, strong) NSMutableArray    *buildings;
+@property (nonatomic, strong) TouchDetector     *touchDetector;
 @property (nonatomic, strong) id<BDMapProtocol> mapDelegate;
-
+@property (nonatomic, assign) CGSize            backgroundSize;
 
 - (instancetype)initWithSize:(CGSize)aSize andBuildings:(NSMutableArray *)array sceneSize:(CGSize)totalSize;
 

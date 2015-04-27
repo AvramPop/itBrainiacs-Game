@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) SKSpriteNode *addedNode;
 @property (nonatomic, assign) NSArray      *cacheBuild;
-@property (nonatomic, assign) CGSize       backgroundSize;
 @property (nonatomic, strong) SKSpriteNode *background;
 
 

@@ -69,8 +69,9 @@
         self.gameScene = [BDMap sceneWithSize:skView.bounds.size];
         BDHeadquarters *headquarter = [[BDHeadquarters alloc] initWithImageNamed:@"Headquarters1"];
         [self.gameScene prepareToAddNode:headquarter];
+        self.gameScene.backgroundSize = CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2);
     }
-    
+
     
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
 
