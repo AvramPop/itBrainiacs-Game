@@ -18,7 +18,8 @@ static BDPlayer *adversaryPlayer;
     self.wood = [aDecoder decodeIntegerForKey:@"amountOfWood"];
     self.iron = [aDecoder decodeIntegerForKey:@"amountOfIron"];
     self.people = [aDecoder decodeIntegerForKey:@"amountOfPeople"];
-
+    self.name = [aDecoder decodeObjectForKey:@"name"];
+    
     return self;
 }
 
@@ -27,6 +28,7 @@ static BDPlayer *adversaryPlayer;
     [aCoder encodeInteger:self.wood forKey:@"amountOfWood"];
     [aCoder encodeInteger:self.iron forKey:@"amountOfIron"];
     [aCoder encodeInteger:self.people forKey:@"amountOfPeople"];
+    [aCoder encodeObject:self.name forKey:@"name"];
 }
 
 + (BDPlayer *)currentPlayer {

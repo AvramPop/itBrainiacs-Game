@@ -15,9 +15,12 @@
     self = [super initWithImageNamed:name];
     if (self) {
         self.name = @"house";
+        
         BDProtoProduct *protoPeople = [[BDProtoProduct alloc] init];
         protoPeople.protoProductName = @"BDPeople";
         protoPeople.isResource = YES;
+        protoPeople.delegate = self;
+        
         self.protoProducts = [NSMutableArray arrayWithObject:protoPeople];
         [self parse:[self getJsonDictionary]];
     }
@@ -29,7 +32,7 @@
 }
 
 -(void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
-    
+    [self.protoProducts removeObject:protoProduct];
 }
 
 - (void)parse:(NSDictionary *)dictionary {

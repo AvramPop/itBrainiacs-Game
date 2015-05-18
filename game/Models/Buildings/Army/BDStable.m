@@ -7,6 +7,7 @@
 //
 
 #import "BDStable.h"
+#import "BDPlayer.h"
 
 @implementation BDStable
 
@@ -21,6 +22,13 @@
 
 - (NSArray *)protoProductsNames {
     return @[@"",@"", @""];
+}
+
+
+- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    [self.protoProducts removeObject:protoProduct];
+    [BDPlayer currentPlayer].swordsmanCount++;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateBuildingUI" object:nil userInfo:@{@"BDProtoProduct":protoProduct}];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {

@@ -16,6 +16,8 @@
 #import "BDMap.h"
 #import "BDBuildingMenu.h"
 #import "BDBuildingInfoParser.h"
+#import "BDArmyMenu.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SKScene (Unarchive) 
 
@@ -43,6 +45,9 @@
 @property (nonatomic, strong) UILabel *iron;
 @property (nonatomic, strong) UILabel *people;
 
+@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UILabel  *nameLabel;
+
 @property (nonatomic, copy) void (^confirmationBlock)();
 
 @end
@@ -56,22 +61,46 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTouchBuilding:) name:@"buildingWasTouched" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateResourcesLabels) name:@"shouldUpdateResourcesUI" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveMapInfo) name:@"saveGame" object:nil];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
     NSMutableArray *array = [[self getSavedBuildings] mutableCopy];
+    [BDPlayer setCurrentPlayer:[self getSavedPlayer]];
+    self.player = [BDPlayer currentPlayer];
+    
+    
     // Present the scene.
+//    UIAlertView *welcomeAlert = [[UIAlertView alloc] initWithTitle:@"Welcome to THE GAME!" message:@"Are you ready to rule?" delegate:self cancelButtonTitle:@"YES!" otherButtonTitles:nil];
+
+    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.button.frame) + 100, 0, 100, 50)];
+    self.nameLabel.text = self.player.name;
+    
     if (array) {
         self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andBuildings:array sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)];
+        if(self.player.name){
+            [self.view addSubview:self.nameLabel];
+        } else {
+            UIAlertView *nameChoosingAlert = [[UIAlertView alloc] initWithTitle:@"Greetings, my lord!" message:@"Choose your name!" delegate:self cancelButtonTitle:@"Not now!" otherButtonTitles:@"Done!", nil];
+            nameChoosingAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+            [nameChoosingAlert show];
+        }
     } else {
+
+        
+//        UIAlertView *tutorial1 = [[UIAlertView alloc] initWithTitle:@"Tutorial" message:@"At first, place your headquarters with a simple tap :)" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil];
+//        [tutorial1 show];
+//        [nameChoosingAlert show];
+//        [welcomeAlert show];
         self.gameScene = [BDMap sceneWithSize:skView.bounds.size];
         BDHeadquarters *headquarter = [[BDHeadquarters alloc] initWithImageNamed:@"Headquarters1"];
         [self.gameScene prepareToAddNode:headquarter];
         self.gameScene.backgroundSize = CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2);
     }
 
+    
     
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
 
@@ -88,13 +117,28 @@
     [self addResourcesInfo];
     self.gameScene.mapDelegate = self.gameLogicController;
  
-    [BDPlayer setCurrentPlayer:[self getSavedPlayer]];
-    self.player = [BDPlayer currentPlayer];
+
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
-    [button setTitle:@"save" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(saveMapInfo) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
+    [self.button setTitle:@"save" forState:UIControlStateNormal];
+    [self.button addTarget:self action:@selector(saveMapInfo) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:self.button];
+
+
+    
+    
+    UIButton *armyButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, self.view.frame.size.height - 180, 100, 100)];
+    armyButton.backgroundColor = [UIColor greenColor];
+    [armyButton setTitle:@"Army" forState:UIControlStateNormal];
+    [armyButton addTarget:self action:@selector(goToArmyView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:armyButton];
+    
+    UIButton *mapButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 180, 100, 100)];
+    mapButton.backgroundColor = [UIColor blueColor];
+    [mapButton setTitle:@"Map" forState:UIControlStateNormal];
+    [mapButton addTarget:self action:@selector(goToAttackMap) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:mapButton];
 }
 
 - (BOOL)shouldAutorotate {
@@ -111,6 +155,15 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+-(void)goToArmyView {
+    BDArmyMenu *menu = [[BDArmyMenu alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height) andPlayer:[BDPlayer currentPlayer]];
+    [self.view addSubview:menu];
+}
+
+-(void)goToAttackMap {
+    //
 }
 
 - (void)menu:(BDMenu *)menu didSelectBuilding:(BDBuilding *)building {
@@ -189,13 +242,22 @@
 }
 
 
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    if (buttonIndex == alertView.cancelButtonIndex) {
+//        self.confirmationBlock = nil;
+//    } else {
+//        self.confirmationBlock();
+//    }
+//}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == alertView.cancelButtonIndex) {
-        self.confirmationBlock = nil;
-    } else {
-        self.confirmationBlock();
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        NSString *name = [alertView textFieldAtIndex:0].text;
+        self.player.name = name;
+        self.nameLabel.text = name;
+        [self.view addSubview:self.nameLabel];
+       // NSLog(@"%@", self.player.name);
     }
 }
-
 
 @end

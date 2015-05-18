@@ -135,7 +135,6 @@ NSString * const kAnimalNodeName = @"notMovable";
             [self.selectedNode runAction:[SKAction repeatActionForever:sequence]];
         }
     }
-    
 }
 
 #pragma mark - helper

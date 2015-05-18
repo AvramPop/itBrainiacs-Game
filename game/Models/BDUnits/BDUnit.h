@@ -17,5 +17,11 @@
 @property (nonatomic, assign) NSInteger     defense;
 @property (nonatomic, assign) NSInteger     speed;
 @property (nonatomic, assign) NSInteger     carryCapacity;
+@property (nonatomic, assign) NSInteger     woodCost;
+@property (nonatomic, assign) NSInteger     goldCost;
+@property (nonatomic, assign) NSInteger     ironCost;
+@property (nonatomic, assign) NSInteger     peopleCost;
+@property (nonatomic, assign) NSInteger     timeCost;
+@property (nonatomic, strong) NSString      *imageName;
 
 @end

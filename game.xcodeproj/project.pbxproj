@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC00A8061AEA86A400A2A1D0 /* BDWarUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8051AEA86A400A2A1D0 /* BDWarUnit.m */; };
+		CC00A8061AEA86A400A2A1D0 /* BDSquad.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8051AEA86A400A2A1D0 /* BDSquad.m */; };
 		CC00A8091AEAC91200A2A1D0 /* BDMapGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */; };
+		CC059BDC1AF120060080F3A1 /* BDUnitInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC059BDB1AF120060080F3A1 /* BDUnitInfoView.m */; };
 		CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2466C51ABC7A580056631D /* BDBuildingMenu.m */; };
 		CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB01ACEDF5000872D19 /* archer.json */; };
 		CC2B4FBF1ACEDF5000872D19 /* axeman.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB11ACEDF5000872D19 /* axeman.json */; };
@@ -66,6 +67,8 @@
 		CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCDDD6691A7A8F48006A996C /* LaunchScreen.xib */; };
 		CCDDD6771A7A8F48006A996C /* gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD6761A7A8F48006A996C /* gameTests.m */; };
 		CCE199881A8E5F6E003A0804 /* BDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE199871A8E5F6E003A0804 /* BDMenuController.m */; };
+		CCE471F91B0638E6007C0E79 /* BDArmyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE471F81B0638E6007C0E79 /* BDArmyMenu.m */; };
+		CCE471FC1B06442E007C0E79 /* BDUnitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */; };
 		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
 		CCF9D3841AC9A3F00095A21E /* headquarters.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF9D3811AC9A3F00095A21E /* headquarters.json */; };
 /* End PBXBuildFile section */
@@ -81,10 +84,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CC00A8041AEA86A300A2A1D0 /* BDWarUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWarUnit.h; sourceTree = "<group>"; };
-		CC00A8051AEA86A400A2A1D0 /* BDWarUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDWarUnit.m; sourceTree = "<group>"; };
+		CC00A8041AEA86A300A2A1D0 /* BDSquad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSquad.h; sourceTree = "<group>"; };
+		CC00A8051AEA86A400A2A1D0 /* BDSquad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSquad.m; sourceTree = "<group>"; };
 		CC00A8071AEAC91200A2A1D0 /* BDMapGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMapGestures.h; sourceTree = "<group>"; };
 		CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMapGestures.m; sourceTree = "<group>"; };
+		CC059BDA1AF120060080F3A1 /* BDUnitInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDUnitInfoView.h; path = Views/BDUnitInfoView.h; sourceTree = "<group>"; };
+		CC059BDB1AF120060080F3A1 /* BDUnitInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDUnitInfoView.m; path = Views/BDUnitInfoView.m; sourceTree = "<group>"; };
 		CC2466C41ABC7A580056631D /* BDBuildingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingMenu.h; sourceTree = "<group>"; };
 		CC2466C51ABC7A580056631D /* BDBuildingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingMenu.m; sourceTree = "<group>"; };
 		CC2B4FB01ACEDF5000872D19 /* archer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = archer.json; sourceTree = "<group>"; };
@@ -185,6 +190,10 @@
 		CCE199861A8E5F6E003A0804 /* BDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuController.h; path = Views/BDMenuController.h; sourceTree = "<group>"; };
 		CCE199871A8E5F6E003A0804 /* BDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDMenuController.m; path = Views/BDMenuController.m; sourceTree = "<group>"; };
 		CCE199891A8E602E003A0804 /* BDMenuDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMenuDefinitions.h; path = Views/BDMenuDefinitions.h; sourceTree = "<group>"; };
+		CCE471F71B0638E6007C0E79 /* BDArmyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDArmyMenu.h; sourceTree = "<group>"; };
+		CCE471F81B0638E6007C0E79 /* BDArmyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDArmyMenu.m; sourceTree = "<group>"; };
+		CCE471FA1B06442E007C0E79 /* BDUnitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDUnitInfo.h; sourceTree = "<group>"; };
+		CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUnitInfo.m; sourceTree = "<group>"; };
 		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
 		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
 		CCF9D3811AC9A3F00095A21E /* headquarters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = headquarters.json; sourceTree = "<group>"; };
@@ -299,8 +308,8 @@
 				CC802A681AA10BD000971F83 /* BDWizard.m */,
 				CC802A851AA114B900971F83 /* BDUnit.h */,
 				CC802A861AA114B900971F83 /* BDUnit.m */,
-				CC00A8041AEA86A300A2A1D0 /* BDWarUnit.h */,
-				CC00A8051AEA86A400A2A1D0 /* BDWarUnit.m */,
+				CC00A8041AEA86A300A2A1D0 /* BDSquad.h */,
+				CC00A8051AEA86A400A2A1D0 /* BDSquad.m */,
 			);
 			path = BDUnits;
 			sourceTree = "<group>";
@@ -402,6 +411,8 @@
 			isa = PBXGroup;
 			children = (
 				CCC0A35B1A935CB30091BAF5 /* Menu */,
+				CCE471F71B0638E6007C0E79 /* BDArmyMenu.h */,
+				CCE471F81B0638E6007C0E79 /* BDArmyMenu.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -489,6 +500,10 @@
 				CC2466C51ABC7A580056631D /* BDBuildingMenu.m */,
 				CCC0A4401A9B90090091BAF5 /* BDGameLogicController.h */,
 				CCC0A4411A9B90090091BAF5 /* BDGameLogicController.m */,
+				CC059BDA1AF120060080F3A1 /* BDUnitInfoView.h */,
+				CC059BDB1AF120060080F3A1 /* BDUnitInfoView.m */,
+				CCE471FA1B06442E007C0E79 /* BDUnitInfo.h */,
+				CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -639,6 +654,7 @@
 				CC558D241A83C43000A3F0AB /* BDIronMine.m in Sources */,
 				CC558D2E1A83C52C00A3F0AB /* BDStable.m in Sources */,
 				CC802A6C1AA10BE600971F83 /* BDArcher.m in Sources */,
+				CCE471FC1B06442E007C0E79 /* BDUnitInfo.m in Sources */,
 				CC802A651AA0DAEF00971F83 /* BDProtoProduct.m in Sources */,
 				CC558D171A83C37100A3F0AB /* BDBuilding.m in Sources */,
 				CC802A6F1AA10C0700971F83 /* BDCatapult.m in Sources */,
@@ -647,6 +663,7 @@
 				CC558D3A1A83C56300A3F0AB /* BDMarket.m in Sources */,
 				CC00A8091AEAC91200A2A1D0 /* BDMapGestures.m in Sources */,
 				CCDDD6631A7A8F47006A996C /* GameViewController.m in Sources */,
+				CC059BDC1AF120060080F3A1 /* BDUnitInfoView.m in Sources */,
 				CCC0A3581A9316B90091BAF5 /* BDMenuSectionFactory.m in Sources */,
 				CCD757E41A8D15C000263F03 /* BDMenuItemFactory.m in Sources */,
 				CCDDD65B1A7A8F47006A996C /* AppDelegate.m in Sources */,
@@ -662,7 +679,7 @@
 				CC802A781AA10C6D00971F83 /* BDHighCavalery.m in Sources */,
 				CCC0A43F1A9B85EF0091BAF5 /* BDPlayer.m in Sources */,
 				CC802A721AA10C2700971F83 /* BDBaloon.m in Sources */,
-				CC00A8061AEA86A400A2A1D0 /* BDWarUnit.m in Sources */,
+				CC00A8061AEA86A400A2A1D0 /* BDSquad.m in Sources */,
 				CC558D1E1A83C3FB00A3F0AB /* BDGoldMine.m in Sources */,
 				CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */,
 				CC558D161A83C37100A3F0AB /* BDMap.m in Sources */,
@@ -670,6 +687,7 @@
 				CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */,
 				CC558D2B1A83C51E00A3F0AB /* BDBaracks.m in Sources */,
 				CCDDD6581A7A8F47006A996C /* main.m in Sources */,
+				CCE471F91B0638E6007C0E79 /* BDArmyMenu.m in Sources */,
 				CC558D371A83C55600A3F0AB /* BDHeadquarters.m in Sources */,
 				CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */,
 			);

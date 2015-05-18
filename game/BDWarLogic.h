@@ -10,6 +10,7 @@
 @property(nonatomic, strong) NSArray                *defendingTroops;
 @property(nonatomic, assign) NSInteger              amountOfStolenResources;
 @property(nonatomic, strong) NSString               *winner;
+@property(nonatomic, strong) BDPlayer	       	    *player;
 
 - (instancetype)initWithAttackingTroops:(NSMutableDictionary *)attacDictionary defendingTroops:(NSMutableDictionary *)defDictionary;
 
