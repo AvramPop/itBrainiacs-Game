@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC008A3C1B0F72A00037771F /* BDAttackMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CC008A3B1B0F72A00037771F /* BDAttackMap.m */; };
+		CC008A3F1B0F742E0037771F /* BDAttackMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CC008A3E1B0F742E0037771F /* BDAttackMenu.m */; };
+		CC008A421B0F765A0037771F /* BDTown.m in Sources */ = {isa = PBXBuildFile; fileRef = CC008A411B0F765A0037771F /* BDTown.m */; };
+		CC008A451B0F90C60037771F /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = CC008A441B0F90C60037771F /* UIButton+Block.m */; };
 		CC00A8061AEA86A400A2A1D0 /* BDSquad.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8051AEA86A400A2A1D0 /* BDSquad.m */; };
 		CC00A8091AEAC91200A2A1D0 /* BDMapGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */; };
+		CC032CB51B1220BC004C3838 /* BDAttackMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC032CB31B1220BC004C3838 /* BDAttackMapViewController.m */; };
+		CC032CB61B1220BC004C3838 /* BDAttackMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC032CB41B1220BC004C3838 /* BDAttackMapViewController.xib */; };
 		CC059BDC1AF120060080F3A1 /* BDUnitInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC059BDB1AF120060080F3A1 /* BDUnitInfoView.m */; };
 		CC2466C61ABC7A580056631D /* BDBuildingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2466C51ABC7A580056631D /* BDBuildingMenu.m */; };
 		CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB01ACEDF5000872D19 /* archer.json */; };
@@ -84,10 +90,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC008A3A1B0F72A00037771F /* BDAttackMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAttackMap.h; sourceTree = "<group>"; };
+		CC008A3B1B0F72A00037771F /* BDAttackMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAttackMap.m; sourceTree = "<group>"; };
+		CC008A3D1B0F742E0037771F /* BDAttackMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAttackMenu.h; sourceTree = "<group>"; };
+		CC008A3E1B0F742E0037771F /* BDAttackMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAttackMenu.m; sourceTree = "<group>"; };
+		CC008A401B0F765A0037771F /* BDTown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTown.h; sourceTree = "<group>"; };
+		CC008A411B0F765A0037771F /* BDTown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDTown.m; sourceTree = "<group>"; };
+		CC008A431B0F90C60037771F /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
+		CC008A441B0F90C60037771F /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		CC00A8041AEA86A300A2A1D0 /* BDSquad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSquad.h; sourceTree = "<group>"; };
 		CC00A8051AEA86A400A2A1D0 /* BDSquad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSquad.m; sourceTree = "<group>"; };
 		CC00A8071AEAC91200A2A1D0 /* BDMapGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDMapGestures.h; sourceTree = "<group>"; };
 		CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMapGestures.m; sourceTree = "<group>"; };
+		CC032CB21B1220BC004C3838 /* BDAttackMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDAttackMapViewController.h; sourceTree = "<group>"; };
+		CC032CB31B1220BC004C3838 /* BDAttackMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDAttackMapViewController.m; sourceTree = "<group>"; };
+		CC032CB41B1220BC004C3838 /* BDAttackMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDAttackMapViewController.xib; sourceTree = "<group>"; };
 		CC059BDA1AF120060080F3A1 /* BDUnitInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDUnitInfoView.h; path = Views/BDUnitInfoView.h; sourceTree = "<group>"; };
 		CC059BDB1AF120060080F3A1 /* BDUnitInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDUnitInfoView.m; path = Views/BDUnitInfoView.m; sourceTree = "<group>"; };
 		CC2466C41ABC7A580056631D /* BDBuildingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingMenu.h; sourceTree = "<group>"; };
@@ -343,6 +360,8 @@
 			children = (
 				CCD757D91A8D09A800263F03 /* BDMenu.h */,
 				CCD757DA1A8D09A800263F03 /* BDMenu.m */,
+				CC008A3D1B0F742E0037771F /* BDAttackMenu.h */,
+				CC008A3E1B0F742E0037771F /* BDAttackMenu.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -394,6 +413,9 @@
 				CCDDD65A1A7A8F47006A996C /* AppDelegate.m */,
 				CCDDD6611A7A8F47006A996C /* GameViewController.h */,
 				CCDDD6621A7A8F47006A996C /* GameViewController.m */,
+				CC032CB21B1220BC004C3838 /* BDAttackMapViewController.h */,
+				CC032CB31B1220BC004C3838 /* BDAttackMapViewController.m */,
+				CC032CB41B1220BC004C3838 /* BDAttackMapViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -413,6 +435,8 @@
 				CCC0A35B1A935CB30091BAF5 /* Menu */,
 				CCE471F71B0638E6007C0E79 /* BDArmyMenu.h */,
 				CCE471F81B0638E6007C0E79 /* BDArmyMenu.m */,
+				CC008A431B0F90C60037771F /* UIButton+Block.h */,
+				CC008A441B0F90C60037771F /* UIButton+Block.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -485,6 +509,10 @@
 				CC558D0D1A83C37100A3F0AB /* BDMap.m */,
 				CC00A8071AEAC91200A2A1D0 /* BDMapGestures.h */,
 				CC00A8081AEAC91200A2A1D0 /* BDMapGestures.m */,
+				CC008A3A1B0F72A00037771F /* BDAttackMap.h */,
+				CC008A3B1B0F72A00037771F /* BDAttackMap.m */,
+				CC008A401B0F765A0037771F /* BDTown.h */,
+				CC008A411B0F765A0037771F /* BDTown.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -619,6 +647,7 @@
 				CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */,
 				CC2B4FC01ACEDF5000872D19 /* barracks.json in Resources */,
 				CC2B4FC51ACEDF5000872D19 /* lightCavalery.json in Resources */,
+				CC032CB61B1220BC004C3838 /* BDAttackMapViewController.xib in Resources */,
 				CC2B4FCB1ACEDF5000872D19 /* workshop.json in Resources */,
 				CC2B4FC21ACEDF5000872D19 /* heavyCavalery.json in Resources */,
 				CCDDD6681A7A8F48006A996C /* Images.xcassets in Resources */,
@@ -646,6 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC032CB51B1220BC004C3838 /* BDAttackMapViewController.m in Sources */,
 				CC412DC61AE14A26001A1FAB /* BDWarLogic.m in Sources */,
 				CC802A751AA10C4300971F83 /* BDRam.m in Sources */,
 				CC802A7B1AA10C8F00971F83 /* BDLightCavalery.m in Sources */,
@@ -673,9 +703,11 @@
 				CC558D311A83C53A00A3F0AB /* BDWorkshop.m in Sources */,
 				CC802A871AA114B900971F83 /* BDUnit.m in Sources */,
 				CCD757E11A8D155900263F03 /* BDMenuItem.m in Sources */,
+				CC008A451B0F90C60037771F /* UIButton+Block.m in Sources */,
 				CC802A841AA10D0400971F83 /* BDSwordsman.m in Sources */,
 				CC802A7E1AA10CB200971F83 /* BDSpy.m in Sources */,
 				CCC0A3551A9313EA0091BAF5 /* BDMenuSection.m in Sources */,
+				CC008A3F1B0F742E0037771F /* BDAttackMenu.m in Sources */,
 				CC802A781AA10C6D00971F83 /* BDHighCavalery.m in Sources */,
 				CCC0A43F1A9B85EF0091BAF5 /* BDPlayer.m in Sources */,
 				CC802A721AA10C2700971F83 /* BDBaloon.m in Sources */,
@@ -688,6 +720,8 @@
 				CC558D2B1A83C51E00A3F0AB /* BDBaracks.m in Sources */,
 				CCDDD6581A7A8F47006A996C /* main.m in Sources */,
 				CCE471F91B0638E6007C0E79 /* BDArmyMenu.m in Sources */,
+				CC008A3C1B0F72A00037771F /* BDAttackMap.m in Sources */,
+				CC008A421B0F765A0037771F /* BDTown.m in Sources */,
 				CC558D371A83C55600A3F0AB /* BDHeadquarters.m in Sources */,
 				CC558D181A83C37100A3F0AB /* TouchDetector.m in Sources */,
 			);

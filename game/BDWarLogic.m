@@ -14,7 +14,7 @@
         self.attackingTroops = attacDictionary;
         self.defendingTroops = defDictionary;
     }
-    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:[self timeOfTravel] target:self selector:@selector(attack) userInfo: nil repeats: NO];
+    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:[self timeOfTravel] target:self selector:@selector(attack) userInfo:nil repeats: NO];
     [myTimer fire];
     
     return self;

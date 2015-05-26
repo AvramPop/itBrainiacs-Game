@@ -56,31 +56,10 @@
 }
 
 - (void)addBuilding:(BDBuilding *)building {
-    int uid = building.uid;
-    CGPoint tileScreenCoordinate = [self getTileCoordonateFromId:uid];
-    building.position = tileScreenCoordinate;
     building.zPosition = 10;
     [self.background addChild:building];
     [self.buildings addObject:building];
     [self.mapDelegate didFinishAddingBuilding:building toMap:self];
-}
-
-- (CGPoint)getTileCoordonateFromId:(int)uid {
-    int i = 0;
-
-    int tileHeight = 44;
-    int tileWidth = 57;
-    CGFloat height = self.view.frame.size.height;
-    CGFloat width = self.view.frame.size.width;
-    for (int y = - tileHeight / 2; y <= height; y = y + tileHeight / 2) {
-        for (int x = (y % tileHeight == 0 ? 0 : -tileWidth / 2); x < width; x = x + tileWidth) {
-            if (uid == i) {
-                return CGPointMake(x+tileWidth/2, y+tileHeight/4);
-            }
-            i++;
-        }
-    }
-    return CGPointMake(0, 0);
 }
 
 - (void)update:(NSTimeInterval)currentTime {
@@ -91,9 +70,10 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
+    location = [self.background convertPoint:location fromNode:self.scene];
     if (self.addedNode) {
         BDBuilding *building = (BDBuilding *)self.addedNode;
-        building.uid = [self.touchDetector getTileIdAtPosition:location];
+        building.position = location;
         if (!building.name) {
             building.name = [NSString stringWithFormat:@"thisIsMySprite%d", building.uid]; // set the name for your sprite
         }
@@ -109,14 +89,29 @@
     }
 }
 
--(void)didMoveToView:(SKView *)view {
+- (void)didMoveToView:(SKView *)view {
     UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:_mapGestures action:@selector(handlePanFrom:)];
     [[self view] addGestureRecognizer:gestureRecognizer];
     
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:_mapGestures action:@selector(handleZoomFrom:)];
     [[self view] addGestureRecognizer:pinchGestureRecognizer];
     
-    UIImage *image = [self steachBackgroundImages];
+    
+    
+    NSError *err = nil;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"mapBackground.png"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath
+                                          options:NSDataReadingUncached
+                                            error:&err];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    
+    if (!image) {
+         image = [self steachBackgroundImages];
+        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+    }
+    
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:image]];
     [background setAnchorPoint:CGPointZero];
     background.name = kAnimalNodeName;
@@ -131,7 +126,6 @@
 }
 
 - (UIImage *)steachBackgroundImages {
-    
     int x, y;
     UIImage *tile1 = [UIImage imageNamed:@"tileset1.png"];
     UIImage *tile2 = [UIImage imageNamed:@"tileset2.png"];
@@ -185,6 +179,23 @@
     
 }
 
+- (CGPoint)getTileCoordonateFromId:(int)uid {
+    int i = 0;
+    
+    int tileHeight = 44;
+    int tileWidth = 57;
+    CGFloat height = self.view.frame.size.height;
+    CGFloat width = self.view.frame.size.width;
+    for (int y = - tileHeight / 2; y <= height; y = y + tileHeight / 2) {
+        for (int x = (y % tileHeight == 0 ? 0 : -tileWidth / 2); x < width; x = x + tileWidth) {
+            if (uid == i) {
+                return CGPointMake(x+tileWidth/2, y+tileHeight/4);
+            }
+            i++;
+        }
+    }
+    return CGPointMake(0, 0);
+}
 
 - (SKSpriteNode *)backgroundNode {
     return self.background;

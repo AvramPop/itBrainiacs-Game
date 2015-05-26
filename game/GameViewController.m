@@ -19,6 +19,9 @@
 #import "BDArmyMenu.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "BDAttackMap.h"
+#import "BDAttackMapViewController.h"
+
 @implementation SKScene (Unarchive) 
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
@@ -54,9 +57,7 @@
 
 @implementation GameViewController
 
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTouchBuilding:) name:@"buildingWasTouched" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateResourcesLabels) name:@"shouldUpdateResourcesUI" object:nil];
@@ -100,8 +101,6 @@
         self.gameScene.backgroundSize = CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2);
     }
 
-    
-    
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
 
     self.gameScene.tileSize = self.tileSize;
@@ -117,23 +116,18 @@
     [self addResourcesInfo];
     self.gameScene.mapDelegate = self.gameLogicController;
  
-
-    
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
     [self.button setTitle:@"save" forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(saveMapInfo) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.button];
 
-
-    
-    
     UIButton *armyButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 100, self.view.frame.size.height - 180, 100, 100)];
     armyButton.backgroundColor = [UIColor greenColor];
     [armyButton setTitle:@"Army" forState:UIControlStateNormal];
     [armyButton addTarget:self action:@selector(goToArmyView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:armyButton];
-    
+
     UIButton *mapButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 180, 100, 100)];
     mapButton.backgroundColor = [UIColor blueColor];
     [mapButton setTitle:@"Map" forState:UIControlStateNormal];
@@ -162,12 +156,15 @@
     [self.view addSubview:menu];
 }
 
--(void)goToAttackMap {
-    //
+- (void)goToAttackMap {
+    BDAttackMapViewController *attackVC = [[BDAttackMapViewController alloc] init];
+    [self.navigationController pushViewController:attackVC animated:YES];
+    
+//    SKView * skView = (SKView *)self.view;
+//    [skView presentScene:[[BDAttackMap alloc] initWithSize:skView.bounds.size andTowns:nil sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)]];
 }
 
 - (void)menu:(BDMenu *)menu didSelectBuilding:(BDBuilding *)building {
-    
     [self.gameScene prepareToAddNode:building];
 }
 
@@ -224,7 +221,7 @@
     BDBuilding *building = notification.object;
     BDBuildingMenu *menu;
     CGFloat margin = 100;
-    menu = [[BDBuildingMenu alloc] initWithBuilding:building andFrame: CGRectMake(100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
+    menu = [[BDBuildingMenu alloc] initWithBuilding:building andFrame:CGRectMake(100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
     menu.delegate = self.gameLogicController;
     menu.backgroundColor = [UIColor redColor];
     [self.view addSubview:menu];
@@ -241,7 +238,6 @@
     [alertView show];
 }
 
-
 //- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 //    if (buttonIndex == alertView.cancelButtonIndex) {
 //        self.confirmationBlock = nil;
@@ -256,7 +252,6 @@
         self.player.name = name;
         self.nameLabel.text = name;
         [self.view addSubview:self.nameLabel];
-       // NSLog(@"%@", self.player.name);
     }
 }
 
