@@ -24,7 +24,7 @@
     [super viewDidLoad];
     SKView * skView = (SKView *)self.view;
     self.mapAttack = [[BDAttackMap alloc] initWithSize:skView.bounds.size andTowns:nil sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTouchBuilding:) name:@"townWasTouched" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTouchTown:) name:@"townWasTouched" object:nil];
 
 
 }
@@ -48,7 +48,7 @@
     
 }
 
-- (void)didTouchBuilding:(NSNotification *)notification {
+- (void)didTouchTown:(NSNotification *)notification {
     self.targetTown = notification.userInfo[@"town"];
     
     if (self.targetTown) {

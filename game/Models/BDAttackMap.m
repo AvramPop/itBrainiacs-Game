@@ -77,11 +77,6 @@
     return self.background;
 }
 
-- (void)openAttackMenuForTown:(BDTown *)town{
-    BDAttackMenu *menu = [[BDAttackMenu alloc] initWithPlayer:self.player andFrame:CGRectMake(100, 100, self.frame.size.width - 200, self.frame.size.height - 200) andTargetTown:town];
-    //sa pui culoare la attackMenu!!!!
-}
-
 - (void)populateMapWithTowns {
     self.cachedTowns = [NSMutableArray array];
     //aici le generezi trebuie sa le adaugi pe harta acum
