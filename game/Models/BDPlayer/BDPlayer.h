@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString  *name;
 @property (nonatomic, assign) NSInteger points;
+@property (nonatomic, strong) NSArray   *arrayOfTowns;
 //
 @property (nonatomic, assign) NSInteger gold;
 @property (nonatomic, assign) NSInteger wood;

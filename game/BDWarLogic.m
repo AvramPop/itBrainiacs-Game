@@ -3,16 +3,19 @@
 
 @interface BDWarLogic ()
 
+@property (nonatomic, assign)double distance;
+
 @end
 
 
 @implementation BDWarLogic
 
-- (instancetype)initWithAttackingTroops:(NSArray *)attacDictionary defendingTroops:(NSArray *)defDictionary {
+- (instancetype)initWithAttackingTroops:(NSArray *)attacDictionary defendingTroops:(NSArray *)defDictionary andDistance:(double)distance {
     self = [super init];
     if (self) {
         self.attackingTroops = attacDictionary;
         self.defendingTroops = defDictionary;
+        self.distance = distance;
     }
     NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:[self timeOfTravel] target:self selector:@selector(attack) userInfo:nil repeats: NO];
     [myTimer fire];
@@ -34,14 +37,15 @@
 
 - (BOOL)ckeckIfAllAreDead:(NSArray *)troops{
     for (BDSquad* key in troops){
-        if(key.count){
-            return YES;
+        if(!key.count){
+            return NO;
         }
     }
-    return NO;
+    return YES;
 }
 
 - (void)attack {
+    NSLog(@"the war has begun");
     NSInteger deffendersKiled, attackersKiled;
 	for (BDSquad *attackingUnit in self.attackingTroops) {
         BDSquad *defendingUnit = [self findWarUnit:attackingUnit.unit.favouriteTarget inArray:self.defendingTroops];
@@ -92,6 +96,7 @@
             self.winner = [NSString stringWithFormat: @"defenders"];
 			self.amountOfStolenResources = 0;
 		}
+        NSLog(@"%@", self.winner);
 	}
     NSTimer *myTimer = [NSTimer scheduledTimerWithTimeInterval:[self timeOfTravel] target: self selector:@selector(incrementPlayerResources) userInfo: nil repeats: NO];
     [myTimer fire];
@@ -113,12 +118,12 @@
 }
 
 - (NSInteger)timeOfTravel{
-    NSInteger time = 0, c = 0;
+    NSInteger speed = 0, c = 0;
     for (BDSquad *attackingUnit in self.attackingTroops){
-        time += attackingUnit.unit.speed * attackingUnit.count;
+        speed += attackingUnit.unit.speed * attackingUnit.count;
         c += attackingUnit.count;
     }
-    return time / c;
+    return self.distance * speed / c;
 }
 
 - (void) incrementPlayerResources{

@@ -12,6 +12,6 @@
 @property(nonatomic, strong) NSString               *winner;
 @property(nonatomic, strong) BDPlayer	       	    *player;
 
-- (instancetype)initWithAttackingTroops:(NSArray *)attacDictionary defendingTroops:(NSArray *)defDictionary;
+- (instancetype)initWithAttackingTroops:(NSArray *)attacDictionary defendingTroops:(NSArray *)defDictionary andDistance:(double)distance;
 
 @end

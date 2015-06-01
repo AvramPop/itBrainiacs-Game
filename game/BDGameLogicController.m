@@ -36,7 +36,7 @@
 
 - (void)checkTimer:(NSTimer *)timer{
     NSDate *date = [[NSDate alloc] init];
-    NSArray *buildings = self.map.buildings;
+    NSArray *buildings = self.map.town.buildings;
     BOOL hasResourcesUpdate = NO;
     for (BDBuilding *BDB in buildings) {
         NSArray *protoProducts = [NSArray arrayWithArray:BDB.protoProducts];
