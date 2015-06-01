@@ -61,14 +61,13 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTouchBuilding:) name:@"buildingWasTouched" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateResourcesLabels) name:@"shouldUpdateResourcesUI" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveMapInfo) name:@"saveGame" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveInfo) name:@"saveGame" object:nil];
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
-    NSMutableArray *array = [[self getSavedBuildings] mutableCopy];
     [BDPlayer setCurrentPlayer:[self getSavedPlayer]];
     self.player = [BDPlayer currentPlayer];
     
@@ -79,15 +78,9 @@
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.button.frame) + 100, 0, 100, 50)];
     self.nameLabel.text = self.player.name;
     
-    if (array) {
-        self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andBuildings:array sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)];
-        if(self.player.name){
-            [self.view addSubview:self.nameLabel];
-        } else {
-            UIAlertView *nameChoosingAlert = [[UIAlertView alloc] initWithTitle:@"Greetings, my lord!" message:@"Choose your name!" delegate:self cancelButtonTitle:@"Not now!" otherButtonTitles:@"Done!", nil];
-            nameChoosingAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-            [nameChoosingAlert show];
-        }
+    if (self.player.arrayOfTowns.count) {
+        self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andTown:self.player.arrayOfTowns[0] sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)];
+        [self.view addSubview:self.nameLabel];
     } else {
 
         
@@ -95,10 +88,20 @@
 //        [tutorial1 show];
 //        [nameChoosingAlert show];
 //        [welcomeAlert show];
-        self.gameScene = [BDMap sceneWithSize:skView.bounds.size];
+        NSInteger y = arc4random_uniform(1000);
+        NSInteger x = arc4random_uniform(1000);
+        BDTown *homeTown = [[BDTown alloc] initWithPosition:CGPointMake(x, y) imageName:@"Headquarters1" andType:BDTownTypeHuman];
+        homeTown.owner = self.player;
+        self.player.arrayOfTowns = @[homeTown];
+        self.gameScene = [[BDMap alloc] initWithSize:skView.bounds.size andTown:self.player.arrayOfTowns[0] sceneSize:CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2)];
         BDHeadquarters *headquarter = [[BDHeadquarters alloc] initWithImageNamed:@"Headquarters1"];
         [self.gameScene prepareToAddNode:headquarter];
         self.gameScene.backgroundSize = CGSizeMake(skView.bounds.size.width *2, skView.bounds.size.height *2);
+        
+        UIAlertView *nameChoosingAlert = [[UIAlertView alloc] initWithTitle:@"Greetings, my lord!" message:@"Choose your name!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Done!", nil];
+        nameChoosingAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [nameChoosingAlert show];
+
     }
 
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
@@ -118,7 +121,7 @@
  
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
     [self.button setTitle:@"save" forState:UIControlStateNormal];
-    [self.button addTarget:self action:@selector(saveMapInfo) forControlEvents:UIControlEventTouchUpInside];
+    [self.button addTarget:self action:@selector(saveInfo) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.button];
 
@@ -174,7 +177,7 @@
     self.wood.text = [NSString stringWithFormat:@"Wood: %ld", (long)[BDPlayer currentPlayer].wood];
     self.people.text = [NSString stringWithFormat:@"People: %ld", (long)[BDPlayer currentPlayer].people];
 
-    [self saveUserInfo];
+    [self saveInfo];
 }
 
 - (void)addResourcesInfo{
@@ -191,17 +194,10 @@
     [self.view addSubview:self.people];
 }
 
-- (void)saveUserInfo{
+- (void)saveInfo {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[BDPlayer currentPlayer]];
-    [userDefaults setObject:data forKey:@"player"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (void)saveMapInfo {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *buildingsData = [NSKeyedArchiver archivedDataWithRootObject:self.gameScene.buildings];
-    [userDefaults setObject:buildingsData forKey:@"map"];
+    NSData *buildingsData = [NSKeyedArchiver archivedDataWithRootObject:self.player];
+    [userDefaults setObject:buildingsData forKey:@"player"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -209,12 +205,6 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BDPlayer *player = [NSKeyedUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@"player"]];
     return player;
-}
-
-- (NSArray *)getSavedBuildings {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *buildingsArray = [NSKeyedUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@"map"]];
-    return buildingsArray;
 }
 
 - (void)didTouchBuilding:(NSNotification *)notification{

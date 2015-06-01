@@ -79,6 +79,9 @@
 
 - (void)populateMapWithTowns {
     self.cachedTowns = [NSMutableArray array];
+    for (BDTown *town in [BDPlayer currentPlayer].arrayOfTowns) {
+        [self.cachedTowns addObject:town];
+    }
     //aici le generezi trebuie sa le adaugi pe harta acum
     for(int i = 0; i < 10; i++){
         NSInteger x, y;
@@ -86,19 +89,20 @@
         y = arc4random_uniform(1000);
         
         BDPlayer *player = [[BDPlayer alloc] init];
-        player.swordsmanCount = arc4random_uniform(i*20);
-        player.axemanCount = arc4random_uniform(i*20);
-        player.archerCount = arc4random_uniform(i*20);
-        player.wizardCount = arc4random_uniform(i*20);
-        player.spyCount = arc4random_uniform(i*20);
-        player.lightCavaleryCount = arc4random_uniform(i*20);
-        player.highCavaleryCount = arc4random_uniform(i*20);
-        player.archerCount = arc4random_uniform(i*20);
-        player.ramCount = arc4random_uniform(i*20);
-        player.baloonCount = arc4random_uniform(i*20);
-        player.catapultCount = arc4random_uniform(i*20);
+//        player.swordsmanCount = arc4random_uniform(i*20);
+//        player.axemanCount = arc4random_uniform(i*20);
+//        player.archerCount = arc4random_uniform(i*20);
+//        player.wizardCount = arc4random_uniform(i*20);
+//        player.spyCount = arc4random_uniform(i*20);
+//        player.lightCavaleryCount = arc4random_uniform(i*20);
+//        player.highCavaleryCount = arc4random_uniform(i*20);
+//        player.archerCount = arc4random_uniform(i*20);
+//        player.ramCount = arc4random_uniform(i*20);
+//        player.baloonCount = arc4random_uniform(i*20);
+//        player.catapultCount = arc4random_uniform(i*20);
+        player.swordsmanCount = 1;
 
-        BDTown *town = [[BDTown alloc] initWithPosition:CGPointMake(x, y) imageName:@"Headquarters1" andType:BDTownTypeBarbarian];
+        BDTown *town = [[BDTown alloc] initWithPosition:CGPointMake(x, y) imageName:@"BarbarianTownHall1" andType:BDTownTypeBarbarian];
         town.owner = player;
         [self.cachedTowns addObject:town];
     }

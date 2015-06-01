@@ -38,7 +38,7 @@
     
     UIButton *mapButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 180, 100, 100)];
     mapButton.backgroundColor = [UIColor blueColor];
-    [mapButton setTitle:@"Map" forState:UIControlStateNormal];
+    [mapButton setTitle:@"Town" forState:UIControlStateNormal];
     [mapButton addTarget:self action:@selector(didTouchBackToTown:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:mapButton];
 }
@@ -52,7 +52,6 @@
     self.targetTown = notification.userInfo[@"town"];
     
     if (self.targetTown) {
-        NSLog(@"merge");
         CGFloat margin = 100;
         BDAttackMenu *menu = [[BDAttackMenu alloc] initWithPlayer:[BDPlayer currentPlayer] andFrame:CGRectMake(100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin) andTargetTown:self.targetTown];
         [self.view addSubview:menu];

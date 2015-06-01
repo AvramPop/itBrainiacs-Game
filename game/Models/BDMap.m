@@ -13,7 +13,6 @@
 @interface BDMap() <BDMapGesturesDelegate>
 
 @property (nonatomic, strong) SKSpriteNode *addedNode;
-@property (nonatomic, assign) NSArray      *cacheBuild;
 @property (nonatomic, strong) SKSpriteNode *background;
 
 
@@ -23,10 +22,10 @@
 @implementation BDMap
 
 
-- (instancetype)initWithSize:(CGSize)aSize andBuildings:(NSMutableArray *)array sceneSize:(CGSize)totalSize {
+- (instancetype)initWithSize:(CGSize)aSize andTown:(BDTown *)town sceneSize:(CGSize)totalSize {
     self = [self initWithSize:aSize];
     if (self) {
-        self.cacheBuild = array;
+        self.town = town;
         self.backgroundSize = totalSize;
     }
     return self;
@@ -48,7 +47,6 @@
         self.touchDetector = [[TouchDetector alloc] initWithScreenSize:size  andTileSize:self.tileSize];
         
         self.physicsWorld.contactDelegate = self;
-        self.buildings = [NSMutableArray array];
         self.mapGestures = [[BDMapGestures alloc] initWithMap:self];
         self.mapGestures.delegate = self;
     }
@@ -58,7 +56,6 @@
 - (void)addBuilding:(BDBuilding *)building {
     building.zPosition = 10;
     [self.background addChild:building];
-    [self.buildings addObject:building];
     [self.mapDelegate didFinishAddingBuilding:building toMap:self];
 }
 
@@ -79,7 +76,9 @@
         }
         building.userInteractionEnabled = YES;
         
+        [self.town.buildings addObject:building];
         [self addBuilding:building];
+
         self.addedNode = nil;
     } else {
         SKNode *node = [self nodeAtPoint:location];
@@ -120,7 +119,7 @@
     [self addChild:background];
     
     self.background = background;
-        for (BDBuilding *building in self.cacheBuild) {
+    for (BDBuilding *building in self.town.buildings) {
         [self addBuilding:building];
     }
 }

@@ -21,6 +21,6 @@
 
 @property (nonatomic, strong) BDGameLogicController *gameLogicController;
 
--(void)saveUserInfo;
+-(void)saveInfo;
 
 @end

@@ -16,9 +16,11 @@ typedef enum {
 
 @interface BDTown : SKSpriteNode
 
-@property (nonatomic, strong) BDPlayer      *owner;
-@property (nonatomic, assign) BDTownType    type;
+@property (nonatomic, weak)   BDPlayer          *owner;
+@property (nonatomic, assign) BDTownType        type;
+@property (nonatomic, strong) NSMutableArray    *buildings;
 
 - (instancetype)initWithPosition:(CGPoint)point imageName:(NSString *)imageName andType:(BDTownType)type;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 
 @end
