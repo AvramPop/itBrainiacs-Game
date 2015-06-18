@@ -23,11 +23,13 @@
 		CC2B4FC11ACEDF5000872D19 /* goldMine.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB31ACEDF5000872D19 /* goldMine.json */; };
 		CC2B4FC21ACEDF5000872D19 /* heavyCavalery.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB41ACEDF5000872D19 /* heavyCavalery.json */; };
 		CC2B4FC31ACEDF5000872D19 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB51ACEDF5000872D19 /* house.json */; };
+		CC2B4FC41ACEDF5000872D19 /* ironMine.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB61ACEDF5000872D19 /* ironMine.json */; };
 		CC2B4FC51ACEDF5000872D19 /* lightCavalery.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB71ACEDF5000872D19 /* lightCavalery.json */; };
 		CC2B4FC61ACEDF5000872D19 /* market.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB81ACEDF5000872D19 /* market.json */; };
 		CC2B4FC71ACEDF5000872D19 /* stable.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FB91ACEDF5000872D19 /* stable.json */; };
 		CC2B4FC81ACEDF5000872D19 /* swordsman.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBA1ACEDF5000872D19 /* swordsman.json */; };
 		CC2B4FC91ACEDF5000872D19 /* university.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBB1ACEDF5000872D19 /* university.json */; };
+		CC2B4FCA1ACEDF5000872D19 /* woodCamp.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBC1ACEDF5000872D19 /* woodCamp.json */; };
 		CC2B4FCB1ACEDF5000872D19 /* workshop.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2B4FBD1ACEDF5000872D19 /* workshop.json */; };
 		CC412DC61AE14A26001A1FAB /* BDWarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = CC412DC51AE14A26001A1FAB /* BDWarLogic.m */; };
 		CC558D161A83C37100A3F0AB /* BDMap.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558D0D1A83C37100A3F0AB /* BDMap.m */; };
@@ -72,8 +74,6 @@
 		CCE471F91B0638E6007C0E79 /* BDArmyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE471F81B0638E6007C0E79 /* BDArmyMenu.m */; };
 		CCE471FC1B06442E007C0E79 /* BDUnitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */; };
 		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
-		CCF485921B336B0E00429FF0 /* ironmine.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF485901B336B0E00429FF0 /* ironmine.json */; };
-		CCF485931B336B0E00429FF0 /* woodcamp.json in Resources */ = {isa = PBXBuildFile; fileRef = CCF485911B336B0E00429FF0 /* woodcamp.json */; };
 		CCF849951B306AF600EFADEA /* Supercell-magic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCF849931B306AF200EFADEA /* Supercell-magic.ttf */; };
 		CCF8499D1B307B5500EFADEA /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF8499C1B307B5500EFADEA /* UIColor+Additions.m */; };
 		CCF849A11B30960600EFADEA /* BDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF849A01B30960600EFADEA /* BDProgressView.m */; };
@@ -124,11 +124,13 @@
 		CC2B4FB31ACEDF5000872D19 /* goldMine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goldMine.json; sourceTree = "<group>"; };
 		CC2B4FB41ACEDF5000872D19 /* heavyCavalery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heavyCavalery.json; sourceTree = "<group>"; };
 		CC2B4FB51ACEDF5000872D19 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = house.json; sourceTree = "<group>"; };
+		CC2B4FB61ACEDF5000872D19 /* ironMine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ironMine.json; sourceTree = "<group>"; };
 		CC2B4FB71ACEDF5000872D19 /* lightCavalery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lightCavalery.json; sourceTree = "<group>"; };
 		CC2B4FB81ACEDF5000872D19 /* market.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market.json; sourceTree = "<group>"; };
 		CC2B4FB91ACEDF5000872D19 /* stable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stable.json; sourceTree = "<group>"; };
 		CC2B4FBA1ACEDF5000872D19 /* swordsman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swordsman.json; sourceTree = "<group>"; };
 		CC2B4FBB1ACEDF5000872D19 /* university.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = university.json; sourceTree = "<group>"; };
+		CC2B4FBC1ACEDF5000872D19 /* woodCamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = woodCamp.json; sourceTree = "<group>"; };
 		CC2B4FBD1ACEDF5000872D19 /* workshop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workshop.json; sourceTree = "<group>"; };
 		CC412DC31AE14252001A1FAB /* BuildOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildOptions.h; sourceTree = "<group>"; };
 		CC412DC41AE14A26001A1FAB /* BDWarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDWarLogic.h; sourceTree = "<group>"; };
@@ -217,12 +219,10 @@
 		CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUnitInfo.m; sourceTree = "<group>"; };
 		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
 		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
-		CCF485901B336B0E00429FF0 /* ironmine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ironmine.json; sourceTree = "<group>"; };
-		CCF485911B336B0E00429FF0 /* woodcamp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = woodcamp.json; sourceTree = "<group>"; };
-		CCF485941B336BBA00429FF0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CCF849931B306AF200EFADEA /* Supercell-magic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Supercell-magic.ttf"; sourceTree = "<group>"; };
 		CCF8499B1B307B5500EFADEA /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		CCF8499C1B307B5500EFADEA /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		CCF8499E1B307BE000EFADEA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CCF8499F1B30960600EFADEA /* BDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDProgressView.h; sourceTree = "<group>"; };
 		CCF849A01B30960600EFADEA /* BDProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDProgressView.m; sourceTree = "<group>"; };
 		CCF849A71B31B41E00EFADEA /* BDReportMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDReportMenu.h; sourceTree = "<group>"; };
@@ -513,7 +513,7 @@
 				CCDDD6561A7A8F47006A996C /* Info.plist */,
 				CCDDD6571A7A8F47006A996C /* main.m */,
 				CC412DC31AE14252001A1FAB /* BuildOptions.h */,
-				CCF485941B336BBA00429FF0 /* PrefixHeader.pch */,
+				CCF8499E1B307BE000EFADEA /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -574,8 +574,6 @@
 		CCF0A3571B2F19AC002E7F7E /* resources  */ = {
 			isa = PBXGroup;
 			children = (
-				CCF485901B336B0E00429FF0 /* ironmine.json */,
-				CCF485911B336B0E00429FF0 /* woodcamp.json */,
 				CC2B4FB31ACEDF5000872D19 /* goldMine.json */,
 				CC2B4FB51ACEDF5000872D19 /* house.json */,
 			);
@@ -732,9 +730,7 @@
 				CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */,
 				CC2B4FC01ACEDF5000872D19 /* barracks.json in Resources */,
 				CC2B4FC51ACEDF5000872D19 /* lightCavalery.json in Resources */,
-				CCF485931B336B0E00429FF0 /* woodcamp.json in Resources */,
 				CC032CB61B1220BC004C3838 /* BDAttackMapViewController.xib in Resources */,
-				CCF485921B336B0E00429FF0 /* ironmine.json in Resources */,
 				CC2B4FCB1ACEDF5000872D19 /* workshop.json in Resources */,
 				CC2B4FC21ACEDF5000872D19 /* heavyCavalery.json in Resources */,
 				CCF849AD1B31BA0400EFADEA /* ClashofClans_ringtone1.m4r in Resources */,
