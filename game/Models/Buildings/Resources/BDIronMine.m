@@ -16,9 +16,28 @@
         self.name = @"ironMine";
         BDProtoProduct *protoIron = [[BDProtoProduct alloc] init];
         protoIron.protoProductName = @"BDIron";
-        protoIron.isResource = YES;
+        protoIron.type = ProtoProductTypeResource;
+        protoIron.delegate = self;
+        
+        [self parse:[self getJsonDictionary]];
+        
         self.protoProducts = [NSMutableArray arrayWithObject:protoIron];
     }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [super encodeWithCoder:aCoder];
+    [aCoder encodeInteger:self.productionPerHour forKey:@"productionPerHour"];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (!self) {
+        return nil;
+    }
+    self.productionPerHour = [aDecoder decodeIntegerForKey:@"productionPerHour"];
+    
     return self;
 }
 
@@ -27,14 +46,30 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchIronMine" object:nil];
 }
 
-- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {}
+- (void)parse:(NSDictionary *)dictionary {
+    [super parse:dictionary];
+    NSArray *levels = dictionary[@"Level"];
+    self.productionPerHour = [(NSNumber *)(levels[self.level][@"productionPerHour"]) intValue];
+}
+
+
+- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    if ([protoProduct.protoProductName isEqualToString:@"BDIronMineUpgrade"]) {
+        self.level++;
+        [self parse:[self getJsonDictionary]];
+        [self.protoProducts removeObject:protoProduct];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateBuildingUI" object:nil userInfo:@{@"BDProtoProduct":protoProduct}];
+    }
+}
+
 
 + (BDProtoProduct *)upgradeProtoProduct {
-    return nil;
+    BDProtoProduct *proto = [[BDProtoProduct alloc] init];
+    proto.protoProductName = @"BDIronMineUpgrade";
+    proto.type = ProtoProductTypeUpgrade;
+    
+    return proto;
 }
 
-- (NSArray *)protoProductsNames {
-    return @[@"BDIron"];
-}
 
 @end

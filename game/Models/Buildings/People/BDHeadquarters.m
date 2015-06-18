@@ -16,6 +16,7 @@
     if (self) {
         self.name = @"headquarters";
         self.protoProducts = [NSMutableArray array];
+        [self parse:[self getJsonDictionary]];
     }
     return self;
 }
@@ -25,21 +26,17 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchHeadQuartersMenu" object:nil];
 }
 
-- (NSArray *)protoProductsNames {
-    return @[@"",@"", @""];
-}
-
-
 + (BDProtoProduct *)upgradeProtoProduct{
     BDProtoProduct *proto = [[BDProtoProduct alloc] init];
     proto.protoProductName = @"BDHeadquartersUpgrade";
-    proto.isResource = NO;
+    proto.type = ProtoProductTypeUpgrade;
     
     return proto;
 }
 
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
     self.level++;
+    [self parse:[self getJsonDictionary]];
     [self.protoProducts removeObject:protoProduct];
     NSLog(@"didfinish Upgrade!!!!!!");
 }

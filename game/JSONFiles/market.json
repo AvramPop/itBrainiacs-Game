@@ -2,6 +2,7 @@
     "Name": "Market",
     "Type": "BDBuilding",
     "Subtype": "People",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
@@ -9,10 +10,11 @@
                 "woodCost": "120",
                 "ironCost": "120",
                 "peopleCost": "2",
-                "timeCost": "120"
+                "timeCost": "12"
             },
             "merchantsProduced": "2",
-              "points" : "50"
+              "points" : "50",
+              "backgroundImage" : "market1"
         },
         {
             "Cost": {
@@ -23,7 +25,8 @@
                 "timeCost": "600"
             },
             "merchantsProduced": "3",
-              "points" : "100"
+              "points" : "100",
+              "backgroundImage" : "market2"
         },
         {
             "Cost": {
@@ -34,7 +37,8 @@
                 "timeCost": "800"
             },
             "merchantsProduced": "5",
-              "points" : "150"
+              "points" : "150",
+              "backgroundImage" : "market3"
         },
         {
             "Cost": {
@@ -45,7 +49,8 @@
                 "timeCost": "1500"
             },
             "merchantsProduced": "7",
-              "points" : "200"
+              "points" : "200",
+              "backgroundImage" : "market4"
         },
         {
             "Cost": {
@@ -56,7 +61,8 @@
                 "timeCost": "2000"
             },
             "merchantsProduced": "8",
-              "points" : "250"
+              "points" : "250",
+              "backgroundImage" : "market5"
         },
         {
             "Cost": {
@@ -67,7 +73,8 @@
                 "timeCost": "3000"
             },
             "merchantsProduced": "10",
-              "points" : "300"
+              "points" : "300",
+              "backgroundImage" : "market6"
         }
     ]
 }

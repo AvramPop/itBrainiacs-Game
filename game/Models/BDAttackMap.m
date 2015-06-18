@@ -27,13 +27,14 @@
     self = [self initWithSize:aSize];
     if (self) {
         if(!array || ![array count]){
-            [self populateMapWithTowns];
+            [self populateMapWithTownsWithSize:totalSize];
         } else {
             self.cachedTowns = array;
         }
         self.backgroundSize = totalSize;
         self.mapGestures = [[BDMapGestures alloc] initWithMap:self];
         self.mapGestures.delegate = self;
+        self.mapGestures.enableObjectsDragging = NO;
     }
     return self;
 }
@@ -65,9 +66,11 @@
     for (BDTown *building in self.cachedTowns) {
         [self addTown:building];
     }
+    [self.mapGestures setZoomToMax];
 }
 
 - (void)addTown:(BDTown *)town {
+    [town removeFromParent];
     [self.background addChild:town];
     town.userInteractionEnabled = YES;
 
@@ -77,7 +80,7 @@
     return self.background;
 }
 
-- (void)populateMapWithTowns {
+- (void)populateMapWithTownsWithSize:(CGSize)aSize {
     self.cachedTowns = [NSMutableArray array];
     for (BDTown *town in [BDPlayer currentPlayer].arrayOfTowns) {
         [self.cachedTowns addObject:town];
@@ -85,10 +88,15 @@
     //aici le generezi trebuie sa le adaugi pe harta acum
     for(int i = 0; i < 10; i++){
         NSInteger x, y;
-        x = arc4random_uniform(1000);
-        y = arc4random_uniform(1000);
-        
+        x = [self randomFloatBetween:aSize.width/5.0 and:aSize.width*4.0/5.0];
+        y = [self randomFloatBetween:aSize.height/5.0 and:aSize.height*4.0/5.0];
+       
         BDPlayer *player = [[BDPlayer alloc] init];
+        player.name = [NSString stringWithFormat:@"Barbarian%d", arc4random_uniform(1000)];
+        BDTown *town = [[BDTown alloc] initWithPosition:CGPointMake(x, y) imageName:@"BarbarianTownHall1" andType:BDTownTypeBarbarian];
+        town.name = [NSString stringWithFormat:@"BarbarianTown(%ld, %ld)", x, y];
+        player.arrayOfTowns = @[town];
+        town.owner = player;
 //        player.swordsmanCount = arc4random_uniform(i*20);
 //        player.axemanCount = arc4random_uniform(i*20);
 //        player.archerCount = arc4random_uniform(i*20);
@@ -100,12 +108,18 @@
 //        player.ramCount = arc4random_uniform(i*20);
 //        player.baloonCount = arc4random_uniform(i*20);
 //        player.catapultCount = arc4random_uniform(i*20);
-        player.swordsmanCount = 1;
+        [player currentTown].swordsmanCount = arc4random_uniform(5);
+        [player currentTown].gold = 1000;
+        [player currentTown].iron = 1000;
+        [player currentTown].wood = 1000;
 
-        BDTown *town = [[BDTown alloc] initWithPosition:CGPointMake(x, y) imageName:@"BarbarianTownHall1" andType:BDTownTypeBarbarian];
-        town.owner = player;
         [self.cachedTowns addObject:town];
     }
+}
+
+- (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {
+    float diff = bigNumber - smallNumber;
+    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
 }
 
 @end

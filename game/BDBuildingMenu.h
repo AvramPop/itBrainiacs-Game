@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BDBuilding.h"
+#import "BDProgressView.h"
+
 
 @protocol BDBuildingDelegate;
 
@@ -15,6 +17,7 @@
 
 @property (nonatomic, assign) id<BDBuildingDelegate> delegate;
 @property (nonatomic, strong) BDBuilding            *building;
+@property (nonatomic, strong) BDProgressView        *progress;
 
 - (instancetype)initWithBuilding:(BDBuilding *)building andFrame:(CGRect)frame;
 

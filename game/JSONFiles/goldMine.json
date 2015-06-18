@@ -2,16 +2,17 @@
     "Name": "GoldMine",
     "Type": "BDBuilding",
     "Subtype": "Resources",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
                 "goldCost": "200",
                 "woodCost": "300",
                 "ironCost": "250",
-                "peopleCost": "0",
-                "timeCost": "150"
+                "peopleCost": "2",
+                "timeCost": "15"
             },
-            "productionPerHour": "100",
+            "productionPerHour": "7000",
               "points": "50",
               "backgroundImage": "Gold_Mine1"
         },
@@ -21,9 +22,9 @@
                 "woodCost": "600",
                 "ironCost": "75",
                 "peopleCost": "3",
-                "timeCost": "1800"
+                "timeCost": "25"
             },
-            "productionPerHour": "300",
+            "productionPerHour": "900",
               "points": "100",
               "backgroundImage": "Gold_Mine2"
         },
@@ -35,7 +36,7 @@
                 "peopleCost": "4",
                 "timeCost": "2500"
             },
-            "productionPerHour": "450",
+            "productionPerHour": "1500",
               "points": "150",
               "backgroundImage": "Gold_Mine3"
         },

@@ -2,16 +2,18 @@
     "Name": "Headquarters",
     "Type": "BDBuilding",
     "Subtype": "People",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
                 "goldCost": "0",
                 "woodCost": "0",
                 "ironCost": "0",
-                "peopleCost": "2",
-                "timeCost": "0"
+                "peopleCost": "0",
+                "timeCost": "2"
             },
-              "points" : "50"
+              "points" : "50",
+              "backgroundImage" : "Headquarters1"
         },
         {
             "Cost": {
@@ -21,7 +23,9 @@
                 "peopleCost": "3",
                 "timeCost": "1800"
             },
-              "points" : "100"
+              "points" : "100",
+              "backgroundImage" : "Headquarters2"
+
         },
         {
             "Cost": {
@@ -31,7 +35,8 @@
                 "peopleCost": "4",
                 "timeCost": "2500"
             },
-              "points" : "150"
+              "points" : "150",
+              "backgroundImage" : "Headquarters3"
         },
         {
             "Cost": {
@@ -41,7 +46,8 @@
                 "peopleCost": "5",
                 "timeCost": "3600"
             },
-              "points" : "200"
+              "points" : "200",
+              "backgroundImage" : "Headquarters4"
         },
         {
             "Cost": {
@@ -51,7 +57,8 @@
                 "peopleCost": "7",
                 "timeCost": "5000"
             },
-              "points" : "250"
+              "points" : "250",
+              "backgroundImage" : "Headquarters5"
         },
         {
             "Cost": {
@@ -61,7 +68,8 @@
                 "peopleCost": "10",
                 "timeCost": "8000"
             },
-              "points" : "300"
+              "points" : "300",
+              "backgroundImage" : "Headquarters6"
         }
     ]
 }

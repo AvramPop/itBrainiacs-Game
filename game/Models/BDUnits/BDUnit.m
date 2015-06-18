@@ -7,23 +7,30 @@
 //
 
 #import "BDUnit.h"
+#import "BDSwordsman.h"
 
 @implementation BDUnit
 
--(instancetype)init{
+- (instancetype)init{
     self = [super init];
     if(self){
         self.woodCost = 50;
         self.goldCost = 50;
         self.ironCost = 50;
         self.peopleCost = 0;
-        self.timeCost = 10;
+        self.timeCost = 5;
+        self.attack = 20;
+        self.defense = 20;
+        self.life = 50;
+        self.carryCapacity = 35;
+        self.speed = 60;
+        self.favouriteTarget = [BDSwordsman class];
     }
     return self;
 }
 
 
--(bool)isEqual:(id)object{
+-(BOOL)isEqual:(id)object{
     if([self isKindOfClass:[object class]]){
         BDUnit *unitObj = object;
         if (self.timeCost == unitObj.timeCost &&

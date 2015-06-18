@@ -15,6 +15,8 @@
 @property(nonatomic, strong) UIButton *questButton;
 @property(nonatomic, strong) UIButton *warButton;
 
+@property (nonatomic, strong) UINavigationController *controller;
+
 - (instancetype)initWithFrame:(CGRect)frame andPlayer:(BDPlayer *)player;
 
 @end

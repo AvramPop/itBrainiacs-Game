@@ -2,6 +2,7 @@
     "Name": "Barracks",
     "Type": "BDBuilding",
     "Subtype": "Army",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
@@ -9,9 +10,9 @@
                 "woodCost": "200",
                 "ironCost": "200",
                 "peopleCost": "2",
-                "timeCost": "180"
+                "timeCost": "18"
             },
-            "products": { "swordsman": "1" },
+              "products": ["BDSwordsman"],
             "points" : "50",
             "backgroundImage" : "Army_Camp1"
         },
@@ -23,10 +24,10 @@
                 "peopleCost": "3",
                 "timeCost": "1800"
             },
-            "products": {
-                "swordsman": "2",
-                "axeman": "1"
-            },
+            "products": [
+                "BDSwordsman",
+                "BDAxeman"
+            ],
             "points" : "100",
             "backgroundImage" : "Army_Camp2"
         },
@@ -38,11 +39,11 @@
                 "peopleCost": "4",
                 "timeCost": "2500"
             },
-            "products": {
-                "swordsman": "3",
-                "axeman": "2",
-                "archer": "1"
-            },
+            "products": [
+                "BDSwordsman",
+                "BDAxeman",
+                "BDArcher"
+            ],
             "points" : "150",
             "backgroundImage" : "Army_Camp3"
         },
@@ -54,11 +55,11 @@
                 "peopleCost": "5",
                 "timeCost": "3600"
             },
-            "products": {
-                "swordsman": "4",
-                "axeman": "3",
-                "archer": "2"
-            },
+            "products": [
+                "swordsman",
+                "BDAxeman",
+                "BDArcher"
+            ],
             "points" : "200",
             "backgroundImage" : "Army_Camp4"
         },
@@ -70,11 +71,11 @@
                 "peopleCost": "7",
                 "timeCost": "5000"
             },
-            "products": {
-                "swordsman": "5",
-                "axeman": "4",
-                "archer": "3"
-            },
+            "products": [
+                "BDSwordsman",
+                "BDAxeman",
+                "BDArcher"
+            ],
             "points" : "250",
             "backgroundImage" : "Army_Camp5"
         },
@@ -86,12 +87,12 @@
                 "peopleCost": "10",
                 "timeCost": "8000"
             },
-            "products": {
-                "lightCavalery": "5",
-                "axeman": "5",
-                "archer": "5",
-                "wizard": "1"
-            },
+            "products": [
+                "BDSwordsman",
+                "BDAxeman",
+                "BDArcher",
+                "BDWizard"
+            ],
             "points" : "300",
             "backgroundImage" : "Army_Camp6"
         }

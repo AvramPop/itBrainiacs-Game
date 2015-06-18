@@ -10,4 +10,6 @@
 
 @interface BDGoldMine : BDBuilding
 
+@property(nonatomic, assign) NSInteger productionPerHour;
+
 @end

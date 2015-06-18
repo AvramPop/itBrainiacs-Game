@@ -16,7 +16,11 @@
         self.name = @"woodCamp";
         BDProtoProduct *protoWood = [[BDProtoProduct alloc] init];
         protoWood.protoProductName = @"BDWood";
-        protoWood.isResource = YES;
+        protoWood.type = ProtoProductTypeResource;
+        protoWood.delegate = self;
+        
+        [self parse:[self getJsonDictionary]];
+
         self.protoProducts = [NSMutableArray arrayWithObject:protoWood];
     }
     return self;
@@ -27,15 +31,42 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"didTouchWoodCamp" object:nil];
 }
 
-- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {}
-
-
-+ (BDProtoProduct *)upgradeProtoProduct {
-    return nil;
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [super encodeWithCoder:aCoder];
+    [aCoder encodeInteger:self.productionPerHour forKey:@"productionPerHour"];
 }
 
-- (NSArray *)protoProductsNames {
-    return @[@"BDWood"];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (!self) {
+        return nil;
+    }
+    self.productionPerHour = [aDecoder decodeIntegerForKey:@"productionPerHour"];
+    
+    return self;
+}
+
+- (void)parse:(NSDictionary *)dictionary {
+    [super parse:dictionary];
+    NSArray *levels = dictionary[@"Level"];
+    self.productionPerHour = [(NSNumber *)(levels[self.level][@"productionPerHour"]) intValue];
+}
+
+- (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    if ([protoProduct.protoProductName isEqualToString:@"BDWoodCampUpgrade"]) {
+        self.level++;
+        [self parse:[self getJsonDictionary]];
+        [self.protoProducts removeObject:protoProduct];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateBuildingUI" object:nil userInfo:@{@"BDProtoProduct":protoProduct}];
+    }
+}
+
++ (BDProtoProduct *)upgradeProtoProduct {
+    BDProtoProduct *proto = [[BDProtoProduct alloc] init];
+    proto.protoProductName = @"BDWoodCampUpgrade";
+    proto.type = ProtoProductTypeUpgrade;
+    
+    return proto;
 }
 
 @end

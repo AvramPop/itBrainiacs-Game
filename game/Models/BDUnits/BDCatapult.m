@@ -10,6 +10,15 @@
 
 @implementation BDCatapult
 
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.name = @"Catapult";
+        self.imageName = @"catapult";
+    }
+    return self;
+}
+
 + (BDProtoProduct *)protoProduct {
     BDProtoProduct *product = [[BDProtoProduct alloc] init];
     product.protoProductName = @"BDCatapult";

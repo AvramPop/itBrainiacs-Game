@@ -14,11 +14,6 @@ static BDPlayer *adversaryPlayer;
 @implementation BDPlayer
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    self.gold = [aDecoder decodeIntegerForKey:@"amountOfGold"];
-    self.wood = [aDecoder decodeIntegerForKey:@"amountOfWood"];
-    self.iron = [aDecoder decodeIntegerForKey:@"amountOfIron"];
-    self.people = [aDecoder decodeIntegerForKey:@"amountOfPeople"];
-    self.swordsmanCount = [aDecoder decodeIntegerForKey:@"amountOfSwordsman"];
     self.name = [aDecoder decodeObjectForKey:@"name"];
 #warning please fill the archive with all the properties
    
@@ -27,20 +22,17 @@ static BDPlayer *adversaryPlayer;
     for (BDTown *town in self.arrayOfTowns) {
         town.owner = self;
     }
+    self.points = [aDecoder decodeIntegerForKey:@"points"];
     
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
 #warning please fill the archive with all the properties
-    [aCoder encodeInteger:self.gold forKey:@"amountOfGold"];
-    [aCoder encodeInteger:self.wood forKey:@"amountOfWood"];
-    [aCoder encodeInteger:self.iron forKey:@"amountOfIron"];
-    [aCoder encodeInteger:self.people forKey:@"amountOfPeople"];
-    [aCoder encodeInteger:self.swordsmanCount forKey:@"amountOfSwordsman"];
     [aCoder encodeObject:self.name forKey:@"name"];
     NSData *townData = [NSKeyedArchiver archivedDataWithRootObject:self.arrayOfTowns];
     [aCoder encodeObject:townData forKey:@"arrayOfTowns"];
+    [aCoder encodeInteger:self.points forKey:@"points"];
 }
 
 + (BDPlayer *)currentPlayer {
@@ -61,6 +53,10 @@ static BDPlayer *adversaryPlayer;
 
 + (void)setAdversaryPlayer:(BDPlayer *)aPlayer {
     adversaryPlayer = aPlayer;
+}
+
+- (BDTown *)currentTown {
+    return self.arrayOfTowns[0];
 }
 
 @end

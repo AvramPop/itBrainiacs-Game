@@ -7,7 +7,6 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "TouchDetector.h"
 #import "BDTown.h"
 
 @protocol BDMapProtocol;
@@ -18,7 +17,6 @@
 @property (nonatomic, strong) SKSpriteNode      *player;
 @property (nonatomic, assign) CGSize            tileSize;
 @property (nonatomic, strong) BDTown            *town;
-@property (nonatomic, strong) TouchDetector     *touchDetector;
 @property (nonatomic, strong) id<BDMapProtocol> mapDelegate;
 @property (nonatomic, assign) CGSize            backgroundSize;
 

@@ -11,7 +11,7 @@
 
 @interface BDUnit : NSObject <BDProtoProduct>
 
-@property (nonatomic, strong) BDUnit        *favouriteTarget;
+@property (nonatomic, strong) Class         favouriteTarget;
 @property (nonatomic, assign) NSInteger     life;
 @property (nonatomic, assign) NSInteger     attack;
 @property (nonatomic, assign) NSInteger     defense;
@@ -23,5 +23,6 @@
 @property (nonatomic, assign) NSInteger     peopleCost;
 @property (nonatomic, assign) NSInteger     timeCost;
 @property (nonatomic, strong) NSString      *imageName;
+@property (nonatomic, strong) NSString      *name;
 
 @end

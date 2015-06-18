@@ -43,41 +43,53 @@
     if (self) {
         self.player = player;
         self.defendingTown = town;
-        self.backgroundColor = [UIColor blueColor];
-        UILabel *targetLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 20, 150, 40)];
-        targetLabel.text = [NSString stringWithFormat:@"Target: "];
+        UIColor *blueColor = [UIColor colorWithRed:10/255.0 green:154/255.0 blue:191/255.0 alpha:1.0];
+        self.backgroundColor = blueColor;
         
-        UILabel *targetTown = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(targetLabel.frame), 20, 150, 40)];
-        targetLabel.text = town.name;
+        UIFont *font = [UIFont fontWithName:@"Supercell-magic" size:16.0];
+        UIColor *color = [UIColor colorWithRed:1.0 green:191.0/255.0 blue:78.0/255.0 alpha:1];
         
-        UILabel *ownerLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(targetLabel.frame), 150, 40)];
-        targetLabel.text = [NSString stringWithFormat:@"Owner: "];
+        UILabel *targetLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 450, 40)];
+        targetLabel.text = [NSString stringWithFormat:@"Target: %@", town.name];
+        targetLabel.font = font;
+        targetLabel.textColor = color;
         
-        UILabel *ownerPlayer = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(ownerLabel.frame), CGRectGetMaxY(targetLabel.frame), 150, 40)];
-        targetLabel.text = town.owner.name;
+        UILabel *ownerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(targetLabel.frame), 450, 40)];
+        ownerLabel.text = [NSString stringWithFormat:@"Owner: %@", town.owner.name];
+        ownerLabel.font = font;
+        ownerLabel.textColor = color;
         
         self.units = @[[BDSwordsman new], [BDLightCavalery new], [BDRam new],
-                               [BDAxeman new], [BDHighCavalery new], [BDCatapult new],
-                               [BDArcher new], [BDWizard new], [BDBaloon new]];
+                        [BDAxeman new], [BDHighCavalery new], [BDCatapult new],
+                        [BDArcher new], [BDWizard new], [BDBaloon new]];
         
         NSArray *unitNames = @[@[@"Swordsman:", @"Light Cavalery: ", @"Ram: "],
                                @[@"Axeman: ", @"Heavy Cavalery: ", @"Catapult: "],
                                @[@"Archer: ", @"Wizard: ", @"Baloon: "]];
-        NSArray *unitNumber = @[@[@(self.player.swordsmanCount), @(self.player.lightCavaleryCount), @(self.player.ramCount)],
-                               @[@(self.player.axemanCount), @(self.player.highCavaleryCount), @(self.player.catapultCount)],
-                               @[@(self.player.archerCount), @(self.player.wizardCount), @(self.player.baloonCount)]];
+        NSArray *unitNumber = @[@[@([self.player currentTown].swordsmanCount), @([self.player currentTown].lightCavaleryCount), @([self.player currentTown].ramCount)],
+                               @[@([self.player currentTown].axemanCount), @([self.player currentTown].highCavaleryCount), @([self.player currentTown].catapultCount)],
+                               @[@([self.player currentTown].archerCount), @([self.player currentTown].wizardCount), @([self.player currentTown].baloonCount)]];
         self.textFields = [NSMutableArray array];
         
+        double width = self.frame.size.width / 6 - 10;
+        font = [UIFont fontWithName:@"Supercell-magic" size:14.0];
+
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 3, (i + 2) * self.frame.size.height / 6 , self.frame.size.width / 6, self.frame.size.height / 6)];
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10 + j * self.frame.size.width / 3, (i + 2) *  self.frame.size.height / 6, width * 1.5, self.frame.size.height / 6)];
                 label.text = unitNames[i][j];
+                label.font = font;
+                label.textColor = color;
                 
-                UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label.frame), (i + 2) * self.frame.size.height / 6 ,  self.frame.size.width / 12,  self.frame.size.height / 6)];
+                UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label.frame), (i + 2) * self.frame.size.height / 6 ,  width/4,  self.frame.size.height / 6)];
+                textField.font = font;
+                textField.textColor = color;
                 [self.textFields addObject:textField];
-                textField.tag = i + j*3;
+                textField.tag = j + i*3;
 
-                UIButton_Block *button = [[UIButton_Block alloc]initWithFrame:CGRectMake(CGRectGetMaxX(textField.frame), (i + 2) * self.frame.size.height / 6, self.frame.size.width / 12,  self.frame.size.height / 6)];
+                UIButton_Block *button = [[UIButton_Block alloc]initWithFrame:CGRectMake(CGRectGetMaxX(textField.frame), (i + 2) * self.frame.size.height / 6, width/4,  self.frame.size.height / 6)];
+                button.titleLabel.font = font;
+                button.titleLabel.textColor = color;
                 __weak typeof(button) wutton = button;
                 button.actionTouchUpInside = ^{
                     textField.text = wutton.titleLabel.text;
@@ -96,16 +108,16 @@
         [exitButton setTitle:@"X" forState:UIControlStateNormal];
         [exitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [exitButton addTarget:self action:@selector(didTouchExitButton) forControlEvents:UIControlEventTouchUpInside];
+        exitButton.titleLabel.font = font;
         
         UIButton *attackButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 100, self.frame.size.height - 100, 100, 100)];
         [attackButton setTitle:@"ATTACK" forState:UIControlStateNormal];
         attackButton.backgroundColor = [UIColor redColor];
         [attackButton addTarget:self action:@selector(attackTown:) forControlEvents:UIControlEventTouchUpInside];
+        attackButton.titleLabel.font = font;
         
         [self addSubview:targetLabel];
-        [self addSubview:targetTown];
         [self addSubview:ownerLabel];
-        [self addSubview:ownerPlayer];
         [self addSubview:exitButton];
         [self addSubview:attackButton];
     }
@@ -126,17 +138,19 @@
     
 }
          
--(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if (alertView.firstOtherButtonIndex == buttonIndex) {
         
         NSMutableArray *def = [NSMutableArray  array];
         
         self.attackingTroops = [NSMutableArray array];
+        NSInteger counter = 0;
         for (UITextField *textField in self.textFields) {
             BDSquad *squad = [[BDSquad alloc] init];
             squad.unit = self.units[textField.tag];
             squad.count = [textField.text integerValue];
+            counter += squad.count;
             [self.attackingTroops addObject:squad];
 
             //naspa dar aste e... deocamdata
@@ -144,15 +158,18 @@
         }
         BDSquad *sq = [BDSquad new];
         sq.unit = [BDSwordsman new];
-        sq.count = self.defendingTown.owner.swordsmanCount;
+        sq.count = self.defendingTown.swordsmanCount;
         [def removeObjectAtIndex:0];
         [def insertObject:sq atIndex:0];
 
-        
-        BDWarLogic *attacklogic = [[BDWarLogic alloc] initWithAttackingTroops:self.attackingTroops defendingTroops:def andDistance:[self getDistanceBetweenTownA:self.player.arrayOfTowns[0] andTownB:self.defendingTown]];
-        attacklogic.defendingTroops = [NSArray array];
+        if (counter) {
+            BDWarLogic *attacklogic = [[BDWarLogic alloc] initWithAttackingTroops:self.attackingTroops defendingTroops:def andDistance:[self getDistanceBetweenTownA:[self.player currentTown] andTownB:self.defendingTown]];
+            NSAssert(attacklogic, @"dsfsdaf");
+            [self didTouchExitButton];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"" message:@"Cannot Attack Without Troops" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil] show];
+        }
     }
-    [self didTouchExitButton];
 }
 
 - (NSInteger)getDistanceBetweenTownA:(BDTown *)townA andTownB:(BDTown *)townB {

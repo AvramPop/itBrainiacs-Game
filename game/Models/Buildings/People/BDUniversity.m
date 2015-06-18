@@ -15,18 +15,15 @@
     if (self) {
         self.name = @"university";
         self.protoProducts = [NSMutableArray array];
+        [self parse:[self getJsonDictionary]];
     }
     return self;
-}
-
-- (NSArray *)protoProductsNames {
-    return @[@"",@"", @""];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {
     BDProtoProduct *proto = [[BDProtoProduct alloc] init];
     proto.protoProductName = @"BDUniversityUpgrade";
-    proto.isResource = NO;
+    proto.type = ProtoProductTypeUpgrade;
     
     return proto;
 }

@@ -10,6 +10,15 @@
 
 @implementation BDBaloon
 
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.name = @"Baloon";
+        self.imageName = @"baloon";
+    }
+    return self;
+}
+
 + (BDProtoProduct *)protoProduct {
     BDProtoProduct *product = [[BDProtoProduct alloc] init];
     product.protoProductName = @"BDBaloon";

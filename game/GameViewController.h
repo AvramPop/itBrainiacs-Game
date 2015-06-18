@@ -2,7 +2,6 @@
 //  GameViewController.h
 //  game
 //
-
 //  Copyright (c) 2015 Telenav. All rights reserved.
 //
 
@@ -20,7 +19,5 @@
 @property (nonatomic, strong) BDMap             *gameScene;
 
 @property (nonatomic, strong) BDGameLogicController *gameLogicController;
-
--(void)saveInfo;
 
 @end

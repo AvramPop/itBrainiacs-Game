@@ -24,8 +24,8 @@
 
 + (BDMenuItem *)menuItemMarket {
     BDMenuItem *peopleItem = [[BDMenuItem alloc] init];
-    peopleItem.title = @"Resources";
-    peopleItem.iconName = nil;
+    peopleItem.title = @"";
+    peopleItem.iconName = @"market1";
     peopleItem.className = @"BDMarket";
     peopleItem.itemKey = BDMenuItemMarket;
 
@@ -106,8 +106,8 @@
 
 + (BDMenuItem *)menuItemWorkshop {
     BDMenuItem *peopleItem = [[BDMenuItem alloc] init];
-    peopleItem.title = @"Resources";
-    peopleItem.iconName = nil;
+    peopleItem.title = @"";
+    peopleItem.iconName = @"workshop1";
     peopleItem.className = @"BDWorkshop";
     peopleItem.itemKey = BDMenuItemWorkshop;
 

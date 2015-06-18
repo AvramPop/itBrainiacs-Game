@@ -23,6 +23,7 @@ NSString * const kAnimalNodeName = @"notMovable";
     self = [super init];
     if (self) {
         self.mapScene = map;
+        self.enableObjectsDragging = YES;
     }
     
     return self;
@@ -99,13 +100,13 @@ NSString * const kAnimalNodeName = @"notMovable";
     if([[self.selectedNode name] isEqualToString:kAnimalNodeName]) {
         CGPoint newPos = CGPointMake(position.x + translation.x, position.y + translation.y);
         [[self.delegate backgroundNode] setPosition:[self boundLayerPos:newPos]];
-    } else {
+    } else if (self.enableObjectsDragging) {
         [self.selectedNode setPosition:CGPointMake(position.x + translation.x, position.y + translation.y)];
     }
 }
 
 - (CGPoint)boundLayerPos:(CGPoint)newPos {
-    SKSpriteNode *background =[self.delegate backgroundNode];
+    SKSpriteNode *background = [self.delegate backgroundNode];
 
     CGSize winSize = self.mapScene.size;
     CGPoint retval = newPos;
@@ -118,7 +119,53 @@ NSString * const kAnimalNodeName = @"notMovable";
     return retval;
 }
 
-#pragma mark - animations 
+
+- (void)setZoomToMax {
+    SKSpriteNode *background = [self.delegate backgroundNode];
+
+    CGPoint anchorPointInMySkNode = self.mapScene.view.center;
+    CGFloat scale = background.xScale * 0.55;
+    
+    [background setScale:scale];
+    
+    CGPoint mySkNodeAnchorPointInScene = [self.mapScene convertPoint:anchorPointInMySkNode fromNode:background];
+    CGPoint translationOfAnchorInScene = CGPointSubtract(self.mapScene.view.center, mySkNodeAnchorPointInScene);
+    
+    background.position = [self boundLayerPos:CGPointAdd(background.position, translationOfAnchorInScene)];
+}
+
+- (void)setZoomToMin {
+    SKSpriteNode *background = [self.delegate backgroundNode];
+    
+    CGPoint anchorPointInMySkNode = self.mapScene.view.center;
+    CGFloat scale = background.xScale * 2;
+    
+    [background setScale:scale];
+    
+    CGPoint mySkNodeAnchorPointInScene = [self.mapScene convertPoint:anchorPointInMySkNode fromNode:background];
+    CGPoint translationOfAnchorInScene = CGPointSubtract(self.mapScene.view.center, mySkNodeAnchorPointInScene);
+    
+    background.position = [self boundLayerPos:CGPointAdd(background.position, translationOfAnchorInScene)];
+}
+
+- (void)pannToCenter {
+    float scrollDuration = 0.2;
+    SKSpriteNode *background = [self.delegate backgroundNode];
+
+    CGPoint pos = [background position];
+    CGPoint p = self.mapScene.view.center;
+    
+    CGPoint newPos = CGPointMake(pos.x + p.x, pos.y + p.y);
+    newPos = [self boundLayerPos:newPos];
+    [self.selectedNode removeAllActions];
+    
+    SKAction *moveTo = [SKAction moveTo:newPos duration:scrollDuration];
+    [moveTo setTimingMode:SKActionTimingEaseInEaseOut];
+    [self.selectedNode runAction:moveTo];
+
+}
+
+#pragma mark - animations
 
 - (void)selectNodeForTouch:(CGPoint)touchLocation {
 
@@ -128,7 +175,7 @@ NSString * const kAnimalNodeName = @"notMovable";
         [self.selectedNode runAction:[SKAction rotateToAngle:0.0f duration:0.1]];
         
         self.selectedNode = touchedNode;
-        if(![[touchedNode name] isEqualToString:kAnimalNodeName]) {
+        if(self.enableObjectsDragging && ![[touchedNode name] isEqualToString:kAnimalNodeName]) {
             SKAction *sequence = [SKAction sequence:@[[SKAction rotateByAngle:degToRad(-4.0f) duration:0.1],
                                                       [SKAction rotateByAngle:0.0 duration:0.1],
                                                       [SKAction rotateByAngle:degToRad(4.0f) duration:0.1]]];

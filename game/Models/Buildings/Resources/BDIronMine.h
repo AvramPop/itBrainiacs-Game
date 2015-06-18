@@ -10,5 +10,6 @@
 
 @interface BDIronMine : BDBuilding
 
+@property(nonatomic, assign) NSInteger productionPerHour;
 
 @end

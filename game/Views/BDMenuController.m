@@ -40,6 +40,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)didTouchMainMenu:(id)sender {
     if (self.isAnimating) {
         return;

@@ -10,6 +10,16 @@
 
 @implementation BDSpy
 
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.name = @"Spy";
+        self.imageName = @"spy";
+    }
+    return self;
+}
+
+
 + (BDProtoProduct *)protoProduct {
     BDProtoProduct *product = [[BDProtoProduct alloc] init];
     product.protoProductName = @"BDSpy";

@@ -10,6 +10,16 @@
 
 @implementation BDRam
 
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.name = @"Ram";
+        self.imageName = @"ram";
+    }
+    return self;
+}
+
+
 + (BDProtoProduct *)protoProduct {
     BDProtoProduct *product = [[BDProtoProduct alloc] init];
     product.protoProductName = @"BDRam";

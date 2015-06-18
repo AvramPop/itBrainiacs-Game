@@ -8,6 +8,7 @@
 
 #import "BDHouse.h"
 #import "BDBuildingInfoParser.h"
+#import "BDPlayer.h"
 
 @implementation BDHouse
 
@@ -18,7 +19,7 @@
         
         BDProtoProduct *protoPeople = [[BDProtoProduct alloc] init];
         protoPeople.protoProductName = @"BDPeople";
-        protoPeople.isResource = YES;
+        protoPeople.type = ProtoProductTypeResource;
         protoPeople.delegate = self;
         
         self.protoProducts = [NSMutableArray arrayWithObject:protoPeople];
@@ -27,24 +28,26 @@
     return self;
 }
 
-- (NSArray *)protoProductsNames {
-    return @[@"BDPeople"];
-}
-
 -(void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
+    if ([protoProduct.protoProductName isEqualToString:@"BDHouseUpgrade"]) {
+        self.level++;
+        [self parse:[self getJsonDictionary]];
+        [[BDPlayer currentPlayer] currentTown].people += self.peopleProduced;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateBuildingUI" object:nil userInfo:@{@"BDProtoProduct":protoProduct}];
+    }
     [self.protoProducts removeObject:protoProduct];
 }
 
 - (void)parse:(NSDictionary *)dictionary {
     [super parse:dictionary];
     NSArray *levels = dictionary[@"Level"];
-    self.peopleProduced = [(NSNumber *)(levels[self.level][@"popleProduced"]) intValue];
+    self.peopleProduced = [(NSNumber *)(levels[self.level][@"peopleProduced"]) intValue];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {
     BDProtoProduct *proto = [[BDProtoProduct alloc] init];
     proto.protoProductName = @"BDHouseUpgrade";
-    proto.isResource = NO;
+    proto.type = ProtoProductTypeUpgrade;
     
     return proto;
 }

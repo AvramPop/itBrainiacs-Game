@@ -2,6 +2,7 @@
     "Name": "Workshop",
     "Type": "BDBuilding",
     "Subtype": "Army",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
@@ -9,10 +10,11 @@
                 "woodCost": "200",
                 "ironCost": "200",
                 "peopleCost": "2",
-                "timeCost": "180"
+                "timeCost": "18"
             },
-            "products": { "ram": "1" },
-              "points" : "50"
+            "products": ["BDRam"],
+              "points" : "50",
+              "backgroundImage" : "workshop1"
         },
         {
             "Cost": {
@@ -22,11 +24,12 @@
                 "peopleCost": "3",
                 "timeCost": "1800"
             },
-            "products": {
-                "ram": "2",
-                "baloon": "1"
-            },
-              "points" : "100"
+              "products": [
+                           "BDRam",
+                           "BDBaloon"
+                           ],
+              "points" : "100",
+              "backgroundImage" : "workshop2"
         },
         {
             "Cost": {
@@ -36,12 +39,13 @@
                 "peopleCost": "4",
                 "timeCost": "2500"
             },
-            "products": {
-                "ram": "3",
-                "baloon": "2",
-                "catapult": "1"
-            },
-              "points" : "150"
+            "products": [
+                "BDRam",
+                "BDBaloon",
+                "BDCatapult"
+            ],
+              "points" : "150",
+              "backgroundImage" : "workshop3"
         },
         {
             "Cost": {
@@ -51,12 +55,13 @@
                 "peopleCost": "5",
                 "timeCost": "3600"
             },
-            "products": {
-                "ram": "4",
-                "baloon": "3",
-                "catapult": "2"
-            },
-              "points" : "200"
+              "products": [
+                           "BDRam",
+                           "BDBaloon",
+                           "BDCatapult"
+                           ],
+              "points" : "200",
+              "backgroundImage" : "workshop4"
         },
         {
             "Cost": {
@@ -66,12 +71,13 @@
                 "peopleCost": "7",
                 "timeCost": "5000"
             },
-            "products": {
-                "ram": "5",
-                "baloon": "4",
-                "catapult": "3"
-            },
-              "points" : "250"
+              "products": [
+                           "BDRam",
+                           "BDBaloon",
+                           "BDCatapult"
+                           ],
+              "points" : "250",
+              "backgroundImage" : "workshop5"
         },
         {
             "Cost": {
@@ -81,12 +87,13 @@
                 "peopleCost": "10",
                 "timeCost": "8000"
             },
-            "products": {
-                "ram": "5",
-                "baloon": "5",
-                "catapult": "5"
-            },
-              "points" : "300"
+              "products": [
+                           "BDRam",
+                           "BDBaloon",
+                           "BDCatapult"
+                           ],
+              "points" : "300",
+              "backgroundImage" : "workshop6"
         }
     ]
 }

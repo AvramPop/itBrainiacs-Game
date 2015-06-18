@@ -10,6 +10,6 @@
 
 @interface BDHouse : BDBuilding
 
-@property (nonatomic, assign) int peopleProduced;
+@property (nonatomic, assign) NSInteger peopleProduced;
 
 @end

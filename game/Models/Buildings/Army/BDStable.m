@@ -8,6 +8,7 @@
 
 #import "BDStable.h"
 #import "BDPlayer.h"
+#import "BDTown.h"
 
 @implementation BDStable
 
@@ -15,26 +16,34 @@
     self = [super initWithImageNamed:name];
     if (self) {
         self.name = @"stable";
+        [self parse:[self getJsonDictionary]];
         self.protoProducts = [NSMutableArray array];
     }
     return self;
 }
 
-- (NSArray *)protoProductsNames {
-    return @[@"",@"", @""];
-}
-
-
 - (void)didFinishCreatingProtoProduct:(BDProtoProduct *)protoProduct {
-    [self.protoProducts removeObject:protoProduct];
-    [BDPlayer currentPlayer].swordsmanCount++;
+    if ([protoProduct.protoProductName isEqualToString:@"BDStableUpgrade"]) {
+        self.level++;
+        [self parse:[self getJsonDictionary]];
+    } else {
+        [self runAction:[SKAction playSoundFileNamed:@"finished-unit.m4r" waitForCompletion:NO]];
+        if ([protoProduct.protoProductName isEqualToString:@"BDLightCavalery"]){
+            [[BDPlayer currentPlayer] currentTown].lightCavaleryCount++;
+        } else if ([protoProduct.protoProductName isEqualToString:@"BDSpy"]){
+            [[BDPlayer currentPlayer] currentTown].spyCount++;
+        } else if ([protoProduct.protoProductName isEqualToString:@"BDHighCavalery"]){
+            [[BDPlayer currentPlayer] currentTown].highCavaleryCount++;
+        }
+    }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateBuildingUI" object:nil userInfo:@{@"BDProtoProduct":protoProduct}];
+    [self.protoProducts removeObject:protoProduct];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {
     BDProtoProduct *proto = [[BDProtoProduct alloc] init];
     proto.protoProductName = @"BDStableUpgrade";
-    proto.isResource = NO;
+    proto.type = ProtoProductTypeUpgrade;
     
     return proto;
 }

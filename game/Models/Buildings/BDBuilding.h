@@ -11,8 +11,10 @@
 
 @interface BDBuilding : SKSpriteNode <BDProtoProduct, NSCoding>
 
-@property (nonatomic, assign) int               uid;
-@property (nonatomic, assign) int               level;
+@property (nonatomic, assign) NSInteger         level;
+@property (nonatomic, assign) NSInteger         maxLevel;
+
+@property (nonatomic, strong) NSArray           *availableProtoProducts;
 @property (nonatomic, strong) NSMutableArray    *protoProducts;
 @property (nonatomic, assign) NSInteger         goldCost;
 @property (nonatomic, assign) NSInteger         woodCost;
@@ -20,11 +22,14 @@
 @property (nonatomic, assign) NSInteger         peopleCost;
 @property (nonatomic, assign) NSInteger         timeCost;
 @property (nonatomic, strong) NSString          *iconName;
+@property (nonatomic, strong) NSString          *buildingDescription;
+@property (nonatomic, assign) NSInteger         points;
 
 - (BOOL)isUpgrading;
 - (void)reactToTouch;
 - (instancetype)initWithLevel:(int)level;
-- (NSArray *)protoProductsNames;
 - (NSDictionary *)getJsonDictionary;
+
+- (void)changeImage:(UIImage *)image;
 
 @end

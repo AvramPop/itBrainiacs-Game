@@ -7,26 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BDProgressView.h"
 @class BDUnit, BDSquad;
 @protocol BDUnitInfoViewDelegate;
 
 @interface BDUnitInfoView : UIView
 
-@property(nonatomic, strong)UIButton        *plusButton;
-@property(nonatomic, strong)UIButton        *minusButton;
-@property(nonatomic, strong)UIImageView     *unitImage;
-@property(nonatomic, strong)UITextField     *fieldOfAmountOfUnitsToBeCreated;
-@property(nonatomic, assign)NSInteger       amountOfUnitsToBeCreated;
+@property(nonatomic, strong) UIButton        *plusButton;
+@property(nonatomic, strong) UIButton        *minusButton;
+@property(nonatomic, strong) UIImageView     *unitImage;
+@property(nonatomic, strong) UITextField     *fieldOfAmountOfUnitsToBeCreated;
+@property(nonatomic, assign) NSInteger       amountOfUnitsToBeCreated;
+@property(nonatomic, strong) BDProgressView  *prog;
 
 @property(nonatomic, assign)id<BDUnitInfoViewDelegate> delegate;
 
--(instancetype)initWithFrame:(CGRect)frame andUnit:(BDUnit *)unit;
-
-
+- (instancetype)initWithFrame:(CGRect)frame andUnit:(BDUnit *)unit;
 
 @end
-
 
 @protocol BDUnitInfoViewDelegate<NSObject>
 

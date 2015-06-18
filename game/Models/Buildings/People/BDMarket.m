@@ -14,18 +14,16 @@
     self = [super initWithImageNamed:name];
     if (self) {
         self.name = @"market";
+        [self parse:[self getJsonDictionary]];
         self.protoProducts = [NSMutableArray array];
     }
     return self;
-}
-- (NSArray *)protoProductsNames {
-    return @[@"",@"", @""];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {
     BDProtoProduct *proto = [[BDProtoProduct alloc] init];
     proto.protoProductName = @"BDMarketUpgrade";
-    proto.isResource = NO;
+    proto.type = ProtoProductTypeUpgrade;
     
     return proto;
 }

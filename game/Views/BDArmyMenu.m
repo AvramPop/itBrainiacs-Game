@@ -7,74 +7,84 @@
 //
 
 #import "BDArmyMenu.h"
+#import "BDAttackMapViewController.h"
+
+@interface BDArmyMenu ()
+@end
 
 @implementation BDArmyMenu
 
 - (instancetype)initWithFrame:(CGRect)frame andPlayer:(BDPlayer *)player{
     self = [super initWithFrame:frame];
     if(self) {
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor colorWithRed:10/255.0 green:154/255.0 blue:191/255.0 alpha:1.0];
         
         self.player = player;
-        
+
+        UIFont *font = [UIFont fontWithName:@"Supercell-magic" size:17.0];
+        UIColor *color = [UIColor colorWithRed:1.0 green:191.0/255.0 blue:78.0/255.0 alpha:1];
+
         UILabel *message = [[UILabel alloc] initWithFrame:CGRectMake(65, 54, 300, 150)];
         message.text = [NSString stringWithFormat:@"Your army, my lord"];
-        [message setFont:[UIFont fontWithName:@"Tom's Handwriting" size:60]];
+        message.font = font;
+        message.textColor = color;
         
-        UILabel *swordsmanLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 164, 130, 44)];
-        swordsmanLabel.text = [NSString stringWithFormat:@"Swordsmans: "];
-        UILabel *swordsmanCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(swordsmanLabel.frame), swordsmanLabel.frame.origin.y, 130, 44)];
-        swordsmanCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.swordsmanCount];
+        UILabel *swordsmanLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 164, 300, 44)];
+        swordsmanLabel.text = [NSString stringWithFormat:@"Swordsmans: %ld", (long)[self.player currentTown].swordsmanCount];
+        swordsmanLabel.font = font;
+        swordsmanLabel.textColor = color;
         
-        UILabel *axemanLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(swordsmanLabel.frame), 130, 44)];
-        axemanLabel.text = [NSString stringWithFormat:@"Axemans: "];
-        UILabel *axemanCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(axemanLabel.frame), axemanLabel.frame.origin.y, 130, 44)];
-        axemanCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.axemanCount];
+        UILabel *axemanLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(swordsmanLabel.frame), 300, 44)];
+        axemanLabel.text = [NSString stringWithFormat:@"Axemans: %ld", (long)[self.player currentTown].axemanCount];
+        axemanLabel.font = font;
+        axemanLabel.textColor = color;
         
-        UILabel *archerLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(axemanLabel.frame), 130, 44)];
-        archerLabel.text = [NSString stringWithFormat:@"Archers: "];
-        UILabel *archerCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(archerLabel.frame), archerLabel.frame.origin.y, 130, 44)];
-        archerCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.archerCount];
+        UILabel *archerLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(axemanLabel.frame), 300, 44)];
+        archerLabel.text = [NSString stringWithFormat:@"Archers: %ld", (long)[self.player currentTown].archerCount];
+        archerLabel.font = font;
+        archerLabel.textColor = color;
         
-        UILabel *lightCavaleryLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(archerLabel.frame), 130, 44)];
-        lightCavaleryLabel.text = [NSString stringWithFormat:@"Light Cavalery: "];
-        UILabel *lightCavaleryCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(lightCavaleryLabel.frame), lightCavaleryLabel.frame.origin.y, 130, 44)];
-        lightCavaleryCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.lightCavaleryCount];
+        UILabel *lightCavaleryLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(archerLabel.frame), 300, 44)];
+        lightCavaleryLabel.text = [NSString stringWithFormat:@"Light Cavalery: %ld", (long)[self.player currentTown].lightCavaleryCount];
+        lightCavaleryLabel.font = font;
+        lightCavaleryLabel.textColor = color;
         
-        UILabel *heavyCavaleryLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(lightCavaleryLabel.frame), 130, 44)];
-        heavyCavaleryLabel.text = [NSString stringWithFormat:@"Heavy Cavalery: "];
-        UILabel *heavyCavaleryCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(heavyCavaleryLabel.frame), heavyCavaleryLabel.frame.origin.y, 130, 44)];
-        heavyCavaleryCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.highCavaleryCount];
+        UILabel *heavyCavaleryLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(lightCavaleryLabel.frame), 300, 44)];
+        heavyCavaleryLabel.text = [NSString stringWithFormat:@"Heavy Cavalery: %ld", (long)[self.player currentTown].highCavaleryCount];
+        heavyCavaleryLabel.font = font;
+        heavyCavaleryLabel.textColor = color;
         
-        UILabel *wizardLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(heavyCavaleryLabel.frame), 130, 44)];
-        wizardLabel.text = [NSString stringWithFormat:@"Wizards: "];
-        UILabel *wizardCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(wizardLabel.frame), wizardLabel.frame.origin.y, 130, 44)];
-        wizardCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.wizardCount];
+        UILabel *wizardLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(heavyCavaleryLabel.frame), 300, 44)];
+        wizardLabel.text = [NSString stringWithFormat:@"Wizards: %ld", (long)[self.player currentTown].wizardCount];
+        wizardLabel.font = font;
+        wizardLabel.textColor = color;
         
-        UILabel *ramLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(wizardLabel.frame), 130, 44)];
-        ramLabel.text = [NSString stringWithFormat:@"Rams: "];
-        UILabel *ramCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(ramLabel.frame), ramLabel.frame.origin.y, 130, 44)];
-        ramCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.ramCount];
+        UILabel *ramLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(wizardLabel.frame), 300, 44)];
+        ramLabel.text = [NSString stringWithFormat:@"Rams: %ld", (long)[self.player currentTown].ramCount];
+        ramLabel.font = font;
+        ramLabel.textColor = color;
         
-        UILabel *catapultLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(ramLabel.frame), 130, 44)];
-        catapultLabel.text = [NSString stringWithFormat:@"Catapults: "];
-        UILabel *catapultCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(catapultLabel.frame), catapultLabel.frame.origin.y, 130, 44)];
-        catapultCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.catapultCount];
+        UILabel *catapultLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(ramLabel.frame), 300, 44)];
+        catapultLabel.text = [NSString stringWithFormat:@"Catapults: %ld", (long)[self.player currentTown].catapultCount];
+        catapultLabel.font = font;
+        catapultLabel.textColor = color;
         
-        UILabel *baloonLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(catapultLabel.frame), 130, 44)];
-        baloonLabel.text = [NSString stringWithFormat:@"Baloons: "];
-        UILabel *baloonCount = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(baloonLabel.frame), baloonLabel.frame.origin.y, 130, 44)];
-        baloonCount.text = [NSString stringWithFormat:@"%ld", (long)self.player.baloonCount];
+        UILabel *baloonLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, CGRectGetMaxY(catapultLabel.frame), 300, 44)];
+        baloonLabel.text = [NSString stringWithFormat:@"Baloons: %ld", (long)[self.player currentTown].baloonCount];
+        baloonLabel.font = font;
+        baloonLabel.textColor = color;
         
         self.warButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.frame) - 180, CGRectGetMaxY(self.frame) - 75, 180, 75)];
         [self.warButton setTitle:@"WAR!" forState:UIControlStateNormal];
-        self.warButton.backgroundColor =[UIColor redColor];
+        self.warButton.backgroundColor = [UIColor redColor];
         [self.warButton addTarget:self action:@selector(goToMap:) forControlEvents:UIControlEventTouchUpInside];
+        [self.warButton.titleLabel setFont:font];
         
         UIButton *exitButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         [exitButton setTitle:@"X" forState:UIControlStateNormal];
         [exitButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [exitButton addTarget:self action:@selector(didTouchExitButton) forControlEvents:UIControlEventTouchUpInside];
+        [exitButton.titleLabel setFont:font];
         
         [self addSubview:exitButton];
         [self addSubview:message];
@@ -87,23 +97,17 @@
         [self addSubview:ramLabel];
         [self addSubview:catapultLabel];
         [self addSubview:baloonLabel];
-        [self addSubview:swordsmanCount];
-        [self addSubview:axemanCount];
-        [self addSubview:archerCount];
-        [self addSubview:lightCavaleryCount];
-        [self addSubview:heavyCavaleryCount];
-        [self addSubview:wizardCount];
-        [self addSubview:ramCount];
-        [self addSubview:catapultCount];
-        [self addSubview:baloonCount];
+
         [self addSubview:self.warButton];
     }
     return self;
 }
 
-
--(void)goToMap:(UIButton *)button{
-  //  BDAttackMap *map =  [[BDAttackMap alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height)];
+-(void)goToMap:(UIButton *)button {
+    UINavigationController *a = self.controller;
+    BDAttackMapViewController *attackVC = [[BDAttackMapViewController alloc] init];
+    [a pushViewController:attackVC animated:YES];
+    [self removeFromSuperview];
 }
 
 - (void)didTouchExitButton{

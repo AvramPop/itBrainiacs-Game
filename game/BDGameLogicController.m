@@ -14,11 +14,21 @@
 #import "BDHeadquarters.h"
 #import "BDHouse.h"
 
+#import "BDGoldMine.h"
+#import "BDIronMine.h"
+#import "BDWoodCamp.h"
+
+#import "BDStable.h"
+
 @interface BDGameLogicController()
+
+@property (nonatomic, assign) NSTimeInterval timeToUptade;
 
 @property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) BDMap *map;
+
+@property (nonatomic, assign) BOOL isTimeToSave;
 
 @end
 
@@ -27,7 +37,8 @@
 - (instancetype)initWithMap:(BDMap *)map {
     self = [super init];
     if(self){
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(checkTimer:) userInfo:nil repeats:YES];
+        self.timeToUptade = 1;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.timeToUptade target:self selector:@selector(checkTimer:) userInfo:nil repeats:YES];
         [self.timer fire];
         self.map = map;
     }
@@ -39,23 +50,24 @@
     NSArray *buildings = self.map.town.buildings;
     BOOL hasResourcesUpdate = NO;
     for (BDBuilding *BDB in buildings) {
-        NSArray *protoProducts = [NSArray arrayWithArray:BDB.protoProducts];
-        for (BDProtoProduct *product in protoProducts) {
+        NSArray *protoProducts = BDB.protoProducts;
+        for (BDProtoProduct *proto in protoProducts) {
+            BDProtoProduct *product = [BDProtoProduct protoProductWithProtoProduct:proto];
             if ([date compare:product.timeStamp] == NSOrderedDescending) {
-                if (product.isResource) {
+                if (product.type == ProtoProductTypeResource) {
                     hasResourcesUpdate = YES;
+                    double addedValue;
                     if ([product.protoProductName compare:@"BDGold"] == NSOrderedSame) {
-                        [BDPlayer currentPlayer].gold++;
+                        addedValue = ((BDGoldMine *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
+                        [[BDPlayer currentPlayer] currentTown].gold += addedValue;
                     } else if ([product.protoProductName compare:@"BDIron"] == NSOrderedSame) {
-                        [BDPlayer currentPlayer].iron++;
+                        addedValue = ((BDIronMine *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
+                        [[BDPlayer currentPlayer] currentTown].iron += addedValue;
+
                     } else if ([product.protoProductName compare:@"BDWood"] == NSOrderedSame) {
-                        [BDPlayer currentPlayer].wood++;
+                        addedValue = ((BDWoodCamp *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
+                        [[BDPlayer currentPlayer] currentTown].wood += addedValue;
                     }
-                } else {
-                    if ([product.protoProductName compare:@"BDHeadquartersUpgrade"] == NSOrderedSame) {
-                        //
-                    }
-                    //the product is not a resource is a unit or a building of something else.
                 }
                 [product.delegate didFinishCreatingProtoProduct:product];
             }
@@ -65,30 +77,31 @@
     if (hasResourcesUpdate) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateResourcesUI" object:nil];
     }
+    
+    [self saveInfo];
 }
 
 - (bool)hasEnoughResourcesFor:(BDBuilding *)building{
 #ifdef DebugEnabled
     return YES;
+#else
+    return [[BDPlayer currentPlayer] currentTown].gold >= building.goldCost &&
+    [[BDPlayer currentPlayer] currentTown].wood >= building.woodCost &&
+    [[BDPlayer currentPlayer] currentTown].iron >= building.ironCost &&
+    [[BDPlayer currentPlayer] currentTown].people >= building.peopleCost;
 #endif
-    return [BDPlayer currentPlayer].gold >= building.goldCost &&
-    [BDPlayer currentPlayer].wood >= building.woodCost &&
-    [BDPlayer currentPlayer].iron >= building.ironCost &&
-    [BDPlayer currentPlayer].people >= building.peopleCost;
-
 }
-
 
 - (void)buildingMenu:(BDBuildingMenu *)menu didTouchUpdateButton:(UIButton *)button withConfirmationBlock:(void(^)())confBlock {
     
     if([self hasEnoughResourcesFor:menu.building] ) {
         [self.delegate gameLogicController:self requestUpdateForBuilding:menu.building withConfirmationBlock:^void{
-            [BDPlayer currentPlayer].gold -= menu.building.goldCost;
-            [BDPlayer currentPlayer].wood -= menu.building.woodCost;
-            [BDPlayer currentPlayer].iron -= menu.building.ironCost;
-            [BDPlayer currentPlayer].people -= menu.building.peopleCost;
+            [[BDPlayer currentPlayer] currentTown].gold -= menu.building.goldCost;
+            [[BDPlayer currentPlayer] currentTown].wood -= menu.building.woodCost;
+            [[BDPlayer currentPlayer] currentTown].iron -= menu.building.ironCost;
+            [[BDPlayer currentPlayer] currentTown].people -= menu.building.peopleCost;
             
-            BDProtoProduct *proto = [BDHeadquarters upgradeProtoProduct];
+            BDProtoProduct *proto = [menu.building.class upgradeProtoProduct];
             proto.delegate = menu.building;
             NSDate *mydate = [NSDate date];
             NSTimeInterval secondsInEightHours = menu.building.timeCost;
@@ -104,8 +117,16 @@
 
 - (void)didFinishAddingBuilding:(BDBuilding *)building toMap:(BDMap *)map {
     if ([building isKindOfClass:[BDHouse class]]) {
-        [BDPlayer currentPlayer].people += ((BDHouse *)building).peopleProduced;
+        [[BDPlayer currentPlayer] currentTown].people += ((BDHouse *)building).peopleProduced;
     }
+    [BDPlayer currentPlayer].points += building.points;
+}
+
+- (void)saveInfo {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *buildingsData = [NSKeyedArchiver archivedDataWithRootObject:[BDPlayer currentPlayer]];
+    [userDefaults setObject:buildingsData forKey:@"player"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

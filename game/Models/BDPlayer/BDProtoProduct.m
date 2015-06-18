@@ -10,6 +10,16 @@
 
 @implementation BDProtoProduct
 
++ (instancetype)protoProductWithProtoProduct:(BDProtoProduct *)proto {
+    BDProtoProduct *protop = [[self alloc] init];
+    protop.timeStamp = proto.timeStamp;
+    protop.protoProductName = proto.protoProductName;
+    protop.type = proto.type;
+    protop.delegate = proto.delegate;
+    
+    return protop;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -23,7 +33,7 @@
     if (self) {
         self.timeStamp = [aDecoder decodeObjectForKey:@"timeStamp"];
         self.protoProductName = [aDecoder decodeObjectForKey:@"protoProductName"];
-        self.isResource = [aDecoder decodeBoolForKey:@"isResource"];
+        self.type = [aDecoder decodeBoolForKey:@"type"];
     }
     return self;
 }
@@ -31,13 +41,18 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.timeStamp forKey:@"timeStamp"];
     [aCoder encodeObject:self.protoProductName forKey:@"protoProductName"];
-    [aCoder encodeBool:self.isResource forKey:@"isResource"];
+    [aCoder encodeBool:self.type forKey:@"type"];
 }
 
 
 -(BOOL)isEqual:(id)object{
-    if([object class] == self.class && [[object protoProductName] isEqualToString:self.protoProductName]){
-        return YES;
+    if([object class] == self.class) {
+        BDProtoProduct *proto = object;
+        if (self.type == proto.type  &&
+            [proto.protoProductName isEqualToString:self.protoProductName] &&
+            ([self.timeStamp isEqualToDate:proto.timeStamp]||self.type == ProtoProductTypeUpgrade)) {
+            return YES;
+        }
     }
     return NO;
 }

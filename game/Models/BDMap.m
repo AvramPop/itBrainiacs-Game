@@ -27,6 +27,7 @@
     if (self) {
         self.town = town;
         self.backgroundSize = totalSize;
+        [self.mapGestures pannToCenter];
     }
     return self;
 }
@@ -43,8 +44,6 @@
         int tileHeight = 44;
         int tileWidth = 57;
         self.tileSize = CGSizeMake(tileWidth, tileHeight);
-        
-        self.touchDetector = [[TouchDetector alloc] initWithScreenSize:size  andTileSize:self.tileSize];
         
         self.physicsWorld.contactDelegate = self;
         self.mapGestures = [[BDMapGestures alloc] initWithMap:self];
@@ -72,13 +71,12 @@
         BDBuilding *building = (BDBuilding *)self.addedNode;
         building.position = location;
         if (!building.name) {
-            building.name = [NSString stringWithFormat:@"thisIsMySprite%d", building.uid]; // set the name for your sprite
+            building.name = [NSString stringWithFormat:@"thisIsMySprite"]; // set the name for your sprite
         }
         building.userInteractionEnabled = YES;
         
-        [self.town.buildings addObject:building];
+        [self.town addBuilding:building];
         [self addBuilding:building];
-
         self.addedNode = nil;
     } else {
         SKNode *node = [self nodeAtPoint:location];
@@ -95,21 +93,28 @@
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:_mapGestures action:@selector(handleZoomFrom:)];
     [[self view] addGestureRecognizer:pinchGestureRecognizer];
     
-    
-    
-    NSError *err = nil;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"mapBackground.png"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath
-                                          options:NSDataReadingUncached
-                                            error:&err];
-    UIImage *image = [UIImage imageWithData:data];
-    
-    
+    UIImage *image = nil;
     if (!image) {
-         image = [self steachBackgroundImages];
-        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+        NSError *err = nil;
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"mapBackground.png"];
+        NSData *data = [NSData dataWithContentsOfFile:filePath
+                                              options:NSDataReadingUncached
+                                                error:&err];
+        image = [UIImage imageWithData:data];
+        
+        
+        if (!image) {
+            image = [self steachBackgroundImages];
+            [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+        }
     }
+    
+    UIImage *backroundImg = [UIImage imageNamed:@"mapBackground-woods"];
+    if (backroundImg) {
+        image = backroundImg;
+    }
+
     
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImage:image]];
     [background setAnchorPoint:CGPointZero];
@@ -122,6 +127,7 @@
     for (BDBuilding *building in self.town.buildings) {
         [self addBuilding:building];
     }
+    [self.mapGestures setZoomToMax];
 }
 
 - (UIImage *)steachBackgroundImages {

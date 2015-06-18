@@ -23,7 +23,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self){
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1];
         self.buttons = [NSMutableArray array];
         self.isOpen = NO;
     }
@@ -72,6 +72,8 @@
 
 - (void)populateMenuFromDataSource {
     float ratio = 1.0 / self.dataSource.count;
+    UIColor *color = [UIColor colorWithRed:1.0 green:191.0/255.0 blue:78.0/255.0 alpha:1];
+    UIFont *font = [UIFont fontWithName:@"Supercell-magic" size:15.0];
     
     for (int i = 0 ; i < self.dataSource.count; i++) {
         id<BDMenuItem> item = self.dataSource[i];
@@ -79,19 +81,17 @@
         aButton.frame = CGRectMake(self.frame.size.width * ratio * i, 0, self.frame.size.width * ratio, self.frame.size.height);
         aButton.tag = i;
         [aButton setHidden:NO];
+        [aButton setTitle:@"" forState:UIControlStateNormal];
+        [aButton setImage:nil forState:UIControlStateNormal];
         
         if (![item.title isEqual:@"emptyItem"]) {
-          
-            if (![item.title isEqual:@""]) {
-                [aButton setTitle:item.title forState:UIControlStateNormal];
-            }
-            
             if (item.iconName && ![item.iconName isEqual:@""]) {
                 [aButton setImage:[UIImage imageNamed:item.iconName] forState:UIControlStateNormal];
+            } else if (![item.title isEqual:@""]) {
+                [aButton setTitle:item.title forState:UIControlStateNormal];
+                [aButton setTitleColor:color forState:UIControlStateNormal];
+                aButton.titleLabel.font = font;
             }
-        } else {
-            [aButton setTitle:@"" forState:UIControlStateNormal];
-            [aButton setImage:nil forState:UIControlStateNormal];
         }
     }
 }

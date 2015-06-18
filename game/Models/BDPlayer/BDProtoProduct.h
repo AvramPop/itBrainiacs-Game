@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    ProtoProductTypeResource,
+    ProtoProductTypeBuilding,
+    ProtoProductTypeUnit,
+    ProtoProductTypeUpgrade
+} ProtoProductType;
+
 @class BDProtoProduct;
 
 
@@ -28,7 +35,9 @@
 
 @property (nonatomic, strong) NSDate                *timeStamp;
 @property (nonatomic, strong) NSString              *protoProductName;
-@property (nonatomic, assign) BOOL                  isResource;
+@property (nonatomic, assign) ProtoProductType      type;
 @property (nonatomic, assign) id<BDProtoProduct>    delegate;
+
++ (instancetype)protoProductWithProtoProduct:(BDProtoProduct *)proto;
 
 @end

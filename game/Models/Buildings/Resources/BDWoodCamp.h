@@ -10,6 +10,6 @@
 
 @interface BDWoodCamp : BDBuilding
 
-@property(nonatomic, assign)NSInteger productionRate;
+@property(nonatomic, assign) NSInteger productionPerHour;
 
 @end
