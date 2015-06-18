@@ -1,79 +1,81 @@
 {
-    "Name": "IrodMine",
+    "Name": "IronMine",
     "Type": "BDBuilding",
     "Subtype": "Resources",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+    
     "Level": [
-        {
-            "Cost": {
-                "goldCost": "200",
-                "woodCost": "100",
-                "ironCost": "75",
-                "peopleCost": "2",
-                "timeCost": "120"
-            },
-            "productionPerHour": "100",
+              {
+              "Cost": {
+              "goldCost": "200",
+              "woodCost": "100",
+              "ironCost": "0",
+              "peopleCost": "2",
+              "timeCost": "12"
+              },
+              "productionPerHour": "7000",
               "points" : "50",
               "backgroundImage": "Dark_Elixir_Drill1"
-        },
-        {
-            "Cost": {
-                "goldCost": "250",
-                "woodCost": "600",
-                "ironCost": "75",
-                "peopleCost": "3",
-                "timeCost": "1800"
-            },
-            "productionPerHour": "300",
+              },
+              {
+              "Cost": {
+              "goldCost": "250",
+              "woodCost": "600",
+              "ironCost": "75",
+              "peopleCost": "3",
+              "timeCost": "30"
+              },
+              "productionPerHour": "1000",
               "points" : "100",
               "backgroundImage": "Dark_Elixir_Drill2"
-        },
-        {
-            "Cost": {
-                "goldCost": "500",
-                "woodCost": "1000",
-                "ironCost": "300",
-                "peopleCost": "4",
-                "timeCost": "2500"
-            },
-            "productionPerHour": "450",
+              },
+              {
+              "Cost": {
+              "goldCost": "500",
+              "woodCost": "1000",
+              "ironCost": "300",
+              "peopleCost": "4",
+              "timeCost": "2500"
+              },
+              "productionPerHour": "450",
               "points" : "150",
-              "backgroundImage": "Dark_Elixir_Drill3
-        },
-        {
-            "Cost": {
-                "goldCost": "900",
-                "woodCost": "1500",
-                "ironCost": "550",
-                "peopleCost": "5",
-                "timeCost": "3600"
-            },
-            "productionPerHour": "700",
+              "backgroundImage": "Dark_Elixir_Drill3"
+              },
+              {
+              "Cost": {
+              "goldCost": "900",
+              "woodCost": "1500",
+              "ironCost": "550",
+              "peopleCost": "5",
+              "timeCost": "3600"
+              },
+              "productionPerHour": "700",
               "points" : "200",
               "backgroundImage": "Dark_Elixir_Drill4"
-        },
-        {
-            "Cost": {
-                "goldCost": "1500",
-                "woodCost": "2300",
-                "ironCost": "800",
-                "peopleCost": "7",
-                "timeCost": "5000"
-            },
-            "productionPerHour": "1000",
+              },
+              {
+              "Cost": {
+              "goldCost": "1500",
+              "woodCost": "2300",
+              "ironCost": "800",
+              "peopleCost": "7",
+              "timeCost": "5000"
+              },
+              "productionPerHour": "1000",
               "points" : "250",
               "backgroundImage": "Dark_Elixir_Drill5"
-        },
-        {
-            "Cost": {
-                "goldCost": "2200",
-                "woodCost": "3000",
-                "ironCost": "1200",
-                "peopleCost": "10",
-                "timeCost": "8000"
-            },
-            "productionPerHour": "1500",
+              },
+              {
+              "Cost": {
+              "goldCost": "2200",
+              "woodCost": "3000",
+              "ironCost": "1200",
+              "peopleCost": "10",
+              "timeCost": "8000"
+              },
+              "productionPerHour": "1500",
               "points" : "300",
               "backgroundImage": "Dark_Elixir_Drill6"
-        }
-    ]
+              }
+              ]
 }
