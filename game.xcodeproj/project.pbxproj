@@ -574,9 +574,7 @@
 		CCF0A3571B2F19AC002E7F7E /* resources  */ = {
 			isa = PBXGroup;
 			children = (
-				CC2B4FB61ACEDF5000872D19 /* ironMine.json */,
 				CC2B4FB31ACEDF5000872D19 /* goldMine.json */,
-				CC2B4FBC1ACEDF5000872D19 /* woodCamp.json */,
 				CC2B4FB51ACEDF5000872D19 /* house.json */,
 			);
 			name = "resources ";
@@ -728,7 +726,6 @@
 				CCF849951B306AF600EFADEA /* Supercell-magic.ttf in Resources */,
 				CC2B4FC31ACEDF5000872D19 /* house.json in Resources */,
 				CC2B4FC11ACEDF5000872D19 /* goldMine.json in Resources */,
-				CC2B4FCA1ACEDF5000872D19 /* woodCamp.json in Resources */,
 				CCDDD66B1A7A8F48006A996C /* LaunchScreen.xib in Resources */,
 				CC2B4FBE1ACEDF5000872D19 /* archer.json in Resources */,
 				CC2B4FC01ACEDF5000872D19 /* barracks.json in Resources */,
@@ -744,7 +741,6 @@
 				CCF849AB1B31B92600EFADEA /* background-sound.m4a in Resources */,
 				CCF849B31B31BFB700EFADEA /* tap-building.m4a in Resources */,
 				CCF849AF1B31BCBA00EFADEA /* upgrade-finished.m4r in Resources */,
-				CC2B4FC41ACEDF5000872D19 /* ironMine.json in Resources */,
 				CC2B4FC71ACEDF5000872D19 /* stable.json in Resources */,
 				CCDDD6661A7A8F47006A996C /* Main.storyboard in Resources */,
 			);
