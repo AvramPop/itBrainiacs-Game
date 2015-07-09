@@ -14,6 +14,7 @@
 #import "BDGoldMine.h"
 #import "BDHouse.h"
 #import "BDPlayer.h"
+#import "BDMarketContainerMenu.h"
 
 @interface BDBuildingMenu() <BDUnitInfoViewDelegate>
 
@@ -262,6 +263,10 @@
         self.production.text = [NSString stringWithFormat:@"People produced: %ld", (long)((BDHouse *)self.building).peopleProduced];
     }
     
+	if ([self.building respondsToSelector:NSSelectorFromString(@"merchantsProduced")]) {
+        self.production.text = [NSString stringWithFormat:@"Merchants produced: %ld", (long)((BDMarket.building).merchantsProduced];
+    }
+	
     NSMutableDictionary *productsValue = [NSMutableDictionary dictionary];
     for (BDProtoProduct *proto in self.building.protoProducts) {
         NSNumber *value = productsValue[proto.protoProductName];
@@ -274,9 +279,12 @@
     self.container.contentSize = CGSizeMake(self.building.availableProtoProducts.count * infoViewWidth + 10, self.container.frame.size.height);
     NSArray *availableProto = self.building.availableProtoProducts;
     
-    if (!availableProto.count) {
+    if (!availableProto.count  && ![self.building.name isEqualToString: @"market"]) {
         self.descriptionLabel.hidden = NO;
         [self.descriptionLabel setText:self.building.buildingDescription];
+    } else if([self.building.name isEqualToString: @"market"]){
+        self.descriptionLabel.hidden = YES;
+        BDMarketContainerMenu *m = [BDMarketContainerMenu alloc] initWithFrame:CGRectMake(self.container.frame.origin.x, self.container.frame.origin.y, self.container.frame.size.width, self.container.frame.size.height) andNumberOfAvaliableMerchants:(NSInteger)10 andTown:(BDTown*)self.town];
     } else {
         self.descriptionLabel.hidden = YES;
         for (NSString *unitClassName in availableProto) {

@@ -14,6 +14,13 @@
     self = [super initWithImageNamed:name];
     if (self) {
         self.name = @"market";
+        
+        BDProtoProduct *protoMerchants = [[BDProtoProduct alloc] init];
+        protoPeople.protoProductName = @"BDMerchants";
+        protoPeople.type = ProtoProductTypeResource;
+        protoPeople.delegate = self;
+        
+        self.protoProducts = [NSMutableArray arrayWithObject:protoMerchants];
         [self parse:[self getJsonDictionary]];
         self.protoProducts = [NSMutableArray array];
     }
@@ -26,6 +33,12 @@
     proto.type = ProtoProductTypeUpgrade;
     
     return proto;
+}
+
+- (void)parse:(NSDictionary *)dictionary {
+    [super parse:dictionary];
+    NSArray *levels = dictionary[@"Level"];
+    self.merchantsProduced = [(NSNumber *)(levels[self.level][@"merchantsProduced"]) intValue];
 }
 
 @end

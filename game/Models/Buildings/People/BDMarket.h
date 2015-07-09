@@ -10,4 +10,6 @@
 
 @interface BDMarket : BDBuilding
 
+@property (nonatomic, assign) NSInteger merchantsProduced;
+
 @end

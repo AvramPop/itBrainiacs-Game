@@ -66,6 +66,7 @@
         NSArray *unitNames = @[@[@"Swordsman:", @"Light Cavalery: ", @"Ram: "],
                                @[@"Axeman: ", @"Heavy Cavalery: ", @"Catapult: "],
                                @[@"Archer: ", @"Wizard: ", @"Baloon: "]];
+        
         NSArray *unitNumber = @[@[@([self.player currentTown].swordsmanCount), @([self.player currentTown].lightCavaleryCount), @([self.player currentTown].ramCount)],
                                @[@([self.player currentTown].axemanCount), @([self.player currentTown].highCavaleryCount), @([self.player currentTown].catapultCount)],
                                @[@([self.player currentTown].archerCount), @([self.player currentTown].wizardCount), @([self.player currentTown].baloonCount)]];
@@ -94,7 +95,7 @@
                 button.actionTouchUpInside = ^{
                     textField.text = wutton.titleLabel.text;
                 };
-                NSString *string = [NSString stringWithFormat:@"%@", unitNumber[i][j]];
+                NSString *string = [NSString stringWithFormat:@"(%@)", unitNumber[i][j]];
                 [button setTitle:string forState:UIControlStateNormal];
 
                 [self addSubview:label];
