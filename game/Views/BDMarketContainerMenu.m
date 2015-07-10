@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *_pickerData;
 @property (nonatomic, strong) NSInteger resToExchange;
 @property (nonatomic, strong) NSInteger resToReceive;
+@property (nonatomic, strong) UILabel   *needTextField;
 
 @end
 
@@ -79,13 +80,9 @@
         pic2.delegate = self;
         pic2.tag = 2;
 
-        self.needTextField = [[UITextField alloc] initWithFrame:CGRectMake(offerLabel.frame.size.width + 30, CGRectGetMaxY(offerLabel.frame), 100, offerLabel.frame.size.height)];
+        self.needTextField = [[UILabel alloc] initWithFrame:CGRectMake(offerLabel.frame.size.width + 30, CGRectGetMaxY(offerLabel.frame), 100, offerLabel.frame.size.height)];
         self.needTextField.font = font;
         self.needTextField.textColor = color;
-
-        if(woodTextField.editing || [woodButton isSelected]){
-            needTextField.text = ([forTextField.text intValue]) * 0.85; 
-        }
 
         [self addSubview:self.needTextField];
         [self addSubview:self.forTextField];
@@ -132,6 +129,10 @@
             }
         }
     }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.needTextField.text = [NSString stringWithFormat:([self.forTextField.text intValue]) * 0.85];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
