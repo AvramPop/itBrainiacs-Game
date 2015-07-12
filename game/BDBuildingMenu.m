@@ -39,7 +39,7 @@
 
 @implementation BDBuildingMenu
 
-- (instancetype)initWithBuilding:(BDBuilding *)building andFrame:(CGRect)frame{
+- (instancetype)initWithBuilding:(BDBuilding *)building andFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self) {
         self.building = building;

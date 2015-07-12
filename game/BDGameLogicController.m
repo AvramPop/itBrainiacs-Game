@@ -13,6 +13,7 @@
 #import "BDBuilding.h"
 #import "BDHeadquarters.h"
 #import "BDHouse.h"
+#import "BDStorage.h"
 
 #import "BDGoldMine.h"
 #import "BDIronMine.h"
@@ -45,7 +46,7 @@
     return self;
 }
 
-- (void)checkTimer:(NSTimer *)timer{
+- (void)checkTimer:(NSTimer *)timer {
     NSDate *date = [[NSDate alloc] init];
     NSArray *buildings = self.map.town.buildings;
     BOOL hasResourcesUpdate = NO;
@@ -59,14 +60,26 @@
                     double addedValue;
                     if ([product.protoProductName compare:@"BDGold"] == NSOrderedSame) {
                         addedValue = ((BDGoldMine *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
-                        [[BDPlayer currentPlayer] currentTown].gold += addedValue;
+                        if([[BDPlayer currentPlayer] currentTown].gold + addedValue < [[BDPlayer currentPlayer] currentTown].resLimit) {
+                            [[BDPlayer currentPlayer] currentTown].gold += addedValue;
+                        } else {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":BDGold}];
+                        }
                     } else if ([product.protoProductName compare:@"BDIron"] == NSOrderedSame) {
                         addedValue = ((BDIronMine *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
-                        [[BDPlayer currentPlayer] currentTown].iron += addedValue;
+                        if([[BDPlayer currentPlayer] currentTown].iron + addedValue < [[BDPlayer currentPlayer] currentTown].resLimit) {
+                            [[BDPlayer currentPlayer] currentTown].iron += addedValue;
+                        } else {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":BDIron}];
+                        }
 
                     } else if ([product.protoProductName compare:@"BDWood"] == NSOrderedSame) {
                         addedValue = ((BDWoodCamp *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
-                        [[BDPlayer currentPlayer] currentTown].wood += addedValue;
+                        if([[BDPlayer currentPlayer] currentTown].wood + addedValue < [[BDPlayer currentPlayer] currentTown].resLimit) {
+                            [[BDPlayer currentPlayer] currentTown].wood += addedValue;
+                        } else {
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":BDWood}];
+                        }
                     }
                 }
                 [product.delegate didFinishCreatingProtoProduct:product];
