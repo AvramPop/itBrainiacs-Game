@@ -1,0 +1,53 @@
+{
+    "Name": "Spy",
+    "Type": "BDUnit",
+    "Subtype": "stable",
+    "peopleCost": "1",
+    "Level": [
+        {
+            "Cost": {
+                "goldCost": "200",
+                "woodCost": "250",
+                "ironCost": "350",
+                "timeCost": "300"
+            },
+			"squaresPerHour" : "70"
+        },
+        {
+            "Cost": {
+                "goldCost": "440",
+                "woodCost": "500",
+                "ironCost": "600",
+                "timeCost": "600"
+            },
+			"squaresPerHour" : "150"
+        },
+        {
+            "Cost": {
+                "goldCost": "700",
+                "woodCost": "700",
+                "ironCost": "880",
+                "timeCost": "700"
+            },
+			"squaresPerHour" : "170"
+        },
+        {
+            "Cost": {
+                "goldCost": "1000",
+                "woodCost": "1400",
+                "ironCost": "1500",
+                "timeCost": "800"
+            },
+			"squaresPerHour" : "270"
+        },
+        {
+            "Cost": {
+                "goldCost": "1700",
+                "woodCost": "1900",
+                "ironCost": "2200",
+                "timeCost": "1000"
+            },
+			"squaresPerHour" : "340"
+        }
+    ]
+}

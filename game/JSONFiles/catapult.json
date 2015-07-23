@@ -1,0 +1,74 @@
+{
+    "Name": "Catapult",
+    "Type": "BDUnit",
+    "Subtype": "workshop",
+    "favouriteTarget": "BDBuilding",
+    "peopleCost": "3",
+    "Level": [
+        {
+            "Cost": {
+                "goldCost": "50",
+                "woodCost": "30",
+                "ironCost": "70",
+                "timeCost": "50"
+            },
+            "damage": "5",
+            "life": "100",
+            "defense": "10",
+            "squaresPerHour": "40",
+            "carryCapacity": "20"
+        },
+        {
+            "Cost": {
+                "goldCost": "100",
+                "woodCost": "80",
+                "ironCost": "100",
+                "timeCost": "120"
+            },
+            "damage": "12",
+            "life": "160",
+            "defense": "18",
+            "squaresPerHour": "65",
+            "carryCapacity": "50"
+        },
+        {
+            "Cost": {
+                "goldCost": "230",
+                "woodCost": "150",
+                "ironCost": "100",
+                "timeCost": "300"
+            },
+            "damage": "20",
+            "life": "200",
+            "defense": "30",
+            "squaresPerHour": "85",
+            "carryCapacity": "70"
+        },
+        {
+            "Cost": {
+                "goldCost": "300",
+                "woodCost": "260",
+                "ironCost": "200",
+                "timeCost": "400"
+            },
+            "damage": "40",
+            "life": "250",
+            "defense": "60",
+            "squaresPerHour": "100",
+            "carryCapacity": "100"
+        },
+        {
+            "Cost": {
+                "goldCost": "400",
+                "woodCost": "350",
+                "ironCost": "300",
+                "timeCost": "550"
+            },
+            "damage": "600",
+            "life": "400",
+            "defense": "100",
+            "squaresPerHour": "120",
+            "carryCapacity": "120"
+        }
+    ]
+}

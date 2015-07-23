@@ -35,7 +35,7 @@
 - (void)parse:(NSDictionary *)dictionary {
     [super parse:dictionary];
     NSArray *levels = dictionary[@"Level"];
-    self.resLimit = [(NSNumber *)(levels[self.level][@"resLimit"]) intValue];
+    self.resLimit = [(NSNumber *)(levels[self.level][@"capacity"]) intValue];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {

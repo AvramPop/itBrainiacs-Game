@@ -14,7 +14,8 @@
             },
             "products": ["BDRam"],
               "points" : "50",
-              "backgroundImage" : "workshop1"
+              "backgroundImage" : "workshop1",
+			"reductionRatio" : "95"
         },
         {
             "Cost": {
@@ -29,7 +30,8 @@
                            "BDBaloon"
                            ],
               "points" : "100",
-              "backgroundImage" : "workshop2"
+              "backgroundImage" : "workshop2",
+			"reductionRatio" : "90"
         },
         {
             "Cost": {
@@ -45,7 +47,8 @@
                 "BDCatapult"
             ],
               "points" : "150",
-              "backgroundImage" : "workshop3"
+              "backgroundImage" : "workshop3",
+			"reductionRatio" : "85"
         },
         {
             "Cost": {
@@ -61,7 +64,8 @@
                            "BDCatapult"
                            ],
               "points" : "200",
-              "backgroundImage" : "workshop4"
+              "backgroundImage" : "workshop4",
+			"reductionRatio" : "80"
         },
         {
             "Cost": {
@@ -77,7 +81,8 @@
                            "BDCatapult"
                            ],
               "points" : "250",
-              "backgroundImage" : "workshop5"
+              "backgroundImage" : "workshop5",
+			"reductionRatio" : "75"
         },
         {
             "Cost": {
@@ -93,7 +98,8 @@
                            "BDCatapult"
                            ],
               "points" : "300",
-              "backgroundImage" : "workshop6"
+              "backgroundImage" : "workshop6",
+			"reductionRatio" : "70"
         }
     ]
 }

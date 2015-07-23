@@ -14,7 +14,8 @@
             },
               "products": ["BDSwordsman"],
             "points" : "50",
-            "backgroundImage" : "Army_Camp1"
+            "backgroundImage" : "Army_Camp1",
+			"reductionRatio" : "95"
         },
         {
             "Cost": {
@@ -29,7 +30,8 @@
                 "BDAxeman"
             ],
             "points" : "100",
-            "backgroundImage" : "Army_Camp2"
+            "backgroundImage" : "Army_Camp2",
+			"reductionRatio" : "90"
         },
         {
             "Cost": {
@@ -45,7 +47,8 @@
                 "BDArcher"
             ],
             "points" : "150",
-            "backgroundImage" : "Army_Camp3"
+            "backgroundImage" : "Army_Camp3",
+			"reductionRatio" : "85"
         },
         {
             "Cost": {
@@ -61,7 +64,8 @@
                 "BDArcher"
             ],
             "points" : "200",
-            "backgroundImage" : "Army_Camp4"
+            "backgroundImage" : "Army_Camp4",
+			"reductionRatio" : "80"
         },
         {
             "Cost": {
@@ -77,7 +81,8 @@
                 "BDArcher"
             ],
             "points" : "250",
-            "backgroundImage" : "Army_Camp5"
+            "backgroundImage" : "Army_Camp5",
+			"reductionRatio" : "75"
         },
         {
             "Cost": {
@@ -94,7 +99,8 @@
                 "BDWizard"
             ],
             "points" : "300",
-            "backgroundImage" : "Army_Camp6"
+            "backgroundImage" : "Army_Camp6",
+			"reductionRatio" : "70"
         }
     ]
 }

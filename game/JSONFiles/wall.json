@@ -1,22 +1,19 @@
 {
-    "Name": "Stable",
+    "Name": "Wall",
     "Type": "BDBuilding",
     "Subtype": "Army",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
-                "goldCost": "200",
-                "woodCost": "200",
-                "ironCost": "200",
-                "peopleCost": "2",
-                "timeCost": "10"
+                "goldCost": "0",
+                "woodCost": "0",
+                "ironCost": "0",
+                "peopleCost": "0",
+                "timeCost": "2"
             },
-              "products": ["BDLightCavalery"
-                ],
               "points" : "50",
-              "backgroundImage" : "Barracks1",
-			"reductionRatio" : "95"
+              "backgroundImage" : "wall1"
         },
         {
             "Cost": {
@@ -24,15 +21,11 @@
                 "woodCost": "600",
                 "ironCost": "75",
                 "peopleCost": "3",
-                "timeCost": "10"
+                "timeCost": "1800"
             },
-            "products": [
-                "BDLightCavalery",
-                "BDSpy"
-            ],
               "points" : "100",
-              "backgroundImage" : "Barracks2",
-			"reductionRatio" : "90"
+              "backgroundImage" : "wall2"
+
         },
         {
             "Cost": {
@@ -42,14 +35,8 @@
                 "peopleCost": "4",
                 "timeCost": "2500"
             },
-            "products" : [
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-            ],
               "points" : "150",
-              "backgroundImage" : "Barracks3",
-			"reductionRatio" : "85"
+              "backgroundImage" : "wall3"
         },
         {
             "Cost": {
@@ -59,14 +46,8 @@
                 "peopleCost": "5",
                 "timeCost": "3600"
             },
-            "products": [
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-            ],
               "points" : "200",
-              "backgroundImage" : "Barracks4",
-			"reductionRatio" : "80"
+              "backgroundImage" : "wall4"
         },
         {
             "Cost": {
@@ -76,14 +57,8 @@
                 "peopleCost": "7",
                 "timeCost": "5000"
             },
-            "products": [
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-            ],
               "points" : "250",
-              "backgroundImage" : "Barracks5",
-			"reductionRatio" : "75"
+              "backgroundImage" : "wall5"
         },
         {
             "Cost": {
@@ -93,14 +68,8 @@
                 "peopleCost": "10",
                 "timeCost": "8000"
             },
-              "products":[
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-              ],
               "points" : "300",
-              "backgroundImage" : "Barracks6",
-			"reductionRatio" : "70"
+              "backgroundImage" : "wall6"
         }
     ]
 }

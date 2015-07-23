@@ -1,22 +1,20 @@
 {
-    "Name": "Stable",
+    "Name": "Storage",
     "Type": "BDBuilding",
-    "Subtype": "Army",
+    "Subtype": "Resources",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
     "Level": [
         {
             "Cost": {
-                "goldCost": "200",
-                "woodCost": "200",
-                "ironCost": "200",
-                "peopleCost": "2",
-                "timeCost": "10"
+                "goldCost": "100",
+                "woodCost": "120",
+                "ironCost": "120",
+                "peopleCost": "0",
+                "timeCost": "12"
             },
-              "products": ["BDLightCavalery"
-                ],
+            "capacity": "2000",
               "points" : "50",
-              "backgroundImage" : "Barracks1",
-			"reductionRatio" : "95"
+              "backgroundImage": "ClanCastle1"
         },
         {
             "Cost": {
@@ -24,15 +22,11 @@
                 "woodCost": "600",
                 "ironCost": "75",
                 "peopleCost": "3",
-                "timeCost": "10"
+                "timeCost": "30"
             },
-            "products": [
-                "BDLightCavalery",
-                "BDSpy"
-            ],
+            "capacity": "5000",
               "points" : "100",
-              "backgroundImage" : "Barracks2",
-			"reductionRatio" : "90"
+            "backgroundImage": "ClanCastle2"
         },
         {
             "Cost": {
@@ -40,16 +34,11 @@
                 "woodCost": "1000",
                 "ironCost": "300",
                 "peopleCost": "4",
-                "timeCost": "2500"
+                "timeCost": "800"
             },
-            "products" : [
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-            ],
+            "capacity": "8000",
               "points" : "150",
-              "backgroundImage" : "Barracks3",
-			"reductionRatio" : "85"
+            "backgroundImage": "ClanCastle3"
         },
         {
             "Cost": {
@@ -57,16 +46,11 @@
                 "woodCost": "1500",
                 "ironCost": "550",
                 "peopleCost": "5",
-                "timeCost": "3600"
+                "timeCost": "1500"
             },
-            "products": [
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-            ],
+            "capacity": "12000",
               "points" : "200",
-              "backgroundImage" : "Barracks4",
-			"reductionRatio" : "80"
+            "backgroundImage": "ClanCastle4"
         },
         {
             "Cost": {
@@ -74,16 +58,11 @@
                 "woodCost": "2300",
                 "ironCost": "800",
                 "peopleCost": "7",
-                "timeCost": "5000"
+                "timeCost": "2000"
             },
-            "products": [
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-            ],
+            "capacity": "17000",
               "points" : "250",
-              "backgroundImage" : "Barracks5",
-			"reductionRatio" : "75"
+            "backgroundImage": "ClanCastle5"
         },
         {
             "Cost": {
@@ -91,16 +70,11 @@
                 "woodCost": "3000",
                 "ironCost": "1200",
                 "peopleCost": "10",
-                "timeCost": "8000"
+                "timeCost": "3000"
             },
-              "products":[
-                "BDLightCavalery",
-                "BDSpy",
-                "BDHighCavalery"
-              ],
+            "capacity": "25000",
               "points" : "300",
-              "backgroundImage" : "Barracks6",
-			"reductionRatio" : "70"
+          "backgroundImage": "ClanCastle6"
         }
     ]
 }

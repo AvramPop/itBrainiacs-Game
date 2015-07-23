@@ -1,19 +1,32 @@
-TO DO LIST:
+TO DO LIST
 
 MUST:
-1.multyplayer playing
-2. add storage building(where we store and have a limit of resources) and wall/towers(which are very important even in an )
-3. make university menu in order to research (asta il fac acuma in weekend)
-4. technology to conquer another towns
-5.tutorial
-* make the json infos realistic
-*make the timings work
 
-Nice to have:
-5. a better raports menu
-6. logic in order to make the arrangement of buildings matter
+Urgent:
+3. make university menu for research 
+1. multyplayer playing - first make the multiplayer war work
+4. technology to conquer another towns - related to university - which includes multitown playing 
+
+Important:
+
+13. make the timings work
 7. get rid of all hardcoded code :)
+12. make the headquarters a normal building
+11. make the json infos realistic
+5. a better raports menu
+
+Yet started but not finished - duties for dani
+2. wall/towers(which are very important even in an not-really-playable war) - including logic for building the walls
+9. special kind of troops logic - spy, wizard, etc
+11. make the bdunitinfo work 
+10. think building menu more logical 
+
+After the ones above:
+6. logic in order to make the arrangement of buildings matter
+5. tutorial
 8. quests
+14. use our graphic resources
+
 
 
 
