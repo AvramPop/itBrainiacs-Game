@@ -10,21 +10,25 @@
 #import "BDAttackMapViewController.h"
 #import "UIButton+Block.h"
 
-@interface BDMarketContainerMenu : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface BDMarketContainerMenu ()<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) UIButton *dealButton;
 @property (nonatomic, strong) BDTown   *town;
-@property (nonatomic, strong) UITextField *forTextField;
-@property (nonatomic, strong) NSArray *_pickerData;
-@property (nonatomic, strong) NSInteger resToExchange;
-@property (nonatomic, strong) NSInteger resToReceive;
+@property (nonatomic, strong) UITextField   *forTextField;
+@property (nonatomic, strong) NSArray       *pickerData;
+@property (nonatomic, assign) NSInteger resToExchange;
+@property (nonatomic, assign) NSInteger resToReceive;
 @property (nonatomic, strong) UILabel   *needTextField;
+
+@property (nonatomic, strong) UIButton *woodButton;
+@property (nonatomic, strong) UIButton *forLabel;
+@property (nonatomic, strong) UIButton *offerLabel;
 
 @end
 
 @implementation BDMarketContainerMenu
 
-- (instancetype) initWithFrame:(CGrect)frame andNumberOfAvaliableMerchants:(NSInteger)numberOfAvaliableMerchants andTown:(BDTown* )town {
+- (instancetype)initWithFrame:(CGRect)frame andNumberOfAvaliableMerchants:(NSInteger)numberOfAvaliableMerchants andTown:(BDTown* )town {
     self = [super initWithFrame:frame];
     if(self) {
         UIFont *font = [UIFont fontWithName:@"Supercell-magic" size:16.0];
@@ -36,7 +40,7 @@
         self.town = town;
 
         self.dealButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.frame) - 100, self.frame.size.height - 70, 80, 50)];
-        [self.dealButton setTitle:"Deal!" forState:UIControlStateNormal];
+        [self.dealButton setTitle:@"Deal!" forState:UIControlStateNormal];
         [self.dealButton addTarget:self action:@selector(makeExchange) forControlEvents:UIControlEventTouchUpInside];
         [self.dealButton setTitleColor: blueColor forState:UIControlStateNormal];
         self.dealButton.backgroundColor = color;
@@ -63,18 +67,18 @@
         woodButton.actionTouchUpInside = ^{
                self.forTextField.text = wutton.titleLabel.text;
         };
-        NSString *string = [NSString stringWithFormat:@"(%ld)", self.numberOfAvaliableMerchants * 1000;
+        NSString *string = [NSString stringWithFormat:@"(%ld)", self.numberOfAvaliableMerchants * 1000 ];
         [woodButton setTitle:string forState:UIControlStateNormal];
 
-        _pickerData = @[@"wood", @"gold", @"iron"];
+        self.pickerData = @[@"wood", @"gold", @"iron"];
 
-        UIPickerView *pic1 = [UIPickerView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(woodButton.frame) + 100, woodButton.frame.origin.y, 200, 100)];
+        UIPickerView *pic1 = [[UIPickerView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(woodButton.frame) + 100, woodButton.frame.origin.y, 200, 100)];
 
         pic1.dataSource = self;
         pic1.delegate = self;
         pic1.tag = 1;
 
-        UIPickerView *pic2 = [UIPickerView alloc] initWithFrame:CGRectMake(pic1.frame.origin.x, CGRectGetMaxY(pic1.frame), 200, 100)];
+        UIPickerView *pic2 = [[UIPickerView alloc] initWithFrame:CGRectMake(pic1.frame.origin.x, CGRectGetMaxY(pic1.frame), 200, 100)];
 
         pic2.dataSource = self;
         pic2.delegate = self;
@@ -96,43 +100,43 @@
 }
 
 - (void)makeExchange {
-    if ((self.resToExchange == 0 && [self.forTextField intValue] > self.town.wood) || (self.resToExchange == 1 && [self.forTextField intValue] > self.town.gold) || (self.resToExchange == 2 && [self.forTextField intValue] > self.town.iron)) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You do not have enought resources" message:nil delegate:self cancelButtonTitle:@"Maybe later..." otherButtonTitles: nil];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deal?" message:nil delegate:self cancelButtonTitle:@"Maybe later..." otherButtonTitles:@"DEAL!", nil];
-    }
-    [alert show];
+//    if ((self.resToExchange == 0 && [self.forTextField.text intValue] > self.town.wood) || (self.resToExchange == 1 && [self.forTextField intValue] > self.town.gold) || (self.resToExchange == 2 && [self.forTextField intValue] > self.town.iron)) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You do not have enought resources" message:nil delegate:self cancelButtonTitle:@"Maybe later..." otherButtonTitles: nil];
+//    } else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deal?" message:nil delegate:self cancelButtonTitle:@"Maybe later..." otherButtonTitles:@"DEAL!", nil];
+//    }
+//    [alert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (alertView.firstOtherButtonIndex == buttonIndex) {
         if(self.resToExchange == 0){
-            self.town.wood -= [forTextField.text intValue];
+            self.town.wood -= [self.forTextField.text intValue];
             if(self.resToReceive == 1){
-                self.town.gold += [needTextField.text intValue];
+                self.town.gold += [self.needTextField.text intValue];
             } else {
-                self.town.iron += [needTextField.text intValue];
+                self.town.iron += [self.needTextField.text intValue];
             }
         } else if(self.resToExchange == 1){
-            self.town.gold -= [forTextField.text intValue];
+            self.town.gold -= [self.forTextField.text intValue];
             if(self.resToReceive == 0){
-                self.town.wood += [needTextField.text intValue];
+                self.town.wood += [self.needTextField.text intValue];
             } else {
-                self.town.iron += [needTextField.text intValue];
+                self.town.iron += [self.needTextField.text intValue];
             }
         } else {
-            self.town.iron -= [forTextField.text intValue];
+            self.town.iron -= [self.forTextField.text intValue];
             if(self.resToReceive == 0){
-                self.town.wood += [needTextField.text intValue];
+                self.town.wood += [self.needTextField.text intValue];
             } else {
-                self.town.gold += [needTextField.text intValue];
+                self.town.gold += [self.needTextField.text intValue];
             }
         }
     }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.needTextField.text = [NSString stringWithFormat:([self.forTextField.text intValue]) * 0.85];
+    self.needTextField.text = [NSString stringWithFormat:@"%f", [self.forTextField.text intValue] * 0.85];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -147,7 +151,7 @@
     return _pickerData[row];
 }
  
- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if(pickerView.tag == 1) {
         self.resToExchange = row;
     } else {

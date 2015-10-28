@@ -9,6 +9,7 @@
 #import "BDStorage.h"
 #import "BDBuildingInfoParser.h"
 #import "BDTown.h"
+#import "BDPlayer.h"
 
 @implementation BDStorage
 
@@ -26,7 +27,7 @@
         self.level++;
 
         [self parse:[self getJsonDictionary]];
-        [BDPlayer currentPlayer] currentTown].resLimit += self.resLimit;
+        [[BDPlayer currentPlayer] currentTown].resourceLimit += self.resourceLimit;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldUpdateBuildingUI" object:nil userInfo:@{@"BDProtoProduct":protoProduct}];
     }
     [self.protoProducts removeObject:protoProduct];
@@ -35,7 +36,7 @@
 - (void)parse:(NSDictionary *)dictionary {
     [super parse:dictionary];
     NSArray *levels = dictionary[@"Level"];
-    self.resLimit = [(NSNumber *)(levels[self.level][@"capacity"]) intValue];
+    self.resourceLimit = [(NSNumber *)(levels[self.level][@"capacity"]) intValue];
 }
 
 + (BDProtoProduct *)upgradeProtoProduct {

@@ -10,6 +10,6 @@
 
 @interface BDUniversityContainerMenu : UIView
 
-- (instancetype) initWithFrame:(CGrect)frame andResearchedTechnologies:(NSMutableArray*)researchedTechnologies;
+- (instancetype)initWithFrame:(CGRect)frame andResearchedTechnologies:(NSMutableArray*)researchedTechnologies;
 
 @end

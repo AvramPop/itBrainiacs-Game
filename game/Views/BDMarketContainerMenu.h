@@ -12,8 +12,8 @@
 
 @interface BDMarketContainerMenu : UIView
 
-@property (nonatomic, strong) NSInteger numberOfAvaliableMerchants;
+@property (nonatomic, assign) NSInteger numberOfAvaliableMerchants;
 
-- (instancetype) initWithFrame:(CGrect)frame andNumberOfAvaliableMerchants:(NSInteger)numberOfAvaliableMerchants andTown:(BDTown* )town;
+- (instancetype)initWithFrame:(CGRect)frame andNumberOfAvaliableMerchants:(NSInteger)numberOfAvaliableMerchants andTown:(BDTown* )town;
 
 @end

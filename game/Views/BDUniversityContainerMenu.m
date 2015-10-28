@@ -9,7 +9,7 @@
 #import "BDUniversityContainerMenu.h"
 #import "UIButton+Block.h"
 
-@interface BDUniversityContainerMenu : UIViewController
+@interface BDUniversityContainerMenu ()
 
 @property (nonatomic, strong) NSMutableArray *researchedTechnologies;
 
@@ -17,7 +17,7 @@
 
 @implementation BDUniversityContainerMenu
 
-- (instancetype) initWithFrame:(CGrect)frame andResearchedTechnologies:(NSMutableArray*)researchedTechnologies {
+- (instancetype) initWithFrame:(CGRect)frame andResearchedTechnologies:(NSMutableArray*)researchedTechnologies {
     self = [super initWithFrame:frame];
     if(self) {
         self.researchedTechnologies = researchedTechnologies;

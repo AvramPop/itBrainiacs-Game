@@ -16,9 +16,9 @@
         self.name = @"market";
         
         BDProtoProduct *protoMerchants = [[BDProtoProduct alloc] init];
-        protoPeople.protoProductName = @"BDMerchants";
-        protoPeople.type = ProtoProductTypeResource;
-        protoPeople.delegate = self;
+        protoMerchants.protoProductName = @"BDMerchants";
+        protoMerchants.type = ProtoProductTypeResource;
+        protoMerchants.delegate = self;
         
         self.protoProducts = [NSMutableArray arrayWithObject:protoMerchants];
         [self parse:[self getJsonDictionary]];

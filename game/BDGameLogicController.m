@@ -60,25 +60,25 @@
                     double addedValue;
                     if ([product.protoProductName compare:@"BDGold"] == NSOrderedSame) {
                         addedValue = ((BDGoldMine *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
-                        if([[BDPlayer currentPlayer] currentTown].gold + addedValue < [[BDPlayer currentPlayer] currentTown].resLimit) {
+                        if([[BDPlayer currentPlayer] currentTown].gold + addedValue < [[BDPlayer currentPlayer] currentTown].resourceLimit) {
                             [[BDPlayer currentPlayer] currentTown].gold += addedValue;
                         } else {
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":BDGold}];
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":@"BDGold"}];
                         }
                     } else if ([product.protoProductName compare:@"BDIron"] == NSOrderedSame) {
                         addedValue = ((BDIronMine *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
-                        if([[BDPlayer currentPlayer] currentTown].iron + addedValue < [[BDPlayer currentPlayer] currentTown].resLimit) {
+                        if([[BDPlayer currentPlayer] currentTown].iron + addedValue < [[BDPlayer currentPlayer] currentTown].resourceLimit) {
                             [[BDPlayer currentPlayer] currentTown].iron += addedValue;
                         } else {
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":BDIron}];
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":@"BDIron"}];
                         }
 
                     } else if ([product.protoProductName compare:@"BDWood"] == NSOrderedSame) {
                         addedValue = ((BDWoodCamp *)product.delegate).productionPerHour/(3600.0/self.timeToUptade);
-                        if([[BDPlayer currentPlayer] currentTown].wood + addedValue < [[BDPlayer currentPlayer] currentTown].resLimit) {
+                        if([[BDPlayer currentPlayer] currentTown].wood + addedValue < [[BDPlayer currentPlayer] currentTown].resourceLimit) {
                             [[BDPlayer currentPlayer] currentTown].wood += addedValue;
                         } else {
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":BDWood}];
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"townStorageDidFilledUp" object:nil userInfo:@{@"resource":@"BDWood"}];
                         }
                     }
                 }

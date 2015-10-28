@@ -278,17 +278,17 @@
     NSDictionary *dict = [notification userInfo];
     NSString *res = [dict objectForKey:@"resource"];
     UIAlertView *alert;
-    if(res isEqualToString:@"BDGold"){
+    if([res isEqualToString:@"BDGold"]){
         self.gold.textColor = [UIColor redColor];
-        [[alert alloc] initWithTitle:@"Your gold storage is full" message:@"Upgrade you storage in order to gather more gold" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to storage", nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Your gold storage is full" message:@"Upgrade you storage in order to gather more gold" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to storage", nil];
         alert.tag = 7;
-    } else if(res isEqualToString:"BDWood") {
-        self.wood.text = [UIColor redColor];
-        [[alert alloc] initWithTitle:@"Your wood storage is full" message:@"Upgrade you storage in order to gather more wood" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to storage", nil];
+    } else if([res isEqualToString:@"BDWood"]) {
+        self.wood.textColor = [UIColor redColor];
+        alert = [[UIAlertView alloc] initWithTitle:@"Your wood storage is full" message:@"Upgrade you storage in order to gather more wood" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to storage", nil];
         alert.tag = 13;
     } else {
         self.iron.textColor = [UIColor redColor];
-        [[alert alloc] initWithTitle:@"Your iron storage is full" message:@"Upgrade you storage in order to gather more iron" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to storage", nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Your iron storage is full" message:@"Upgrade you storage in order to gather more iron" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to storage", nil];
         alert.tag = 66;
     }
     [alert show];
@@ -303,15 +303,15 @@
         [self.view addSubview:self.nameLabel];
     } else if (alertView.tag == 102 && buttonIndex == alertView.firstOtherButtonIndex){
         self.confirmationBlock();
-    } else if (alertView.tag == 7 && buttonIndex = alertView.firstOtherButtonIndex) {
-        BDBuildingMenu *menu = [[BDBuildingMenu alloc] initWithBuilding:/*GOLDMINE*/ andFrame:CGRectMake((100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
-        [self addSubview:menu];
-    } else if (alertView.tag = 13 && buttonIndex = alertView.firstOtherButtonIndex) {
-        BDBuildingMenu *menu = [[BDBuildingMenu alloc] initWithBuilding:/*WOODCAMP*/ andFrame:CGRectMake((100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
-        [self addSubview:menu];
-    } else if (alertView.tag == 66 && buttonIndex = alertView.firstOtherButtonIndex) {
-        BDBuildingMenu *menu = [[BDBuildingMenu alloc] initWithBuilding:/*IRONMINE*/ andFrame:CGRectMake((100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
-        [self addSubview:menu];
+    } else if (alertView.tag == 7 && buttonIndex == alertView.firstOtherButtonIndex) {
+//        BDBuildingMenu *menu = [[BDBuildingMenu alloc] initWithBuilding:/*GOLDMINE*/ andFrame:CGRectMake(100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
+//        [self.view addSubview:menu];
+    } else if (alertView.tag == 13 && buttonIndex == alertView.firstOtherButtonIndex) {
+//        BDBuildingMenu *menu = [[BDBuildingMenu alloc] initWithBuilding:/*WOODCAMP*/ andFrame:CGRectMake((100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
+//        [self.view addSubview:menu];
+    } else if (alertView.tag == 66 && buttonIndex == alertView.firstOtherButtonIndex) {
+//        BDBuildingMenu *menu = [[BDBuildingMenu alloc] initWithBuilding:/*IRONMINE*/ andFrame:CGRectMake((100, 80, self.view.frame.size.width - 2*margin, self.view.frame.size.height - 2*margin)];
+//        [self.view addSubview:menu];
     }
 }
 @end

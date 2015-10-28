@@ -10,6 +10,6 @@
 
 @interface BDStorage : BDBuilding
 
-@property (nonatomic, assign) NSInteger resLimit;
+@property (nonatomic, assign) NSInteger resourceLimit;
 
 @end

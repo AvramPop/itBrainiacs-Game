@@ -25,6 +25,8 @@ typedef enum {
 @property (nonatomic, assign) double wood;
 @property (nonatomic, assign) double iron;
 
+@property (nonatomic, assign) double resourceLimit;
+
 @property (nonatomic, assign) NSInteger people;
 //
 @property (nonatomic, assign) NSInteger swordsmanCount;
