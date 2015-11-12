@@ -75,6 +75,7 @@
 		CCE471F91B0638E6007C0E79 /* BDArmyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE471F81B0638E6007C0E79 /* BDArmyMenu.m */; };
 		CCE471FC1B06442E007C0E79 /* BDUnitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */; };
 		CCEE2F081AC4775100BA027F /* BDBuildingInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */; };
+		CCF10DA51BF52DDF00A620EF /* BDBuildingMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF10DA41BF52DDF00A620EF /* BDBuildingMenuViewController.m */; };
 		CCF849951B306AF600EFADEA /* Supercell-magic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCF849931B306AF200EFADEA /* Supercell-magic.ttf */; };
 		CCF8499D1B307B5500EFADEA /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF8499C1B307B5500EFADEA /* UIColor+Additions.m */; };
 		CCF849A11B30960600EFADEA /* BDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF849A01B30960600EFADEA /* BDProgressView.m */; };
@@ -224,6 +225,8 @@
 		CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDUnitInfo.m; sourceTree = "<group>"; };
 		CCEE2F061AC4775100BA027F /* BDBuildingInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingInfoParser.h; sourceTree = "<group>"; };
 		CCEE2F071AC4775100BA027F /* BDBuildingInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingInfoParser.m; sourceTree = "<group>"; };
+		CCF10DA31BF52DDF00A620EF /* BDBuildingMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBuildingMenuViewController.h; sourceTree = "<group>"; };
+		CCF10DA41BF52DDF00A620EF /* BDBuildingMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBuildingMenuViewController.m; sourceTree = "<group>"; };
 		CCF849931B306AF200EFADEA /* Supercell-magic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Supercell-magic.ttf"; sourceTree = "<group>"; };
 		CCF8499B1B307B5500EFADEA /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		CCF8499C1B307B5500EFADEA /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 				CCE471FB1B06442E007C0E79 /* BDUnitInfo.m */,
 				CCF849A71B31B41E00EFADEA /* BDReportMenu.h */,
 				CCF849A81B31B41E00EFADEA /* BDReportMenu.m */,
+				CCF10DA31BF52DDF00A620EF /* BDBuildingMenuViewController.h */,
+				CCF10DA41BF52DDF00A620EF /* BDBuildingMenuViewController.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -810,6 +815,7 @@
 				CCC0A43F1A9B85EF0091BAF5 /* BDPlayer.m in Sources */,
 				CC4DE45C1BE1471D00FE4E54 /* BDMarketContainerMenu.m in Sources */,
 				CC802A721AA10C2700971F83 /* BDBaloon.m in Sources */,
+				CCF10DA51BF52DDF00A620EF /* BDBuildingMenuViewController.m in Sources */,
 				CCF849B61B31E09100EFADEA /* BDFirstLevelBuildingAlert.m in Sources */,
 				CC00A8061AEA86A400A2A1D0 /* BDSquad.m in Sources */,
 				CC558D1E1A83C3FB00A3F0AB /* BDGoldMine.m in Sources */,
